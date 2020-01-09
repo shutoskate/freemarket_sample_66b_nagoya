@@ -62,3 +62,6 @@ end
 
 gem 'fog-aws'
 gem 'carrierwave'
+gem 'haml-rails'
+gem 'pry-rails'
+gem 'pry-byebug'

@@ -64,6 +64,7 @@
 |address1|string|null: false|
 |address2|string| |
 |phone_num|string| |
+|master|boolean|null: false|
 ### Association
 - belongs_to :user
 ## likesテーブル

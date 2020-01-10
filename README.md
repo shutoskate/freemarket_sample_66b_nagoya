@@ -17,7 +17,7 @@
 |birth_day|integer|null: false|
 |phone_num|string|null: false|
 ### Association
-- has_many :items
+- has_many :selling_items, class_name: "Item"
 - has_many :users_items
 - has_many :items, thorough: :users_items
 - has_many :trades
@@ -42,7 +42,7 @@
 |prefecture|integer|null: false|
 |term|integer|null: false|
 ### Association
-- belongs_to :user
+- belongs_to :seller, class_name: "User"
 - belongs_to :category
 - belongs_to :brand
 - has_many :likes

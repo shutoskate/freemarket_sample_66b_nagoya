@@ -10,6 +10,6 @@ class User < ApplicationRecord
   has_many :likes
   has_many :addresses
   has_many :cards
-  has_many :active_relationships, class_name: “Relationship”, foreign_key: “follower_id”
-  has_many :passive_relationships, class_name: “Relationship”, foreign_key: “followed_id”
+  # has_many :active_relationships, class_name: “relationship”, foreign_key: “follower_id”
+  # has_many :passive_relationships, class_name: “relationship”, foreign_key: “followed_id”
 end

@@ -96,14 +96,6 @@
 - has_many :items
 - belongs_to :parent, class_name: :Category
 - has_many :children, class_name: :Category, foreign_key: :parent_id
-## users_itemsテーブル
-|Column|Type|Options|
-|------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|item_id|integer|null: false, foreign_key: true|
-### Association
-- belongs_to :user
-- belongs_to :item
 ## commentsテーブル
 |Column|Type|Options|
 |------|----|-------|

@@ -18,7 +18,6 @@
 |phone_num|string|null: false|
 ### Association
 - has_many :items
-- has_many :users_items
 - has_many :trades
 - has_many :comments
 - has_many :likes
@@ -46,7 +45,6 @@
 - belongs_to :brand
 - has_many :likes
 - has_many :comments
-- has_many :users_items
 - has_many :items_imgs
 - has_one :trade
 ## adressesテーブル

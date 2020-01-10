@@ -4,7 +4,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |nickname|string|null: false index: true|
-|mail|string|null: false, unique: true|
+|email|string|null: false, unique: true|
 |password|string|null: false|
 |profile_img|string| |
 |profile_text|text| |
@@ -15,7 +15,6 @@
 |birth_year|integer|null: false|
 |birth_month|integer|null: false|
 |birth_day|integer|null: false|
-|phone_num|string|null: false|
 ### Association
 - has_many :items
 - has_many :trades
@@ -33,6 +32,7 @@
 |price|integer|null: false|
 |seller_id|integer|null: false, foreign_key: true|
 |brand_id|integer|foreign_key: true|
+|category_id|integer|null: false, foreign_ley: true|
 |status|integer|null: false|
 |charge|integer|null: false|
 |trade_step|integer|null: false,index: true|
@@ -47,15 +47,15 @@
 - has_many :comments
 - has_many :items_imgs
 - has_one :trade
-## adressesテーブル
+## addressesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|null: false, foreign_key:true|
 |post_code|string|null: false|
 |prefecture|integer|null: false|
 |city|string|null: false|
-|address1|string|null: false|
-|address2|string| |
+|address|string|null: false|
+|building|string| |
 |phone_num|string| |
 |master|boolean|null: false|
 ### Association

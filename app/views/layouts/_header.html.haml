@@ -1,0 +1,48 @@
+.header
+  .header__center
+    .header__top
+      .icon
+        %a.lists{:href => "/"}
+          = image_tag "fmarket_logo_red.svg", class:"fmarket__logo", size: "134x36"
+      .serch
+        .serch__area
+          %input.input{:action => "/jp/search/", :placeholder => "  何かお探しですか？", :method => "post"}
+          %a(href="#")
+            %i.fas.fa-search
+    .header__bottom
+      %nav.categories__left
+        %ul.categories__items
+          %li.serch_categories
+            %h4
+              %a.lists{:href => "#"}
+                %i.fas.fa-list-ul
+                %span カテゴリーから探す
+          %li.serch_brand
+            %h4
+              %a.lists{:href => "#"}
+                %i.fas.fa-tag
+                %span ブランドから探す
+          .serch_items
+      %nav.categories__right
+        %ul.user_area
+          %li.liked
+            %a.lists(href="#")
+              %i.far.fa-heart
+              %span いいね！一覧
+          %li.ararm
+            %a.lists(href="#")
+              %i.far.fa-bell
+              %span お知らせ
+          %li.to_do
+            %a.lists(href="#")
+              %i.fas.fa-check
+              %span やることリスト
+          %li.my_page
+            %a.lists(href="#")
+              %i.far.fa-smile
+              %span マイページ
+          
+
+
+/= f.submit 'Send', class: 'send'
+/= form.submit "検索", class: "search-btn"

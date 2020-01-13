@@ -1,15 +1,12 @@
 .footer{
   width: 100%;
   height: 100%;
-  //background-color: red;  
   &__top{
     width: 100%;
     height: 260px;
     background-color: gray;
 
     &__image{
-
-
     }
   }
   &__bottom{
@@ -17,7 +14,6 @@
     background-color: rgb(34, 34, 34);
     padding: 0px 20px 10px;
     .upper__area{
-      //background-color: yellowgreen;
       height: 340px;
       width: 100%;
       padding-left: 190px;

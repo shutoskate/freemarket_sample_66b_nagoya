@@ -68,8 +68,9 @@
         flex-wrap: wrap;
         justify-content: center;
         .product{
-          height:  185px;
-          padding: 10px;
+          height:  167px;
+          margin: 10px;
+          border: 1px solid white;
           &__img{
             position: relative;
             .img{
@@ -107,7 +108,9 @@
             }
           }
         }
-        
+        .product:hover{
+          border:1px solid blue
+        }
         .list-name{
           height: 64px;
         }

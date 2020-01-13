@@ -1,11 +1,11 @@
 $(function(){
 
-  window.onload = function(){
-    var img = 
-    $(".top__advertising").html(img)
+  // window.onload = function(){
+  //   var img = 
+  //   $(".top__advertising").html(img)
 
 
-  }
+  // }
 
 
   // 選択時の囲線での強調--------------------

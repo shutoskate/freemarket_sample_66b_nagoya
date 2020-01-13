@@ -60,8 +60,6 @@ body,html{
           }
           &--more{
             line-height: 60px;
-            // height: $name-h-s;
-            // width:  200px;
             text-align: right;
             .more{
               text-decoration: none;
@@ -136,5 +134,6 @@ body,html{
     font-size: 30px;
     text-decoration: none;
     color: white;
+    z-index: 1;
   }
 }

@@ -1,7 +1,7 @@
 .user
   %section.user__icon
-    %a.user__about{:href => "#"}
-    %img.user__image{:src => "//static.mercdn.net/images/member_photo_noimage_thumb.png", :width => "60"}/
+    %link_to.user__about{:href => "#"}
+    = image_tag "//static.mercdn.net/images/member_photo_noimage_thumb.png", size: "60x60", alt: "顔写真", class: "user__image"
     %h5.user__name  user_name
   %section.user__tab
     %ul.tab
@@ -10,11 +10,11 @@
       %li.to_do
         %h3 やることリスト
   %section.user__contents
-    %img.app__image{:src => "//static.mercdn.net/images/member_photo_noimage_thumb.png", :width => "60"}/
+    = image_tag "//static.mercdn.net/images/member_photo_noimage_thumb.png", size: "60x60", alt: "顔写真", class: "app__image"
     .app__text
   %section.user__index 
     .index__text
-      %a.text{:href => "#"} 一覧を見る
+      %link_to.text{:href => "#"} 一覧を見る
   %section.user__item
     .buy__items
       %h3.buy__item 購入した商品

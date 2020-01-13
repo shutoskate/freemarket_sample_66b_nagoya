@@ -1,0 +1,18 @@
+= render 'layouts/header'
+.content
+  .content__profile
+    %h2.content__profile__profile-title プロフィール
+    .content__profile__mine
+      -# = form_tag(model:"#" ,local:true,url:"#",method: :get) do |f|
+      -#   = f.text_field :ninkname, placeholder: :名前, class: :profile__mine__img
+      .content__profile__mine__img
+      .content__profile__mine__name
+        %input.name{ placeholder: "名前", type: "name", value: ""}/
+    .content__profile__text
+      %textarea.text{ placeholder: "text", type: "text", value: ""} 
+      .content__profile__text__edit
+        変更する
+
+  = render "layouts/sideber"
+
+= render 'layouts/footer'

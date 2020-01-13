@@ -1,0 +1,50 @@
+.content{
+  margin: 40px auto 0;
+  width: 1020px;
+  &__profile{
+    height: 568px;
+    width: 700px;
+    float: right;
+    &__profile-title{
+      padding: 8px 24px;
+      text-align: center;
+      line-height: 50px;
+    }
+    &__mine{
+      background-image: url(https://www.illust-box.jp/db_img/sozai/00011/116345/watermark.jpg);
+      padding: 72px 16px 24px;
+      display: flex;
+      justify-content: center;
+      &__img{
+        height: 60px;
+        width: 60px;
+        border-radius: 100%;
+        background-color: skyblue;
+      }
+      .name{
+        height: 50px;
+        width: 200px;
+        margin-left: 8px;
+        padding: 10px 16px 8px;
+      }
+    }
+    &__text{
+      min-height: 272px;
+      padding: 40px 16px;
+      .text{
+        min-height: 200px;
+        width: 668px;
+        max-width: 668px;
+        padding: 15px;
+      }
+      &__edit{
+        background-color: red;
+        font-size: 14px;
+        line-height: 50px;
+        text-align: center;
+        color: white;
+        margin-top: 16px;
+      }
+    }
+  }
+}

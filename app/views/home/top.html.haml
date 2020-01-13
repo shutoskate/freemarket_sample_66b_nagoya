@@ -1,3 +1,114 @@
 = render 'layouts/header'
-= render 'layouts/footer'
+.top
 
+  -# 広告------------------------------
+  .top__advertising
+    広告
+
+  -# 自分がいいねした商品
+  .top__like
+
+  -# カテゴリー表示----------------------
+  .top__category
+    .top__category__font
+      %h2 人気のカテゴリー
+      .top__category__font--list
+        .select-list 人気カテゴリー名1
+        .select-list 人気カテゴリー名2
+        .select-list 人気カテゴリー名3
+        .select-list 人気カテゴリー名4
+
+  -# 人気カテゴリー-------------------
+  .top__category-item
+    .top__category-item__category-list
+      .top__category-item__category-list__top
+        .top__category-item__category-list__top--name0
+          %h3 人気カテゴリー名その1
+        .top__category-item__category-list__top--more
+          = link_to "もっとみる >", "#", class:"more"
+      = render "top-category"
+
+  .top__category-item
+    .top__category-item__category-list
+      .top__category-item__category-list__top
+        .top__category-item__category-list__top--name1
+          %h3 人気カテゴリー名その2
+        .top__category-item__category-list__top--more
+          = link_to "もっとみる >", "#", class:"more"
+      = render "top-category"
+
+    .top__category-item
+    .top__category-item__category-list
+      .top__category-item__category-list__top
+        .top__category-item__category-list__top--name2
+          %h3 人気カテゴリー名その3
+        .top__category-item__category-list__top--more
+          = link_to "もっとみる >", "#", class:"more"
+      = render "top-category"
+
+    .top__category-item
+    .top__category-item__category-list
+      .top__category-item__category-list__top
+        .top__category-item__category-list__top--name3
+          %h3 人気カテゴリー名その4
+        .top__category-item__category-list__top--more
+          = link_to "もっとみる >", "#", class:"more"
+      = render "top-category"
+
+
+  -#  以下ブランド ----------------------------------
+
+  .top__category
+    .top__category__font
+      %h2 人気のブランド
+      .top__category__font--list
+        .select-list 人気ブランド名1
+        .select-list 人気ブランド名2
+        .select-list 人気ブランド名3
+        .select-list 人気ブランド名4
+        
+  -# 人気のブランド--------------------------------------
+  .top__category-item
+    .top__category-item__category-list
+      .top__category-item__category-list__top
+        .top__category-item__category-list__top--name4
+          %h3 人気ブランド名その1
+        .top__category-item__category-list__top--more
+          = link_to "もっとみる >", "#", class:"more"
+      = render "top-category"
+
+  .top__category-item
+    .top__category-item__category-list
+      .top__category-item__category-list__top
+        .top__category-item__category-list__top--name5
+          %h3 人気ブランド名その2
+        .top__category-item__category-list__top--more
+          = link_to "もっとみる >", "#", class:"more"
+      = render "top-category"
+
+    .top__category-item
+    .top__category-item__category-list
+      .top__category-item__category-list__top
+        .top__category-item__category-list__top--name6
+          %h3 人気カテゴリー名その3
+        .top__category-item__category-list__top--more
+          = link_to "もっとみる >", "#", class:"more"
+      = render "top-category"
+
+    .top__category-item
+    .top__category-item__category-list
+      .top__category-item__category-list__top
+        .top__category-item__category-list__top--name7
+          %h3 人気ブランド名その4
+        .top__category-item__category-list__top--more
+          = link_to "もっとみる >", "#", class:"more"
+      = render "top-category"
+
+
+-# 出品ボタン----------------------------------
+.exhibition
+  -# = icon (fa, people-carry, class:"exhibition1")
+  = link_to "出品", "#", class:"exhibition1"
+
+
+= render 'layouts/footer'

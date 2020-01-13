@@ -1,8 +1,8 @@
 class ApplicationController < ActionController::Base
   before_action :basic_auth, if: :production?
+  before_action :configure_permitted_parameters, if: :devise_controller?
   protect_from_forgery with: :exception
   before_action :authenticate_user!
-  before_action :configure_permitted_parameters, if: :devise_controller?
 
   private
 
@@ -29,8 +29,7 @@ class ApplicationController < ActionController::Base
       :first_name_kana,
       :birth_year,
       :birth_month,
-      :birth_day,
-      :phone_num])
+      :birth_day])
   end
 
 end

@@ -68,13 +68,13 @@
         flex-wrap: wrap;
         justify-content: center;
         .product{
-          height:  167px;
+          height: 100%;
           margin: 10px;
           border: 1px solid white;
           &__img{
             position: relative;
             .img{
-              height: 130px;
+              height: 150px;
               width: 130px;
             }
               .price{
@@ -93,18 +93,19 @@
             }
           }
           &__name{
-            height: 34px;
+            height: 50px;
             width: 130px;
             box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
-            padding: 8px 15px 15px 15px;
-            background-color: #fff;
-            text-overflow: ellipsis;
-            white-space: nowrap;
+            padding: 8px 15px 8px 15px;
             overflow: hidden;
-            line-height: 25px;
             .name{
+              background-color: #fff;
+              text-overflow: ellipsis;
+              // line-height: 25px;
               text-decoration: none;
               color: black;
+              font-size: 14px;
+              word-break: break-all;
             }
           }
         }

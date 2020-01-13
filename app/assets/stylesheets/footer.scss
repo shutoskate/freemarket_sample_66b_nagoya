@@ -1,0 +1,107 @@
+.footer{
+  width: 100%;
+  height: 100%;
+  &__top{
+    width: 100%;
+    height: 260px;
+    background-color: gray;
+
+    &__image{
+    }
+  }
+  &__bottom{
+    height: 100%;
+    background-color: rgb(34, 34, 34);
+    padding: 0px 20px 10px;
+    .upper__area{
+      height: 340px;
+      width: 100%;
+      padding-left: 190px;
+      padding-right: 190px;
+      display: flex;
+      justify-content: space-between;
+      .about__app{
+        margin-right: 30px;
+        .title__app{
+          font-family: Arial, 游ゴシック体,YuGothic,メイリオ,Meiryo,sans-serif;
+          color: rgb(255, 255, 255);
+        }
+        .title__apps{
+          font-size: 30px;
+          color: rgb(255, 255, 255);
+          .fab.fa-twitter{
+            margin-top: 30px;
+            margin-right: 10px;
+          }
+        }
+      }
+      .help__guide{
+        margin-right: 30px;
+        .help__area{
+          font-family: Arial, 游ゴシック体,YuGothic,メイリオ,Meiryo,sans-serif;
+          color: rgb(255, 255, 255);
+        }  
+      }
+      .privacy{
+        margin-right: 30px;
+        .privacy__area{
+          font-family: Arial, 游ゴシック体,YuGothic,メイリオ,Meiryo,sans-serif;
+          color: rgb(255, 255, 255);
+        }
+        .private__areas{
+          .area__left{
+
+          }
+          .area__right{
+            padding-left: 20px;
+          }
+        }
+      }
+      .country{
+        margin-right: 30px;
+        .country__area{
+          font-family: Arial, 游ゴシック体,YuGothic,メイリオ,Meiryo,sans-serif;
+          color: rgb(255, 255, 255);
+        }
+
+      }
+
+      li{
+        font-size: 12px;
+        margin-top: 15px;
+        color: lightgray;
+      }
+      
+
+    }
+    .bottom__area{
+      //background-color: red;
+      width: 100%;
+      height: 100px;
+      padding-left: 190px;
+      padding-right: 190px;
+      
+    }
+
+    .bottom__area{
+      display: flex;
+      padding-left: 190px;
+      padding-right: 190px;
+      padding-top: 30px;
+      position: relative;
+      font-family: Arial, 游ゴシック体,YuGothic,メイリオ,Meiryo,sans-serif;
+      color: rgb(255, 255, 255);
+      .app__image{
+        font-family: Arial, 游ゴシック体,YuGothic,メイリオ,Meiryo,sans-serif;
+        color: rgb(255, 255, 255);
+      }
+      .app__titile{
+        position: absolute;
+        left: 650px;
+
+      }
+    }
+
+
+  }
+}

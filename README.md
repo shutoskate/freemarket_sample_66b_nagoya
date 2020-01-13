@@ -27,12 +27,12 @@
 ## itemsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false, index: false|
+|name|string|null: false, index: true|
 |size|integer|null: false|
 |price|integer|null: false|
 |seller_id|integer|null: false, foreign_key: true|
 |brand_id|integer|foreign_key: true|
-|category_id|integer|null: false, foreign_ley: true|
+|category_id|integer|null: false, foreign_key: true|
 |status|integer|null: false|
 |charge|integer|null: false|
 |trade_step|integer|null: false,index: true|
@@ -125,3 +125,13 @@
 ### Association
 - belongs_to :follower, class_name: “User”
 - belongs_to :followed, class_name: “User”
+
+## SNS_credentialテーブル
+|Column|Type|Options|
+|------|----|-------|
+|provider|string||
+|uid|string||
+|user|references|foreign_key: true|
+
+###
+- belongs_to :user

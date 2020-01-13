@@ -609,4 +609,10 @@
      width: 48.2% !important;
    }
  }
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
  /* min-width 641px and max-width 1024px, use when QAing tablet-only issues */

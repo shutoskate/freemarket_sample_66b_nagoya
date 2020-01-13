@@ -1,2 +1,712 @@
-%h1 Home#top
-%p Find me in app/views/home/top.html.haml
+-g = 'https://wired.jp/wp-content/uploads/2018/01/GettyImages-522585140.jpg'
+
+.top
+
+  -# 広告------------------------------
+  .top__advertising
+    広告
+
+  -# 自分がいいねした商品
+  .top__like
+
+  -# カテゴリー表示----------------------
+  .top__category
+    .top__category__font
+      %h2 人気のカテゴリー
+      .top__category__font--list
+        .select-list 人気カテゴリー名1
+        .select-list 人気カテゴリー名2
+        .select-list 人気カテゴリー名3
+        .select-list 人気カテゴリー名4
+
+  -# 人気カテゴリー名1　一行目-------------------
+  .top__category-item
+    .top__category-item__category-list
+        .top__category-item__category-list__top--name0
+          %h3 人気カテゴリー名その1
+        .top__category-item__category-list__top--more
+          = link_to "もっとみる >", "#", class:"more"
+
+      .top__category-item__category-list--imgs
+        .product
+          .product__img
+            = link_to image_tag(-g, class:"img"), "#"
+            .product__img__price
+              = link_to "¥ 5,000","#", class:"price"
+          .product__name
+            = link_to "学名:ゴリラゴリラゴリラ", "#",class:"name"
+        .product
+          .product__img
+            = link_to image_tag(-g, class:"img"), "#"
+            .product__img__price
+              = link_to "¥ 5,000","#", class:"price"
+          .product__name
+            = link_to "ゴリラ2", "#",class:"name"
+        .product
+          .product__img
+            = link_to image_tag(-g, class:"img"), "#"
+            .product__img__price
+              = link_to "¥ 5,000","#", class:"price"
+          .product__name
+            = link_to "ゴリラ3", "#",class:"name"
+        .product
+          .product__img
+            = link_to image_tag(-g, class:"img"), "#"
+            .product__img__price
+              = link_to "¥ 5,000","#", class:"price"
+          .product__name
+            = link_to "ゴリラ4", "#",class:"name"
+        .product
+          .product__img
+            = link_to image_tag(-g, class:"img"), "#"
+            .product__img__price
+              = link_to "¥ 5,000","#", class:"price"
+          .product__name
+            = link_to "ゴリラ5", "#",class:"name"
+
+
+  -#人気カテゴリー名1　二行目-------------------
+  .top__category-item__category-list--imgs
+    .product
+      .product__img
+        = link_to image_tag(-g, class:"img"), "#"
+        .product__img__price
+          = link_to "¥ 5,000","#", class:"price"
+      .product__name
+        = link_to "学名:ゴリラゴリラゴリラ", "#",class:"name"
+    .product
+      .product__img
+        = link_to image_tag(-g, class:"img"), "#"
+        .product__img__price
+          = link_to "¥ 5,000","#", class:"price"
+      .product__name
+        = link_to "ゴリラ7", "#",class:"name"
+    .product
+      .product__img
+        = link_to image_tag(-g, class:"img"), "#"
+        .product__img__price
+          = link_to "¥ 5,000","#", class:"price"
+      .product__name
+        = link_to "ゴリラ8", "#",class:"name"
+    .product
+      .product__img
+        = link_to image_tag(-g, class:"img"), "#"
+        .product__img__price
+          = link_to "¥ 5,000","#", class:"price"
+      .product__name
+        = link_to "ゴリラ9", "#",class:"name"
+    .product
+      .product__img
+        = link_to image_tag(-g, class:"img"), "#"
+        .product__img__price
+          = link_to "¥ 5,000","#", class:"price"
+      .product__name
+        = link_to "ゴリラ10", "#",class:"name"
+
+  -# 人気カテゴリー名2　一行目-------------------
+  .top__category-item
+    .top__category-item__category-list
+      .top__category-item__category-list__top
+        .top__category-item__category-list__top--name1
+          %h3 人気カテゴリー名その2
+        .top__category-item__category-list__top--more
+          = link_to "もっとみる >", "#", class:"more"
+
+      .top__category-item__category-list--imgs
+        .product
+          .product__img
+            = link_to image_tag(-g, class:"img"), "#"
+            .product__img__price
+              = link_to "¥ 5,000","#", class:"price"
+          .product__name
+            = link_to "学名:ゴリラゴリラゴリラ", "#",class:"name"
+        .product
+          .product__img
+            = link_to image_tag(-g, class:"img"), "#"
+            .product__img__price
+              = link_to "¥ 5,000","#", class:"price"
+          .product__name
+            = link_to "ゴリラ2", "#",class:"name"
+        .product
+          .product__img
+            = link_to image_tag(-g, class:"img"), "#"
+            .product__img__price
+              = link_to "¥ 5,000","#", class:"price"
+          .product__name
+            = link_to "ゴリラ3", "#",class:"name"
+        .product
+          .product__img
+            = link_to image_tag(-g, class:"img"), "#"
+            .product__img__price
+              = link_to "¥ 5,000","#", class:"price"
+          .product__name
+            = link_to "ゴリラ4", "#",class:"name"
+        .product
+          .product__img
+            = link_to image_tag(-g, class:"img"), "#"
+            .product__img__price
+              = link_to "¥ 5,000","#", class:"price"
+          .product__name
+            = link_to "ゴリラ5", "#",class:"name"
+
+
+  -#人気カテゴリー名2　二行目-------------------
+  .top__category-item__category-list--imgs
+    .product
+      .product__img
+        = link_to image_tag(-g, class:"img"), "#"
+        .product__img__price
+          = link_to "¥ 5,000","#", class:"price"
+      .product__name
+        = link_to "学名:ゴリラゴリラゴリラ", "#",class:"name"
+    .product
+      .product__img
+        = link_to image_tag(-g, class:"img"), "#"
+        .product__img__price
+          = link_to "¥ 5,000","#", class:"price"
+      .product__name
+        = link_to "ゴリラ7", "#",class:"name"
+    .product
+      .product__img
+        = link_to image_tag(-g, class:"img"), "#"
+        .product__img__price
+          = link_to "¥ 5,000","#", class:"price"
+      .product__name
+        = link_to "ゴリラ8", "#",class:"name"
+    .product
+      .product__img
+        = link_to image_tag(-g, class:"img"), "#"
+        .product__img__price
+          = link_to "¥ 5,000","#", class:"price"
+      .product__name
+        = link_to "ゴリラ9", "#",class:"name"
+    .product
+      .product__img
+        = link_to image_tag(-g, class:"img"), "#"
+        .product__img__price
+          = link_to "¥ 5,000","#", class:"price"
+      .product__name
+        = link_to "ゴリラ10", "#",class:"name"
+
+  -# 人気カテゴリー名3　一行目-------------------
+  .top__category-item
+    .top__category-item__category-list
+      .top__category-item__category-list__top
+        .top__category-item__category-list__top--name2
+          %h3 人気カテゴリー名その3
+        .top__category-item__category-list__top--more
+          = link_to "もっとみる >", "#", class:"more"
+
+      .top__category-item__category-list--imgs
+        .product
+          .product__img
+            = link_to image_tag(-g, class:"img"), "#"
+            .product__img__price
+              = link_to "¥ 5,000","#", class:"price"
+          .product__name
+            = link_to "学名:ゴリラゴリラゴリラ", "#",class:"name"
+        .product
+          .product__img
+            = link_to image_tag(-g, class:"img"), "#"
+            .product__img__price
+              = link_to "¥ 5,000","#", class:"price"
+          .product__name
+            = link_to "ゴリラ2", "#",class:"name"
+        .product
+          .product__img
+            = link_to image_tag(-g, class:"img"), "#"
+            .product__img__price
+              = link_to "¥ 5,000","#", class:"price"
+          .product__name
+            = link_to "ゴリラ3", "#",class:"name"
+        .product
+          .product__img
+            = link_to image_tag(-g, class:"img"), "#"
+            .product__img__price
+              = link_to "¥ 5,000","#", class:"price"
+          .product__name
+            = link_to "ゴリラ4", "#",class:"name"
+        .product
+          .product__img
+            = link_to image_tag(-g, class:"img"), "#"
+            .product__img__price
+              = link_to "¥ 5,000","#", class:"price"
+          .product__name
+            = link_to "ゴリラ5", "#",class:"name"
+
+
+  -#人気カテゴリー名3　二行目-------------------
+  .top__category-item__category-list--imgs
+    .product
+      .product__img
+        = link_to image_tag(-g, class:"img"), "#"
+        .product__img__price
+          = link_to "¥ 5,000","#", class:"price"
+      .product__name
+        = link_to "学名:ゴリラゴリラゴリラ", "#",class:"name"
+    .product
+      .product__img
+        = link_to image_tag(-g, class:"img"), "#"
+        .product__img__price
+          = link_to "¥ 5,000","#", class:"price"
+      .product__name
+        = link_to "ゴリラ7", "#",class:"name"
+    .product
+      .product__img
+        = link_to image_tag(-g, class:"img"), "#"
+        .product__img__price
+          = link_to "¥ 5,000","#", class:"price"
+      .product__name
+        = link_to "ゴリラ8", "#",class:"name"
+    .product
+      .product__img
+        = link_to image_tag(-g, class:"img"), "#"
+        .product__img__price
+          = link_to "¥ 5,000","#", class:"price"
+      .product__name
+        = link_to "ゴリラ9", "#",class:"name"
+    .product
+      .product__img
+        = link_to image_tag(-g, class:"img"), "#"
+        .product__img__price
+          = link_to "¥ 5,000","#", class:"price"
+      .product__name
+        = link_to "ゴリラ10", "#",class:"name"
+
+  -# 人気カテゴリー名4　一行目-------------------
+  .top__category-item
+    .top__category-item__category-list
+      .top__category-item__category-list__top
+        .top__category-item__category-list__top--name3
+          %h3 人気カテゴリー名その4
+        .top__category-item__category-list__top--more
+          = link_to "もっとみる >", "#", class:"more"
+
+      .top__category-item__category-list--imgs
+        .product
+          .product__img
+            = link_to image_tag(-g, class:"img"), "#"
+            .product__img__price
+              = link_to "¥ 5,000","#", class:"price"
+          .product__name
+            = link_to "学名:ゴリラゴリラゴリラ", "#",class:"name"
+        .product
+          .product__img
+            = link_to image_tag(-g, class:"img"), "#"
+            .product__img__price
+              = link_to "¥ 5,000","#", class:"price"
+          .product__name
+            = link_to "ゴリラ2", "#",class:"name"
+        .product
+          .product__img
+            = link_to image_tag(-g, class:"img"), "#"
+            .product__img__price
+              = link_to "¥ 5,000","#", class:"price"
+          .product__name
+            = link_to "ゴリラ3", "#",class:"name"
+        .product
+          .product__img
+            = link_to image_tag(-g, class:"img"), "#"
+            .product__img__price
+              = link_to "¥ 5,000","#", class:"price"
+          .product__name
+            = link_to "ゴリラ4", "#",class:"name"
+        .product
+          .product__img
+            = link_to image_tag(-g, class:"img"), "#"
+            .product__img__price
+              = link_to "¥ 5,000","#", class:"price"
+          .product__name
+            = link_to "ゴリラ5", "#",class:"name"
+
+
+  -#人気カテゴリー名4　二行目-------------------
+  .top__category-item__category-list--imgs
+    .product
+      .product__img
+        = link_to image_tag(-g, class:"img"), "#"
+        .product__img__price
+          = link_to "¥ 5,000","#", class:"price"
+      .product__name
+        = link_to "学名:ゴリラゴリラゴリラ", "#",class:"name"
+    .product
+      .product__img
+        = link_to image_tag(-g, class:"img"), "#"
+        .product__img__price
+          = link_to "¥ 5,000","#", class:"price"
+      .product__name
+        = link_to "ゴリラ7", "#",class:"name"
+    .product
+      .product__img
+        = link_to image_tag(-g, class:"img"), "#"
+        .product__img__price
+          = link_to "¥ 5,000","#", class:"price"
+      .product__name
+        = link_to "ゴリラ8", "#",class:"name"
+    .product
+      .product__img
+        = link_to image_tag(-g, class:"img"), "#"
+        .product__img__price
+          = link_to "¥ 5,000","#", class:"price"
+      .product__name
+        = link_to "ゴリラ9", "#",class:"name"
+    .product
+      .product__img
+        = link_to image_tag(-g, class:"img"), "#"
+        .product__img__price
+          = link_to "¥ 5,000","#", class:"price"
+      .product__name
+        = link_to "ゴリラ10", "#",class:"name"
+
+  -#  以下ブランド ----------------------------------
+
+  .top__category
+    .top__category__font
+      %h2 人気のブランド
+      .top__category__font--list
+        = link_to "人気ブランド名その1", "#", class:"select-list"
+        = link_to "人気ブランド名その2", "#", class:"select-list"
+        = link_to "人気ブランド名その3", "#", class:"select-list"
+        = link_to "人気ブランド名その4", "#", class:"select-list"
+
+  -# 人気ブランド名1 一行目--------------------------------
+  .top__category-item
+    .top__category-item__category-list
+      .top__category-item__category-list__top
+        .top__category-item__category-list__top--name4
+          %h3 人気カテゴリー名その1
+        .top__category-item__category-list__top--more
+          = link_to "もっとみる >", "#", class:"more"
+
+      .top__category-item__category-list--imgs
+        .product
+          .product__img
+            = link_to image_tag(-g, class:"img"), "#"
+            .product__img__price
+              = link_to "¥ 5,000","#", class:"price"
+          .product__name
+            = link_to "学名:ゴリラゴリラゴリラ", "#",class:"name"
+        .product
+          .product__img
+            = link_to image_tag(-g, class:"img"), "#"
+            .product__img__price
+              = link_to "¥ 5,000","#", class:"price"
+          .product__name
+            = link_to "ゴリラ2", "#",class:"name"
+        .product
+          .product__img
+            = link_to image_tag(-g, class:"img"), "#"
+            .product__img__price
+              = link_to "¥ 5,000","#", class:"price"
+          .product__name
+            = link_to "ゴリラ3", "#",class:"name"
+        .product
+          .product__img
+            = link_to image_tag(-g, class:"img"), "#"
+            .product__img__price
+              = link_to "¥ 5,000","#", class:"price"
+          .product__name
+            = link_to "ゴリラ4", "#",class:"name"
+        .product
+          .product__img
+            = link_to image_tag(-g, class:"img"), "#"
+            .product__img__price
+              = link_to "¥ 5,000","#", class:"price"
+          .product__name
+            = link_to "ゴリラ5", "#",class:"name"
+
+  -# 人気ブランド名1 二行目--------------------------------
+  .top__category-item__category-list--imgs
+    .product
+      .product__img
+        = link_to image_tag(-g, class:"img"), "#"
+        .product__img__price
+          = link_to "¥ 5,000","#", class:"price"
+      .product__name
+        = link_to "学名:ゴリラゴリラゴリラ", "#",class:"name"
+    .product
+      .product__img
+        = link_to image_tag(-g, class:"img"), "#"
+        .product__img__price
+          = link_to "¥ 5,000","#", class:"price"
+      .product__name
+        = link_to "ゴリラ7", "#",class:"name"
+    .product
+      .product__img
+        = link_to image_tag(-g, class:"img"), "#"
+        .product__img__price
+          = link_to "¥ 5,000","#", class:"price"
+      .product__name
+        = link_to "ゴリラ8", "#",class:"name"
+    .product
+      .product__img
+        = link_to image_tag(-g, class:"img"), "#"
+        .product__img__price
+          = link_to "¥ 5,000","#", class:"price"
+      .product__name
+        = link_to "ゴリラ9", "#",class:"name"
+    .product
+      .product__img
+        = link_to image_tag(-g, class:"img"), "#"
+        .product__img__price
+          = link_to "¥ 5,000","#", class:"price"
+      .product__name
+        = link_to "ゴリラ10", "#",class:"name"
+
+  -# 人気ブランド名2 一行目--------------------------------
+  .top__category-item
+    .top__category-item__category-list
+      .top__category-item__category-list__top
+        .top__category-item__category-list__top--name5
+          %h3 人気カテゴリー名その2
+        .top__category-item__category-list__top--more
+          = link_to "もっとみる >", "#", class:"more"
+
+      .top__category-item__category-list--imgs
+        .product
+          .product__img
+            = link_to image_tag(-g, class:"img"), "#"
+            .product__img__price
+              = link_to "¥ 5,000","#", class:"price"
+          .product__name
+            = link_to "学名:ゴリラゴリラゴリラ", "#",class:"name"
+        .product
+          .product__img
+            = link_to image_tag(-g, class:"img"), "#"
+            .product__img__price
+              = link_to "¥ 5,000","#", class:"price"
+          .product__name
+            = link_to "ゴリラ2", "#",class:"name"
+        .product
+          .product__img
+            = link_to image_tag(-g, class:"img"), "#"
+            .product__img__price
+              = link_to "¥ 5,000","#", class:"price"
+          .product__name
+            = link_to "ゴリラ3", "#",class:"name"
+        .product
+          .product__img
+            = link_to image_tag(-g, class:"img"), "#"
+            .product__img__price
+              = link_to "¥ 5,000","#", class:"price"
+          .product__name
+            = link_to "ゴリラ4", "#",class:"name"
+        .product
+          .product__img
+            = link_to image_tag(-g, class:"img"), "#"
+            .product__img__price
+              = link_to "¥ 5,000","#", class:"price"
+          .product__name
+            = link_to "ゴリラ5", "#",class:"name"
+
+  -# 人気ブランド名2 二行目--------------------------------
+  .top__category-item__category-list--imgs
+    .product
+      .product__img
+        = link_to image_tag(-g, class:"img"), "#"
+        .product__img__price
+          = link_to "¥ 5,000","#", class:"price"
+      .product__name
+        = link_to "学名:ゴリラゴリラゴリラ", "#",class:"name"
+    .product
+      .product__img
+        = link_to image_tag(-g, class:"img"), "#"
+        .product__img__price
+          = link_to "¥ 5,000","#", class:"price"
+      .product__name
+        = link_to "ゴリラ7", "#",class:"name"
+    .product
+      .product__img
+        = link_to image_tag(-g, class:"img"), "#"
+        .product__img__price
+          = link_to "¥ 5,000","#", class:"price"
+      .product__name
+        = link_to "ゴリラ8", "#",class:"name"
+    .product
+      .product__img
+        = link_to image_tag(-g, class:"img"), "#"
+        .product__img__price
+          = link_to "¥ 5,000","#", class:"price"
+      .product__name
+        = link_to "ゴリラ9", "#",class:"name"
+    .product
+      .product__img
+        = link_to image_tag(-g, class:"img"), "#"
+        .product__img__price
+          = link_to "¥ 5,000","#", class:"price"
+      .product__name
+        = link_to "ゴリラ10", "#",class:"name"
+
+  -# 人気ブランド名3 一行目--------------------------------
+  .top__category-item
+    .top__category-item__category-list
+      .top__category-item__category-list__top
+        .top__category-item__category-list__top--name6
+          %h3 人気カテゴリー名その3
+        .top__category-item__category-list__top--more
+          = link_to "もっとみる >", "#", class:"more"
+
+      .top__category-item__category-list--imgs
+        .product
+          .product__img
+            = link_to image_tag(-g, class:"img"), "#"
+            .product__img__price
+              = link_to "¥ 5,000","#", class:"price"
+          .product__name
+            = link_to "学名:ゴリラゴリラゴリラ", "#",class:"name"
+        .product
+          .product__img
+            = link_to image_tag(-g, class:"img"), "#"
+            .product__img__price
+              = link_to "¥ 5,000","#", class:"price"
+          .product__name
+            = link_to "ゴリラ2", "#",class:"name"
+        .product
+          .product__img
+            = link_to image_tag(-g, class:"img"), "#"
+            .product__img__price
+              = link_to "¥ 5,000","#", class:"price"
+          .product__name
+            = link_to "ゴリラ3", "#",class:"name"
+        .product
+          .product__img
+            = link_to image_tag(-g, class:"img"), "#"
+            .product__img__price
+              = link_to "¥ 5,000","#", class:"price"
+          .product__name
+            = link_to "ゴリラ4", "#",class:"name"
+        .product
+          .product__img
+            = link_to image_tag(-g, class:"img"), "#"
+            .product__img__price
+              = link_to "¥ 5,000","#", class:"price"
+          .product__name
+            = link_to "ゴリラ5", "#",class:"name"
+
+  -# 人気ブランド名3 二行目--------------------------------
+  .top__category-item__category-list--imgs
+    .product
+      .product__img
+        = link_to image_tag(-g, class:"img"), "#"
+        .product__img__price
+          = link_to "¥ 5,000","#", class:"price"
+      .product__name
+        = link_to "学名:ゴリラゴリラゴリラ", "#",class:"name"
+    .product
+      .product__img
+        = link_to image_tag(-g, class:"img"), "#"
+        .product__img__price
+          = link_to "¥ 5,000","#", class:"price"
+      .product__name
+        = link_to "ゴリラ7", "#",class:"name"
+    .product
+      .product__img
+        = link_to image_tag(-g, class:"img"), "#"
+        .product__img__price
+          = link_to "¥ 5,000","#", class:"price"
+      .product__name
+        = link_to "ゴリラ8", "#",class:"name"
+    .product
+      .product__img
+        = link_to image_tag(-g, class:"img"), "#"
+        .product__img__price
+          = link_to "¥ 5,000","#", class:"price"
+      .product__name
+        = link_to "ゴリラ9", "#",class:"name"
+    .product
+      .product__img
+        = link_to image_tag(-g, class:"img"), "#"
+        .product__img__price
+          = link_to "¥ 5,000","#", class:"price"
+      .product__name
+        = link_to "ゴリラ10", "#",class:"name"
+
+  -# 人気ブランド名4 一行目--------------------------------
+  .top__category-item
+    .top__category-item__category-list
+      .top__category-item__category-list__top
+        .top__category-item__category-list__top--name7
+          %h3 人気カテゴリー名その4
+        .top__category-item__category-list__top--more
+          = link_to "もっとみる >", "#", class:"more"
+
+      .top__category-item__category-list--imgs
+        .product
+          .product__img
+            = link_to image_tag(-g, class:"img"), "#"
+            .product__img__price
+              = link_to "¥ 5,000","#", class:"price"
+          .product__name
+            = link_to "学名:ゴリラゴリラゴリラ", "#",class:"name"
+        .product
+          .product__img
+            = link_to image_tag(-g, class:"img"), "#"
+            .product__img__price
+              = link_to "¥ 5,000","#", class:"price"
+          .product__name
+            = link_to "ゴリラ2", "#",class:"name"
+        .product
+          .product__img
+            = link_to image_tag(-g, class:"img"), "#"
+            .product__img__price
+              = link_to "¥ 5,000","#", class:"price"
+          .product__name
+            = link_to "ゴリラ3", "#",class:"name"
+        .product
+          .product__img
+            = link_to image_tag(-g, class:"img"), "#"
+            .product__img__price
+              = link_to "¥ 5,000","#", class:"price"
+          .product__name
+            = link_to "ゴリラ4", "#",class:"name"
+        .product
+          .product__img
+            = link_to image_tag(-g, class:"img"), "#"
+            .product__img__price
+              = link_to "¥ 5,000","#", class:"price"
+          .product__name
+            = link_to "ゴリラ5", "#",class:"name"
+
+  -# 人気ブランド名4 二行目--------------------------------
+  .top__category-item__category-list--imgs
+    .product
+      .product__img
+        = link_to image_tag(-g, class:"img"), "#"
+        .product__img__price
+          = link_to "¥ 5,000","#", class:"price"
+      .product__name
+        = link_to "学名:ゴリラゴリラゴリラ", "#",class:"name"
+    .product
+      .product__img
+        = link_to image_tag(-g, class:"img"), "#"
+        .product__img__price
+          = link_to "¥ 5,000","#", class:"price"
+      .product__name
+        = link_to "ゴリラ7", "#",class:"name"
+    .product
+      .product__img
+        = link_to image_tag(-g, class:"img"), "#"
+        .product__img__price
+          = link_to "¥ 5,000","#", class:"price"
+      .product__name
+        = link_to "ゴリラ8", "#",class:"name"
+    .product
+      .product__img
+        = link_to image_tag(-g, class:"img"), "#"
+        .product__img__price
+          = link_to "¥ 5,000","#", class:"price"
+      .product__name
+        = link_to "ゴリラ9", "#",class:"name"
+    .product
+      .product__img
+        = link_to image_tag(-g, class:"img"), "#"
+        .product__img__price
+          = link_to "¥ 5,000","#", class:"price"
+      .product__name
+        = link_to "ゴリラ10", "#",class:"name"
+
+
+-# 出品ボタン----------------------------------
+.exhibition
+  -# = icon (fa, people-carry, class:"exhibition1")
+  = link_to "出品", "#", class:"exhibition1"

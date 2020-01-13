@@ -1,0 +1,140 @@
+body,html{
+  height: 100%;
+  width: 100%;
+
+  .top{
+    height: 100%;
+    width: 100%;
+  
+    &__advertising{
+      height: 290px;
+      width: 100%;
+      background-color: rgb(194, 194, 194);
+      // 広告投稿
+     }
+
+     &__like{
+     }
+
+    &__category{
+      display: flex;
+      justify-content: center;
+      height: 50px;
+      padding:  30px 0 10px 0 ;
+      &__font{
+        height:  25px;
+        text-align: center;
+        &--list{
+          height: 30px;
+          padding-top: 20px;
+          display: flex;
+          justify-content: center;
+          .select-list{
+            background-color: rgb(202, 199, 199);
+            color: black;
+            border-radius: 15px;
+            text-decoration: none;
+            padding: 10px;
+            margin-left: 10px;
+            font-size: 14px;
+            line-height: 14px;
+            z-index: 1;
+          }
+        }
+      }
+    }
+
+    &__category-item{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      &__category-list{
+        max-width: 1000px;
+        &__top{
+          padding-top: 50px;
+          display: flex;
+          justify-content: space-between;
+          margin-top: 30px;
+          &--name{
+            font-size:  15px;
+          }
+          &--more{
+            line-height: 60px;
+            // height: $name-h-s;
+            // width:  200px;
+            text-align: right;
+            .more{
+              text-decoration: none;
+              color: #0095ee;
+            }
+          }
+        }
+        &--imgs{
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          .product{
+            height:  185px;
+            padding: 10px;
+            &__img{
+              position: relative;
+              .img{
+                height: 130px;
+                width: 130px;
+              }
+                .price{
+                text-decoration: none;
+                color: white;
+                position: absolute;
+                height: 28px;
+                width: 80px;
+                font-size: 17px;
+                text-align: center;
+                line-height: 28px;
+                background-color: rgba(0, 0, 0, 0.315);
+                left: 0;
+                bottom: 10px;
+                border-radius : 0 15px 15px 0;
+              }
+            }
+            &__name{
+              height: 34px;
+              width: 100px;
+              box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+              padding: 10px 15px 5px 15px;
+              background-color: #fff;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+              overflow: hidden;
+              line-height: 25px;
+              .name{
+                text-decoration: none;
+                color: black;
+              }
+            }
+          }
+          
+          .list-name{
+            height: 64px;
+          }
+          
+        }
+      }
+    }
+  }
+
+
+  .exhibition1{
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 160px;
+    border-radius: 100%;
+    background-color: red;
+    text-align: center;
+    line-height: 160px;
+    font-size: 30px;
+    text-decoration: none;
+    color: white;
+  }
+}

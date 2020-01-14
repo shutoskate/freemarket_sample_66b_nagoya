@@ -1,0 +1,46 @@
+.contents
+  .type-adress 住所入力
+  .type__name
+    .type お名前
+    .logo 必須
+  .name__area
+    %input.login-last-name{name: "family_name",placeholder: "例）山田", type: "family_name",value: ""}/
+    %input.login-first-name{name: "first_name",placeholder: "例）太郎", type: "first_name",value: ""}/
+  .type__name
+    .type お名前カナ
+    .logo 必須
+  .name__kana
+    %input.login-last-kana{name: "family_name_kana",placeholder: "例）ヤマダ", type: "family_name_kana",value: ""}/
+    %input.login-first-kana{name: "first_name_kana",placeholder: "例）タロウ", type: "first_name_kana",value: ""}/
+  .type__name
+    .type 郵便番号
+    .logo 必須
+  .post__number
+    %input.login-post-number{name: "post_code",placeholder: "例）123-4567", type: "post_code",value: ""}/
+  .type__name
+    .type 都道府県
+    .logo 必須
+  .prefecture
+    %input.login-prefecture{name: "prefecture",placeholder: "例）東京都", type: "prefecture",value: ""}/
+  .type__name
+    .type 市町村
+    .logo 必須
+  .city
+    %input.login-city{name: "city",placeholder: "例）大田区", type: "city",value: ""}/
+  .type__name
+    .type 番地
+    .logo 必須    
+  .adress
+    %input.login-adress{name: "adress",placeholder: "例）多摩川 2丁目", type: "adress",value: ""}/
+  .type__name
+    .type 建物名
+    .logo_no 任意  
+  .building
+    %input.login-building{name: "building",placeholder: "例）日本ビル507", type: "building",value: ""}/
+  .type__name
+    .type 建物名
+    .logo_no 任意  
+  .phone_num
+    %input.login-phone_num{name: "phone_num",placeholder: "例）0572-23-****", type: "phone_num",value: ""}/
+  .type-next
+    %button.login-submit{type: "submit"} 次へ進む

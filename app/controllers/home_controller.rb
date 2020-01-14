@@ -3,4 +3,8 @@ class HomeController < ApplicationController
   end
   def profile
   end
+
+  def adress
+  end
+  
 end

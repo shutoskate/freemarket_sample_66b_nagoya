@@ -38,12 +38,21 @@
         padding: 15px;
       }
       &__edit{
-        background-color: red;
-        font-size: 14px;
-        line-height: 50px;
-        text-align: center;
-        color: white;
+        height: 50px;
         margin-top: 16px;
+        position: relative;
+        text-align: center;
+        .edit{
+          position: absolute;
+          background-color: red;
+          top: 0;
+          left: 0;
+          height:100%;
+          width: 100%;
+          font-size: 14px;
+          line-height: 48px;
+          color: white;
+        }
       }
     }
   }

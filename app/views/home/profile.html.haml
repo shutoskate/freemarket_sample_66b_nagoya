@@ -7,11 +7,12 @@
       -#   = f.text_field :ninkname, placeholder: :名前, class: :profile__mine__img
       .content__profile__mine__img
       .content__profile__mine__name
-        %input.name{ placeholder: "名前", type: "name", value: ""}/
+        %input.name{ value: "名前", type: "name"}/
     .content__profile__text
-      %textarea.text{ placeholder: "text", type: "text", value: ""} 
+      %textarea.text{ value: "text", type: "textarea"}
       .content__profile__text__edit
-        変更する
+        %input.edit{value:"変更する",type:"submit"}
+        
 
   = render "layouts/sideber"
 

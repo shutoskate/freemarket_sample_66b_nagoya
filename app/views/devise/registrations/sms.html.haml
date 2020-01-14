@@ -1,0 +1,20 @@
+= render "registration_header"
+%main
+  .container
+    %h2 電話番号の確認
+    = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+      = render "devise/shared/error_messages", resource: resource
+
+      .content
+        .field
+          = f.label :携帯電話の番号
+          %br
+          = f.text_field :nickname, autofocus: true,  placeholder:"携帯電話の番号を入力"
+        .sub-text
+          本人確認のため、携帯電話のSMS（ショートメッセージサービス）をを利用して認証を行います。
+
+        .actions
+          = f.submit "SMSを送信する", class:'btn-red'
+        .sub-text
+          ※電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。
+= render "registration_footer"

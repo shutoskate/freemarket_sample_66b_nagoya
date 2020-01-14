@@ -13,6 +13,7 @@
       width: 100%;
       height: 46px;
       display: flex;
+      padding-top: 8px;
       .serch{
         width: 100%;
         position: relative;
@@ -21,10 +22,11 @@
           display: flex;
           position: relative;
           .input{
-            margin-top: 5px;
             width: 100%;
-            height: 30px;
+            height: 40px;
+            border-width: 1px;
             margin-right: 5px;
+            padding-left: 15px;
             border-radius: 4px;
             font-size: inherit;
             background-color: #f5f5f5;
@@ -43,7 +45,7 @@
       height: 54px;
       display: flex;
       justify-content: space-between;
-
+      margin-top: 15px;
       .categories__left{
         height: 100%;
         width: 315px;
@@ -83,10 +85,8 @@
         height: 100%;
         width: 520px;
         .user_area{
-          padding: 0px;
           display: flex;
           list-style: none;
-          // margin: 20px 20px;
           justify-content: space-around;
           .liked{
             text-decoration: none ;

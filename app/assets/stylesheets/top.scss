@@ -1,31 +1,30 @@
 .top{
   height: 100%;
   width: 100%;
-
   &__advertising{
     height: 290px;
     width: 100%;
     background-color: rgb(194, 194, 194);
     // 広告投稿
-    }
-
-    &__like{
-    }
+  }
+  &__like{
+  }
 
   &__category{
-    display: flex;
-    justify-content: center;
-    height: 50px;
+    height: 171px;
     padding:  30px 0 10px 0 ;
     &__font{
       text-align: center;
+      h2 {
+        font-size: 28px;
+      }
       &--list{
         height: 50px;
         padding-top: 20px;
         display: flex;
         justify-content: center;
         .select-list{
-          background-color: rgb(202, 199, 199);
+          background-color: #efefef;
           color: black;
           border-radius: 15px;
           text-decoration: none;
@@ -43,14 +42,13 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    background-color: #f5f5f5;
     &__category-list{
       max-width: 1000px;
       margin-top: 60px;
       &__top{
-        padding-top: 50px;
         display: flex;
         justify-content: space-between;
-        // margin-top: 30px;
         &--name{
           font-size:  15px;
         }
@@ -65,19 +63,31 @@
       }
       &--imgs{
         display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        .product{
-          height: 100%;
-          margin: 10px;
-          border: 1px solid white;
-          &__img{
+        .product {
+          height: 250px;
+          width: 20%;
+          padding: 10px;
+          &__wrap {
+            background-color: #fff;
+            width: 100%;
+            height: 230px;
             position: relative;
-            .img{
-              height: 150px;
-              width: 130px;
+            a {
+              height: 100%;
+              text-decoration: none;
             }
-              .price{
+          }
+          &__wrap:hover{
+            box-sizing: content-box;
+            box-shadow: 0 0 2px blue;
+            z-index: 1;
+          }
+          &__img{
+            position: absolute;
+            height: 100%;
+            min-height: 180px;
+            overflow: hidden;
+            &__price{
               text-decoration: none;
               color: white;
               position: absolute;
@@ -88,26 +98,25 @@
               line-height: 28px;
               background-color: rgba(0, 0, 0, 0.315);
               left: 0;
-              bottom: 10px;
+              bottom: 70px;
               border-radius : 0 15px 15px 0;
             }
           }
-          &__name{
-            height: 50px;
-            width: 130px;
+          &__name {
+            height: 64px;
+            width: 180px;
             box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
             overflow: hidden;
-            position: relative;
-            .name{
-              position: absolute;
-              top: 0;
-              left: 0;
-              height:100%;
-              width: 100%;
-              padding: 8px 15px 8px 15px;
+            position: absolute;
+            bottom: 0px;
+            .name {
+              height:64px;
+              width: 180px;
+              padding: 8px 15px;
               background-color: #fff;
+              color: #333;
               text-overflow: ellipsis;
-              // line-height: 25px;
+              line-height: 25px;
               text-decoration: none;
               color: black;
               font-size: 14px;
@@ -115,19 +124,10 @@
             }
           }
         }
-        .product:hover{
-          border:1px solid blue
-        }
-        .list-name{
-          height: 64px;
-        }
-        
       }
     }
   }
 }
-
-
 .exhibition1{
   position: fixed;
   bottom: 30px;

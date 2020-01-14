@@ -1,0 +1,97 @@
+.spend{
+  width: 700px;
+  padding: 0 auto;
+  &__title{
+    height: 65px;
+    padding: 16px;
+    border-bottom:1px solid lightgray;
+    .spend-title{
+      font-size: 22px;
+      text-align: center;
+      margin: 0;
+    }
+  }
+  &__main{
+    padding: 40px 80px 64px;
+    .spend-font{
+      font-size: 14px;
+      font-weight: 700;
+      margin:10px;
+    }
+    &__card-num{
+      padding: 20px 0 20px;
+      .card-num{
+        min-height: 50px;
+        max-width: 668px;
+        width: 100%;
+        padding: 10px 16px 8px;
+        margin: 10px 0 10px ;
+        font-size: 20px;
+      }
+      .cregit{
+        height: 50px;
+        width: 60%;
+        padding: 5px;
+      }
+    }
+    &__expiration{
+      align-items: center;
+      padding: 20px 0 20px;
+      &__days{
+        align-items: center;
+        .expiration-day{
+          height: 50px;
+          max-width: 150px;
+          width: 100%;
+          padding: 10px 16px 8px;
+          margin: 20px 0 20px;
+          font-size: 20px;
+        }
+        .spend-day{
+          margin-left: 8px;
+        }
+      }
+    }
+    &__security-num{
+      padding: 20px 0 20px;
+      .security-num{
+        min-height: 50px;
+        max-width: 668px;
+        width: 100%;
+        padding: 10px 16px 8px;
+        font-size: 20px;
+        margin: 10px 0 10px ;
+      }
+    }
+    &__next{
+      height: 60px;
+      width: 100%;
+      margin-top: 16px ;
+      background-color: red;
+      text-align: center;
+      position: relative;
+      .next{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        text-decoration: none;
+        line-height: 60px;
+        color: white;
+      }
+    }
+  }
+  .requred{
+    color: white;
+    background-color: red;
+    width: 40px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+    margin : 0 0 5px 8px;
+    padding: 2px 4px;
+    font-size: 14px;
+    border-radius: 5px;
+  }
+}

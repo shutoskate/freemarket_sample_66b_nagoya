@@ -1,0 +1,31 @@
+.spend
+  .spend__title
+    %p.spend-title 支払い方法
+
+  .spend__main
+    .spend__main__card-num
+      %label.spend-font カード番号
+      %span.requred 必須
+      %input.card-num 
+      = image_tag "card_5brand_500px", alt: "顔写真", class: "cregit"
+    .spend__main__expiration
+      %label.spend-font 有効期限
+      %span.requred 必須
+      .spend__main__expiration__days
+        .spend__main__expiration__year
+          %select.expiration-day
+          %span.spend-day 年
+        .spend__main__expiration__month
+          %select.expiration-day
+          %label.spend-day 月
+
+    .spend__main__security-num
+      %label.spend-font セキュリティコード
+      %span.requred 必須
+      %input.security-num
+
+    .spend__main__next
+      = link_to "次へ", "#", class: "next"
+
+
+-# textarea 

@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root 'users#logout'
+  root 'home#cardpayment'
   devise_for :users, :controllers => {
   :sessions => 'users/sessions',
   :registrations => 'users/registrations'

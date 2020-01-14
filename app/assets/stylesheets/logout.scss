@@ -7,11 +7,12 @@
     float: right;
     background-color: rgba(128, 128, 128, 0.075);
     &__submit{
-      margin: 0 auto;
+      margin: 50px auto;
       width: 320px;
       height: 50px;
+      padding: 16px;
       position: relative;
-      .logout{
+      .logout2{
         position: absolute;
         top: 0;
         left: 0;

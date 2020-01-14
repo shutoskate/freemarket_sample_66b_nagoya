@@ -1,0 +1,28 @@
+.side{
+  width: 280px;
+  margin: 0 40px 40px 0;
+  float: left;
+  &__lists{
+    background-color: rgba(128, 128, 128, 0.075);
+    &--list{
+      height: 50px;
+      list-style: none;
+      border: 1px solid white;
+      font-weight: 600;
+      position: relative;
+      .list{
+        padding: 16px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height:100%;
+        width: 100%;
+        text-decoration: none;
+        color: black;
+      }
+    }
+    &--list:hover{
+      background-color: rgba(128, 128, 128, 0.76);
+    }
+  }
+}

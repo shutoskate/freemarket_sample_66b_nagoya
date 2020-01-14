@@ -3,6 +3,16 @@ class HomeController < ApplicationController
   end
   def profile
   end
+
   def cardpayment
   end
+
+  def adress
+  end
+  
+  def done
+  end
+
+  
+
 end

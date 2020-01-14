@@ -8,4 +8,7 @@ Rails.application.routes.draw do
     get "signup/registration" => "users/registrations#new"
     get "users/sign_out" => "users/sessions#destroy"
   end
+  resources :users, only: [:edit, :update]
+  get "/mypage" => "users#mypage"
+  get "/mypage/profile" => "users#profile"
 end

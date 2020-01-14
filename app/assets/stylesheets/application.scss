@@ -14,9 +14,12 @@
  *= require_self
  */
 @import "./reset";
+@import "./color"; 
 @import "./header";
 @import "./footer";
 @import "font-awesome-sprockets";
 @import "./font-awesome";
 @import "./user_page"; 
 @import "./registration";
+@import "./users"; 
+@import "./login"; 

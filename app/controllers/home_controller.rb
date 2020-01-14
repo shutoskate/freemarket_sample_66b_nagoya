@@ -7,4 +7,8 @@ class HomeController < ApplicationController
   def adress
   end
   
+  def done
+  end
+
+  
 end

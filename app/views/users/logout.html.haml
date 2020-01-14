@@ -1,0 +1,10 @@
+= render "layouts/header"
+.logout
+  .logout__box
+    .logout__box__submit
+      = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "logout2"
+  
+  = render "layouts/sideber"
+
+= render 'layouts/exhibition'
+= render "layouts/footer"

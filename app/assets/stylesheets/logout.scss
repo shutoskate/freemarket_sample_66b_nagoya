@@ -1,0 +1,28 @@
+.logout{
+  margin: 40px auto 0;
+  width: 1020px;
+  &__box{
+    width: 700px; 
+    height: 150px;
+    float: right;
+    background-color: rgba(128, 128, 128, 0.075);
+    &__submit{
+      margin: 0 auto;
+      width: 320px;
+      height: 50px;
+      position: relative;
+      .logout{
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-color: red;
+        line-height: 50px;
+        text-align: center;
+        color: white;
+        text-decoration: none;
+      }
+    }
+  }
+}

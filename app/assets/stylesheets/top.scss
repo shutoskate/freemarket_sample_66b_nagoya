@@ -141,4 +141,13 @@
   text-decoration: none;
   color: white;
   z-index: 1;
+  .camera__logo{
+    width: 100%;
+    align-items: center;
+    .fas.fa-camera{
+      font-size: 70px;
+      color: white;
+      transform: translateY(15%) translateX(1%); 
+    }
+  }
 }

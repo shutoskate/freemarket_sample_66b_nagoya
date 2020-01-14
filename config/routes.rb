@@ -4,5 +4,7 @@ Rails.application.routes.draw do
   :sessions => 'users/sessions',
   :registrations => 'users/registrations'
   }
-  resources :users, only: [:show, :edit, :update]
+  resources :users, only: [:edit, :update]
+  get "/mypage" => "users#mypage"
+  get "/mypage/profile" => "users#profile"
 end

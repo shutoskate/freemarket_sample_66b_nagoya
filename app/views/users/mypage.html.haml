@@ -1,26 +1,31 @@
-.user
-  %section.user__icon
-    %link_to.user__about{:href => "#"}
-    = image_tag "//static.mercdn.net/images/member_photo_noimage_thumb.png", size: "60x60", alt: "顔写真", class: "user__image"
-    %h5.user__name  user_name
-  %section.user__tab
-    %ul.tab
-      %li.notice
-        %h3 お知らせ
-      %li.to_do
-        %h3 やることリスト
-  %section.user__contents
-    = image_tag "//static.mercdn.net/images/member_photo_noimage_thumb.png", size: "60x60", alt: "顔写真", class: "app__image"
-    .app__text
-  %section.user__index 
-    .index__text
-      %link_to.text{:href => "#"} 一覧を見る
-  %section.user__item
-    .buy__items
-      %h3.buy__item 購入した商品
-    %ul.tab__item
-      %li.now__trade
-        %h3 取引中
-      %li.past__trade
-        %h3 過去の取引
-    %h4.trade__text  取引中の商品がありません
+= render "layouts/header"
+%main
+  .content
+    = render "layouts/sideber"
+    .user
+      %section.user__icon
+        %link_to.user__about{:href => "#"}
+        = image_tag "//static.mercdn.net/images/member_photo_noimage_thumb.png", size: "60x60", alt: "顔写真", class: "user__image"
+        %h5.user__name  user_name
+      %section.user__tab
+        %ul.tab
+          %li.notice
+            %h3 お知らせ
+          %li.to_do
+            %h3 やることリスト
+      %section.user__contents
+        = image_tag "//static.mercdn.net/images/member_photo_noimage_thumb.png", size: "60x60", alt: "顔写真", class: "app__image"
+        .app__text
+      %section.user__index 
+        .index__text
+          %link_to.text{:href => "#"} 一覧を見る
+      %section.user__item
+        .buy__items
+          %h3.buy__item 購入した商品
+        %ul.tab__item
+          %li.now__trade
+            %h3 取引中
+          %li.past__trade
+            %h3 過去の取引
+        %h4.trade__text  取引中の商品がありません
+= render "layouts/footer"

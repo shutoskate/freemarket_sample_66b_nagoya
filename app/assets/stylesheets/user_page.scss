@@ -1,6 +1,10 @@
+.content {
+  margin: 0 auto;
+}
 .user{
   width: 700px;
   height: 1190px;
+  float: right;
   &__icon{
     width: 700px;
     height: 200px;
@@ -18,13 +22,16 @@
     }
   }
   &__tab{
-
     .tab{
       display: flex;
       justify-content: space-between;
       margin-left: 80px;
       margin-right: 80px;
       list-style: none;
+      height: 74px;
+      h3 {
+        line-height: 72px;
+      }
     }
   }
   &__contents{

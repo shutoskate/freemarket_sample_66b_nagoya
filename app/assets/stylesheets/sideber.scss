@@ -1,13 +1,14 @@
+
 .side{
   width: 280px;
   margin: 0 40px 40px 0;
   float: left;
   &__lists{
-    background-color: rgba(128, 128, 128, 0.075);
+    background-color: #fff;
     &--list{
       height: 50px;
       list-style: none;
-      border: 1px solid white;
+      border-bottom: 1px solid lightgray;
       font-weight: 600;
       position: relative;
       .list{

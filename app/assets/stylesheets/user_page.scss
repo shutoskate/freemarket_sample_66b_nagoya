@@ -1,0 +1,101 @@
+.user{
+  width: 700px;
+  height: 1190px;
+  &__icon{
+    width: 700px;
+    height: 200px;
+    text-align: center;
+    background-image: url(cloud.jpeg);
+    .user__image{
+      top: 20px;
+      margin-top: 50px;
+      border-radius: 50%;
+    }
+    .user__name{
+      height: 10px;
+      text-align: center;
+      margin: 0 auto;
+    }
+  }
+  &__tab{
+
+    .tab{
+      display: flex;
+      justify-content: space-between;
+      margin-left: 80px;
+      margin-right: 80px;
+      list-style: none;
+    }
+  }
+  &__contents{
+    background-color:#FAFAFA;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    .app__image{
+      margin-top: 10px;
+      margin-left: 10px;
+      margin-bottom: 10px;
+    }
+    .app__text{
+      background-color:#FAFAFA;
+      width: 100%;
+      height: 60px;
+      margin-top: 10px;
+    }
+  }
+  &__index{
+    width: 100%;
+    height: 50px;
+    background-color: #eeeeee;
+    text-align: center;
+    font-size: 15px;
+    .index__text{
+      height: 50px;
+      padding-top: 15px;
+      .text{
+        color: black;
+        list-style: none;
+        font-size: 15px;
+        text-decoration: none;
+
+      }
+    }
+  }
+  &__item{
+    background-color:#FAFAFA;
+    width: 100%;
+    height: 300px;
+    margin-top: 40px;
+    .buy__items{
+      width: 100%;
+      height: 60px;
+      background-color:#FAFAFA;
+      padding-top: 10px;
+      .buy__item{
+        padding: 0 16px;
+      }
+    }
+    .tab__item{
+      display: flex;
+      justify-content: space-between;
+      margin-left: 160px;
+      margin-right: 160px;
+      list-style: none;
+      height: 74px;
+      padding: 0;
+    }
+    .trade__text {
+      margin-top: 80px;
+      width: 100%;
+      text-align: center;
+      color: #CCCCCC;
+    }
+  }
+}
+h3{
+  font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+  font-size: 18px;
+  color: #333;
+  line-height: 1;
+}

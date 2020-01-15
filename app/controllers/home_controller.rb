@@ -1,18 +1,13 @@
 class HomeController < ApplicationController
-  before_action :authenticate_user!
+  #before_action :authenticate_user!
 
   def top
   end
   
   def profile
   end
-
-
-  def adress
-  end
   
-  def done
-  end
+
 
   private
     def set_user

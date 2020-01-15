@@ -56,7 +56,6 @@
 |city|string|null: false|
 |address|string|null: false|
 |building|string| |
-|phone_num|string| |
 |master|boolean|null: false|
 ### Association
 - belongs_to :user

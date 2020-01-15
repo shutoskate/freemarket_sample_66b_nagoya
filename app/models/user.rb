@@ -27,7 +27,7 @@ class User < ApplicationRecord
   year_list = {}
   for i in 0..120 do
     year = 2020 - i
-    year_list.merge!(year => i)
+    year_list.merge!(year.to_s => i)
   end
   enum birth_year:year_list
 

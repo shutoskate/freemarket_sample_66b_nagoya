@@ -37,7 +37,7 @@
 |charge|integer|null: false|
 |trade_step|integer|null: false,index: true|
 |delivery|integer|null: false|
-|prefecture|integer|null: false|
+|prefecture|integer|null: false, index: true|
 |term|integer|null: false|
 ### Association
 - belongs_to :user
@@ -45,7 +45,7 @@
 - belongs_to :brand
 - has_many :likes
 - has_many :comments
-- has_many :items_imgs
+- has_many :item_imgs
 - has_one :trade
 ## addressesテーブル
 |Column|Type|Options|

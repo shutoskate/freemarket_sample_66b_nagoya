@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 20200108092018) do
     t.string   "encrypted_password",                   default: "", null: false
     t.string   "profile_img"
     t.text     "profile_text",           limit: 65535
-    t.string   "family_name",                          default: "", null: false
+    t.string   "family_name",                                       null: false
     t.string   "first_name",                                        null: false
     t.string   "family_name_kana",                                  null: false
     t.string   "first_name_kana",                                   null: false

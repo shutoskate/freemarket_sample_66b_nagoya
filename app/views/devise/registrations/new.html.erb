@@ -1,6 +1,6 @@
-<h2>Sign up</h2>
+<h2>開発用ログイン画面</h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+<%= form_for(@user, url: new_user_registration_path, html: {method: "post"}) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
@@ -40,10 +40,13 @@
 
   <div class="field">
     <%= f.label :生年月日 %><br>
-    <%= f.select :birth_year, [[2020,1],[2019,2]], prompt:"--" %>年
+    <%= f.select :birth_year, User.birth_years.keys, prompt:"--" %>年
     <%= f.select :birth_month, [[1,1],[2,2]],prompt:"--" %>月
     <%= f.select :birth_day, [[1,1],[2,2]], prompt:"--" %>日
   </div>
+
+  <%= flash[:recaptcha_error] %>
+  <%= recaptcha_tags %>
 
   <div class="actions">
     <%= f.submit "Sign up" %>

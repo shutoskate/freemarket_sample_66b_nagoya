@@ -13,4 +13,6 @@ Rails.application.routes.draw do
   resources :users, only: [:edit, :update]
   get "/mypage" => "users#mypage"
   get "/mypage/profile" => "users#profile"
+  post "/mypage/profile" => "users#profile_update"
+  get "/logout" => "users#logout"
 end

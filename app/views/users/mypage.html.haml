@@ -6,7 +6,8 @@
       %section.user__icon
         %link_to.user__about{:href => "#"}
         = image_tag "//static.mercdn.net/images/member_photo_noimage_thumb.png", size: "60x60", alt: "顔写真", class: "user__image"
-        %h5.user__name  user_name
+        %h5.user__name
+          = @user.nickname
       %section.user__tab
         %ul.tab
           %li.notice

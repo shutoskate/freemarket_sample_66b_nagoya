@@ -23,9 +23,22 @@ class UsersController < ApplicationController
   end
 
   def mypage
+    @user = current_user
   end
 
   def profile
+    @user = current_user
+  end
+
+  def profile_update
+    if current_user.update(user_params)
+      redirect_to mypage_profile_path(@user)
+    else
+      render :profile
+    end
+  end
+
+  def logout
   end
 
   private
@@ -33,4 +46,5 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:nickname, :profile_text)
   end
+  
 end

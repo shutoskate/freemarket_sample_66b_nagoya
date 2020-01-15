@@ -6,13 +6,8 @@ class HomeController < ApplicationController
   
   def profile
   end
-
-
-  def adress
-  end
   
-  def done
-  end
+
 
   private
     def set_user

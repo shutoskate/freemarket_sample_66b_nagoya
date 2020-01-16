@@ -1,6 +1,6 @@
-<h2>開発用ログイン画面</h2>
+<h2>開発用サインアップ画面</h2>
 
-<%= form_for(@user, url: new_user_registration_path, html: {method: "post"}) do |f| %>
+<%= form_for(@user, url: signup_registration_path, html: {method: "post"}) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">

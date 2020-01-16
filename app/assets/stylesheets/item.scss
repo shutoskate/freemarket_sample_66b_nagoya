@@ -1,0 +1,379 @@
+/* 商品入力ページ- add_item.html.haml================================ */
+.contents__items{
+  margin-left: 320px;
+  margin-right: 320px;
+  background-color: #fff;
+  .puts__items{
+    height: 65px;
+    border-bottom:1px solid lightgray;
+    padding: 32px 16px;
+    font-size: 22px;
+    font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+    text-align: center;
+    font-weight:bold;
+    height: 100px;
+  }
+  .item__images{
+    width: 100%;
+    height: 300px;
+    padding: 40px;
+    .image__name__area{
+      display: flex;
+      flex-direction: row;
+      font-weight: bold;
+      .image__name{
+        font-size: 16px;
+      }
+      .logo__item{
+        width: 35px;
+        height: 20px;
+        color: #fff;
+        font-size: 12px;
+        text-align: center;
+        background-color: red;  
+        margin-left: 15px;
+        border-radius: 4px;
+      }
+    }
+    .text__image{
+      height: 20px;
+      font-size: 12px;
+      margin-top: 10px;
+      font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+      margin-bottom: 5px;
+    }
+    .image__area{
+      width: 100%;
+      height: 150px;
+      display: block;
+      border-style: solid;
+      border: 1px dashed #ccc;
+      background: #f5f5f5;
+      .image_up{
+
+      }
+    }
+  }
+  .about__item{
+    width: 100%;
+    height: 350px;
+    padding: 40px;
+    border-top:1px solid lightgray;
+    .puts__items__area{
+      display: flex;
+      flex-direction: row;
+      font-weight: bold;
+      .items__name__area{
+        font-size: 16px;
+
+      }
+      .logo__item{
+        width: 35px;
+        height: 20px;
+        color: #fff;
+        font-size: 12px;
+        text-align: center;
+        background-color: red;  
+        margin-left: 15px;
+        border-radius: 4px;
+
+      }
+    }
+    .puts__item__name{
+      padding: 10px 16px 8px;
+      width: 100%;
+    }
+
+  }
+  .item__detail{
+    width: 100%;
+    margin-top: 30px;
+  }
+  .puts__item__detail{
+    margin-top: 7px;
+    height: 150px;
+    width: 100%;
+    padding: 10px;
+  }
+  .items__details{
+    border-top:1px solid lightgray;
+    height: 250px;
+    padding: 40px;
+    display: flex;
+    .about__items{
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      .about__puts{
+        color: #888;
+        font: size 14px;
+      }
+        .category__area{
+          display: flex;
+          .puts__category{
+            display: flex;
+            flex-direction: row;
+            font-weight: bold;
+            font-size: 14px;
+            
+          }
+          .logo__item{
+            width: 35px;
+            height: 20px;
+            color: #fff;
+            font-size: 12px;
+            text-align: center;
+            background-color: red;  
+            margin-left: 15px;
+            border-radius: 4px;
+          }
+        }
+        .categories__name{
+          .bar__category{
+            margin-top: 5px;
+            width: 400px;
+            height: 40px;
+            padding: 10px 16px 8px;
+          }
+        }
+        .condition__area{
+          display: flex;
+          .puts__condition{
+            margin-top: 30px;
+            display: flex;
+            flex-direction: row;
+            font-weight: bold;
+            font-size: 14px;
+          }
+          .logo__item {
+            margin-top: 30px;
+            width: 35px;
+            height: 20px;
+            color: #fff;
+            font-size: 12px;
+            text-align: center;
+            background-color: red;  
+            margin-left: 15px;
+            border-radius: 4px;
+          }
+        }  
+        .condition__name{
+          .bar__conditions{
+            margin-top: 5px;
+            width: 400px;
+            height: 40px;
+            padding: 10px 16px 8px;
+          }
+        }
+  }
+}
+  .item__price{
+    border-top:1px solid lightgray;
+    width: 100%;
+    height: 340px;
+    padding: 40px;
+    .about__price{
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      .about__carry {
+        color: #888;
+        font: size 14px;
+
+      }
+      .how__delivery{
+        .shipping__charge{
+          display: flex;
+          .shipping{
+            display: flex;
+            flex-direction: row;
+            font-weight: bold;
+            font-size: 14px;
+          }
+          .logo__item{
+            width: 35px;
+            height: 20px;
+            color: #fff;
+            font-size: 12px;
+            text-align: center;
+            background-color: red;  
+            margin-left: 15px;
+            border-radius: 4px;
+          }
+        }
+        .bar__charge{
+          margin-top: 5px;
+          width: 400px;
+          height: 40px;
+          padding: 10px 16px 8px;
+        }
+        .shipping__area{
+          display: flex;
+          .areas{
+            margin-top: 30px;
+            display: flex;
+            flex-direction: row;
+            font-weight: bold;
+            font-size: 14px;
+          }
+          .logo__item{
+            margin-top: 30px;
+            width: 35px;
+            height: 20px;
+            color: #fff;
+            font-size: 12px;
+            text-align: center;
+            background-color: red;  
+            margin-left: 15px;
+            border-radius: 4px;
+          }
+        }
+        .bar__area{
+          margin-top: 5px;
+          width: 400px;
+          height: 40px;
+          padding: 10px 16px 8px;
+        }
+        .shipping__day{
+          display: flex;
+          .day_to {
+            margin-top: 30px;
+            display: flex;
+            flex-direction: row;
+            font-weight: bold;
+            font-size: 14px;
+
+          }
+          .logo__item{
+            margin-top: 30px;
+            width: 35px;
+            height: 20px;
+            color: #fff;
+            font-size: 12px;
+            text-align: center;
+            background-color: red;  
+            margin-left: 15px;
+            border-radius: 4px;
+
+          }
+        }
+        .bar__day{
+          margin-top: 5px;
+          width: 400px;
+          height: 40px;
+          padding: 10px 16px 8px;
+        }
+      }
+    }
+
+  }
+  .item__price__tax{
+    border-top:1px solid lightgray;
+    border-bottom:1px solid lightgray;
+    width: 100%;
+    height: 340px;
+    padding: 40px;
+    .price__tax{
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      .what__price{
+        color: #888;
+        font-size: 13px;
+      }
+      .price{
+        .price__what{
+          width: 100%;
+          margin-top: 20px;
+          display: flex;
+          border-bottom:1px solid lightgray;
+          .price__true{
+            display: flex;
+            flex-direction: row;
+            font-weight: bold;
+            font-size: 14px;
+            margin-right: 130px;
+            height: 80px;
+            
+
+            .view__price{
+              margin-top: 13px;
+
+            }
+            .logo__item{
+              width: 35px;
+              height: 20px;
+              color: #fff;
+              font-size: 12px;
+              text-align: center;
+              background-color: red;  
+              margin-left: 15px;
+              border-radius: 4px;
+              margin-top: 13px;
+
+            }
+          }
+          .puts__price{
+            display: flex;
+            .jpn-money{
+              margin-right: 10px;
+              margin-top: 13px;
+              font-size: 16px;
+
+            }
+            .bar__price{
+              height: 50px;
+              text-align: right;
+              padding: 15px;
+
+            }
+
+          }
+        }
+        .tax{
+          height: 65px;
+          padding: 24px 0px;
+          font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+          font-size: 14px;
+          border-bottom:1px solid lightgray;
+        }
+        .profit{
+          height: 80px;
+          padding: 24px 0;
+          border-top: 1px solid #ccc;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+  .bottum__area{
+    border-top:1px solid lightgray;
+    width: 100%;
+    height: 330px;
+    padding: 40px;
+    .text__arart{
+      height: 80px;
+      font-size: 12px;
+
+
+    }
+    .item__bottom{
+      height: 50px;
+      width: 100%;
+      background-color: red;
+      color: white;
+      margin-top: 30px; 
+
+    }
+    .back__bottom{
+      height: 50px;
+      width: 45%;
+      margin-top: 30px;
+      margin-left: 170px;
+      background: #aaa;
+      color: #fff;
+      border: 1px solid #aaa;
+    }
+
+  }
+}

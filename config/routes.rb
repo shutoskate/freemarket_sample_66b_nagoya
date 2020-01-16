@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root 'home#add_item'
+  root 'home#top'
 
   devise_for :users, controllers: {
     sessions: 'users/sessions',

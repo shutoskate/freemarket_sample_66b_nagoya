@@ -1,8 +1,11 @@
 class ItemsController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :create, :buy]
+
   def index
   end
 
   def show
+    
   end
 
   def new

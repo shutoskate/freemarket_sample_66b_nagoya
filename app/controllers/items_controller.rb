@@ -1,9 +1,18 @@
-class ItemController < ApplicationController
+class ItemsController < ApplicationController
+  def index
+  end
+
+  def show
+  end
+
   def new
     @item = Item.new
   end
   def create
     @item = Item.create(item_params)
+  end
+
+  def buy
   end
 
   private

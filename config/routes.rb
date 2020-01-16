@@ -13,8 +13,10 @@ Rails.application.routes.draw do
     get "users/sign_out" => "users/sessions#destroy"
   end
   resources :users, only: [:edit, :update]
+  resources :items
   get "/mypage" => "users#mypage"
   get "/mypage/profile" => "users#profile"
   post "/mypage/profile" => "users#profile_update"
   get "/logout" => "users#logout"
+  # get "/item_id" => "item#show"
 end

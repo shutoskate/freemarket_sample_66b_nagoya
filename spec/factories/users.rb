@@ -12,6 +12,7 @@ FactoryBot.define do
     birth_year            {1}
     birth_month           {1}
     birth_day             {1}
+    phone_num             {12345678}
   end
 
 end

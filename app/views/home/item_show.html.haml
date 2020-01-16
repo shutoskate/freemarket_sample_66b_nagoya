@@ -1,0 +1,83 @@
+=render "layouts/header"
+%main
+  %content
+    .item-box
+      .item-name
+        アイテム名
+      .item-content
+        .item-images
+          .item-image
+            = image_tag 'IMG_34498.jpg', alt: '商品写真', class: ''
+        %table.item-table
+          %tbody
+            %tr
+              %th 出品者
+              %td
+                = link_to('出品者名', {})
+                .ratings
+                  .rating.rating-follow
+                    %i.icon-good.fas.fa-laugh
+                      %span 数
+                  .rating.rating-follow
+                    %i.icon-normal.fas.fa-meh
+                      %span 数
+                  .rating.rating-follow
+                    %i.icon-bad.fas.fa-frown
+                      %span 数
+            %tr
+              %th カテゴリー
+              %td
+                = link_to('大カテゴリ', {})
+                = link_to({}, {}) do
+                  .sub-category
+                    %i.fas.fa-chevron-right
+                    中カテゴリ
+                = link_to({}, {}) do
+                  .sub-sub-category
+                    %i.fas.fa-chevron-right
+                    小カテゴリ
+            %tr
+              %th ブランド
+              %td
+                = link_to('ブランド名', {})
+            %tr
+              %th 商品の状態
+              %td 商品の状態
+            %tr
+              %th 配送料の負担
+              %td 送料負担
+            %tr
+              %th 配送の方法
+              %td 配送方法
+            %tr
+              %th 配送元地域
+              %td
+                = link_to('都道府県', {})
+            %tr
+              %th 発送日の目安
+              %td 2~3日で発送
+      .item-price-box
+        %span.item-price.bold
+          ¥85,000
+        %span.item-tax
+          (税込)
+        %span.item-shipping-fee
+          着払い
+      = link_to('購入画面に進む', {}, class:"item-buy-btn")
+      .item-description
+        %p.item-description-inner
+          SampleSampleSampleSampleSampleSampleSampleSampleSampleSampleSampleSampleSampleSampleSampleSampleSampleSampleSampleSampleSampleSampleSampleSampleSampleSampleSampleSampleSampleSampleSampleSampleSampleSampleSampleSampleSampleSampleSampleSampleSampleSampleSampleSampleSampleSampleSampleSampleSampleSampleSampleSample
+      .item-button-container
+        .item-button-left
+          %button.item-button.item-button-like
+            %i.far.fa-heart
+            %span いいね!
+            %span 0
+          = link_to( {}, class:"item-button item-button-report") do
+            %i.far.fa-flag
+            %span 不適切な商品の報告
+        .item-button-right
+          = link_to( {}, class:"item-button item-button-report", target:"_blank") do
+            %i.fas.fa-lock
+            %span あんしん・あんぜんへの取り組み 
+= render "layouts/footer"

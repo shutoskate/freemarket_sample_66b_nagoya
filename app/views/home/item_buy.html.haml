@@ -1,40 +1,41 @@
-%main
-  .buy
-    .item-box
-      .buy-head
-        購入内容の確認
-      .buy-content.box
-        .item-info
-          .item-info-img
-            = image_tag 'IMG_34498.jpg', alt: '商品写真'
-          .item-info-detail
-            .item-info-name
-              アイテム名
-            .item-info-price
-              ¥85,000 （税込）着払い
-      .buy-content.box
-        .buy-content-inner
-          %form
-            .buy-price-box.box
-              .buy-price-box-label 支払い金額
-              .buy-price ¥85,000
-            .buy-payment.box
-              %span 支払い方法
-              -# 支払い方法の有無で条件分岐
-              %br/
-              = link_to({}, class:"buy-payment-link") do
-                %i.fas.fa-plus-circle
-                %span 登録してください
-            .user-info.box
-              .user-info-label
-                %span 配送先
-                = link_to('変更する', {}, class:"user-info-link")
-              .user-info-address
-                〒111-1111
+= render "layouts/sub_header"
+  %main
+    .buy
+      .item-box
+        .buy-head
+          購入内容の確認
+        .buy-content.box
+          .item-info
+            .item-info-img
+              = image_tag 'IMG_34498.jpg', alt: '商品写真'
+            .item-info-detail
+              .item-info-name
+                アイテム名
+              .item-info-price
+                ¥85,000 （税込）着払い
+        .buy-content.box
+          .buy-content-inner
+            %form
+              .buy-price-box.box
+                .buy-price-box-label 支払い金額
+                .buy-price ¥85,000
+              .buy-payment.box
+                %span 支払い方法
+                -# 支払い方法の有無で条件分岐
                 %br/
-                住所住所住所住所住所住所住所住所
-                %br/
-                氏名
-            .buy-content
-              %button 購入する
+                = link_to({}, class:"buy-payment-link") do
+                  %i.fas.fa-plus-circle
+                  %span 登録してください
+              .user-info.box
+                .user-info-label
+                  %span 配送先
+                  = link_to('変更する', {}, class:"user-info-link")
+                .user-info-address
+                  〒111-1111
+                  %br/
+                  住所住所住所住所住所住所住所住所
+                  %br/
+                  氏名
+              .buy-content
+                %button 購入する
 = render "layouts/registration_footer"

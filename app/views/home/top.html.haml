@@ -3,7 +3,20 @@
 
   -# 広告------------------------------
   .top__advertising
-    広告
+    .advertisement-box
+      .advertisement-fonts
+        %h2 スマホでかんたん
+        %h2 フリマアプリ
+        .advertisement-fonts2
+          %h2 メルカリはスマホからすぐに出品できる
+          %h2 購入時も安心な独自システムのアプリです
+        .advertisement-img
+          = link_to "https://apps.apple.com/jp/app/id667861049?l=ja", class: "apple" do
+            = image_tag "apple.png", class: "apple"
+          = link_to "https://play.google.com/store/apps/details?id=com.kouzoh.mercari&hl=ja", class: "apple" do
+            = image_tag "google.png", class: "google"
+      .advertisement-hand
+        = image_tag "top-banner.png", class: "advertisement"
 
   -# 自分がいいねした商品
   .top__like

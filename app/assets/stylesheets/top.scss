@@ -2,10 +2,45 @@
   height: 100%;
   width: 100%;
   &__advertising{
-    height: 390px;
+    height: auto;
     width: 100%;
-    background-color: rgb(194, 194, 194);
-    // 広告投稿
+    background-image: url("top-background.jpeg");
+    position: relative;
+    .advertisement-box{
+      display: flex;
+      justify-content: space-around;
+      .advertisement-fonts{
+        color: grey;
+        font-size: 40px;
+        padding: 40px 0 0 40px;
+        display: block;
+        .advertisement-fonts2{
+          color: grey;
+          font-size: 20px;
+          padding-top: 20px;
+        }
+        .advertisement-img{
+          padding-top: 20px;
+          .apple{
+            height: 38px;
+            width: 128px;
+            text-decoration: none;
+          }
+          .google{
+            height: 38px;
+            width: 128px;
+          }
+        }
+      }
+      .advertisement{
+        position: absolute;
+        display: block;
+        height: 100%;
+        width: auto;
+        padding-right: 100px;
+        right: 0;
+      }
+    }
   }
   &__like{
   }

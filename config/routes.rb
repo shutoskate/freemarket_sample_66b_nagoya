@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   devise_scope :user do
     get "signup/registration" => "users/registrations#new"
     post "signup/registration" => "users/registrations#create"
-    post "users/sign_up" => "users/registrations#create"
+    get "/login" => "users/sessions#new"
     get "users/sign_out" => "users/sessions#destroy"
   end
   resources :users, only: [:edit, :update]

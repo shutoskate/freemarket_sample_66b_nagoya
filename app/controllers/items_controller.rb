@@ -1,4 +1,6 @@
 class ItemsController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :create, :buy]
+
   def index
   end
 
@@ -16,6 +18,7 @@ class ItemsController < ApplicationController
     @user = User.find(@item.seller_id)
     # 以下、imgテーブル作成次第表示----------------
     # @img = Item_imag.find(item_id: params[:id])
+
   end
 
   def new

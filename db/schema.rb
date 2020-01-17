@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200115081131) do
+ActiveRecord::Schema.define(version: 20200117034140) do
 
   create_table "brands", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name",       null: false
@@ -28,20 +28,21 @@ ActiveRecord::Schema.define(version: 20200115081131) do
   end
 
   create_table "items", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "name",        null: false
-    t.integer  "size",        null: false
-    t.integer  "price",       null: false
-    t.integer  "seller_id",   null: false
+    t.string   "name",                      null: false
+    t.integer  "size",                      null: false
+    t.integer  "price",                     null: false
+    t.integer  "seller_id",                 null: false
     t.integer  "brand_id"
-    t.integer  "category_id", null: false
-    t.integer  "status",      null: false
-    t.integer  "charge",      null: false
-    t.integer  "trade_step",  null: false
-    t.integer  "delivery",    null: false
-    t.integer  "prefecture",  null: false
-    t.integer  "term",        null: false
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.integer  "category_id",               null: false
+    t.integer  "status",                    null: false
+    t.integer  "charge",                    null: false
+    t.integer  "trade_step",                null: false
+    t.integer  "delivery",                  null: false
+    t.integer  "prefecture",                null: false
+    t.integer  "term",                      null: false
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.text     "item_text",   limit: 65535
     t.index ["brand_id"], name: "index_items_on_brand_id", using: :btree
     t.index ["category_id"], name: "index_items_on_category_id", using: :btree
     t.index ["name"], name: "index_items_on_name", using: :btree
@@ -63,12 +64,12 @@ ActiveRecord::Schema.define(version: 20200115081131) do
     t.integer  "birth_year",                                        null: false
     t.integer  "birth_month",                                       null: false
     t.integer  "birth_day",                                         null: false
-    t.string   "phone_num",                                         null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.datetime "created_at",                                        null: false
     t.datetime "updated_at",                                        null: false
+    t.string   "phone_num"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["nickname"], name: "index_users_on_nickname", using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree

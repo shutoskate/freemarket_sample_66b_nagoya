@@ -39,6 +39,8 @@
 |delivery|integer|null: false|
 |prefecture|integer|null: false, index: true|
 |term|integer|null: false|
+|item_text|text|null: false |
+
 ### Association
 - belongs_to :user
 - belongs_to :category

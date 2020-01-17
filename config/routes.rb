@@ -18,5 +18,5 @@ Rails.application.routes.draw do
   get "/mypage/profile" => "users#profile"
   post "/mypage/profile" => "users#profile_update"
   get "/logout" => "users#logout"
-  # get "/item_id" => "item#show"
+  # get "/item_id" => "items#show"
 end

@@ -9,6 +9,11 @@
   </head>
 
   <body>
+    <% if Rails.env.development? %>
+      <%= link_to('新規会員登録', signup_registration_path, class:'lists') %>
+      <%= link_to('ログイン', "/login", class:'lists') %>
+      <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+    <% end %>
     <%= yield %>
   </body>
 </html>

@@ -41,6 +41,11 @@
               %th ブランド
               %td
                 = link_to(@brand.name, {})
+            - unless @item.size === "サイズなし"
+              %tr
+                %th サイズ
+                %td
+                  = @item.size
             %tr
               %th 商品の状態
               %td

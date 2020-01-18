@@ -53,7 +53,7 @@ class Item < ApplicationRecord
   }
 
   enum size:{ 
-    "XXS以下":1, "XS(SS)":2, "S":3, "M":4, "L":5, "XL(LL)":6, "2XL(3L)":7, "3XL(4L)":8, "4XL(5L)以上":9, "FREE SIZE":10 
+    "サイズなし":0, "XXS以下":1, "XS(SS)":2, "S":3, "M":4, "L":5, "XL(LL)":6, "2XL(3L)":7, "3XL(4L)":8, "4XL(5L)以上":9, "FREE SIZE":10 
   }
 
   enum trade_step:{

@@ -1,13 +1,14 @@
 .logout{
-  margin: 40px auto 0;
+  margin: 0 auto;
   width: 1020px;
+  display: flex;
   &__box{
     width: 700px; 
-    height: 150px;
-    float: right;
-    background-color: rgba(128, 128, 128, 0.075);
+    height: 179px;
+    background-color: #fff;
+    align-items: center;
     &__submit{
-      margin: 50px auto;
+      margin: 65px auto;
       width: 320px;
       height: 50px;
       padding: 16px;
@@ -18,7 +19,7 @@
         left: 0;
         height: 100%;
         width: 100%;
-        background-color: red;
+        background-color: #e62017;
         line-height: 50px;
         text-align: center;
         color: white;

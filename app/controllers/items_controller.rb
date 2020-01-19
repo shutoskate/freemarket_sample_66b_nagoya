@@ -28,6 +28,7 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     #binding pry
+    # 開発終わればsave!をsaveに戻す
     if @item.save!
       redirect_to @item
     else

@@ -43,7 +43,7 @@
               .puts__condition 商品の状態
               .logo__item 必須
             = f.select :status, Item.statuses.keys, {prompt:"--"}, class:'bar__conditions'
-            = f.select :trade_step, Item.trade_steps.keys,{}, class:'bar__trade_step' 
+            = f.hidden_field :trade_step, Item.trade_steps.keys,{}' 
       .item__price
         .about__price
           .about__carry 配送について

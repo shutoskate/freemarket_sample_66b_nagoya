@@ -1,16 +1,39 @@
 # frozen_string_literal: true
 
 class Users::RegistrationsController < Devise::RegistrationsController
-  before_action :configure_sign_up_params, if: :devise_controller?
+  before_action :configure_sign_up_params, only: [:create]
   before_action :configure_account_update_params, only: [:update]
   prepend_before_action :check_captcha, only: [:create] 
 
   def new
-    super
+    @user = User.new
   end
   
   def create
-    super
+    @user = User.new(sign_up_params)
+    unless @user.valid?
+      flash.now[:alert] = @user.errors.full_messages
+      render :new and return
+    end
+    session["devise.regist_data"] = {user: @user.attributes}
+    session["devise.regist_data"][:user]["password"] = params[:user][:password]
+    @address = @user.addresses.build
+    render :new_address
+  end
+
+  def new_address
+  end
+
+  def create_address
+    @user = User.new(session["devise.regist_data"]["user"])
+    @address = Address.new(address_params)
+    unless @address.valid?
+      flash.now[:alert] = @address.errors.full_messages
+      render :new_address and return
+    end
+    @user.addresses.build(@address.attributes)
+    @user.save
+    sign_in(:user, @user)
   end
 
   # GET /resource/edit
@@ -47,11 +70,15 @@ class Users::RegistrationsController < Devise::RegistrationsController
       end
     end
 
+    def address_params
+      params.require(:address).permit(:post_code, :prefecture, :city, :address, :master)
+    end
+
   protected
 
   # If you have extra params to permit, append them to the sanitizer.
   def configure_sign_up_params
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:nickname, :family_name, :first_name,:family_name_kana, :first_name_kana, :birth_year, :birth_month, :birth_day])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:nickname, :family_name, :first_name,:family_name_kana, :first_name_kana, :birth_year, :birth_month, :birth_day, :phone_num])
   end
 
   # If you have extra params to permit, append them to the sanitizer.

@@ -52,13 +52,13 @@
 ## addressesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key:true|
+|user_id|references|foreign_key: true|
 |post_code|string|null: false|
 |prefecture|integer|null: false|
 |city|string|null: false|
 |address|string|null: false|
 |building|string| |
-|master|boolean|null: false|
+|master|boolean|null: false, default, true|
 ### Association
 - belongs_to :user
 ## likesテーブル

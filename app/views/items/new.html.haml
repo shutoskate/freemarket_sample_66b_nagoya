@@ -30,7 +30,7 @@
             .categories__name
               -# = f.select :category_id, {}, class:'bar__category'
               -# = f.select :category_id, {}, class:'bar__category_2'
-              = f.select :category_id, [[1,1]],{}, class:'bar__category_3'
+              = f.select :category_id, [["小カテゴリー",356]],{}, class:'bar__category_3'
             .size__area
               .puts__size サイズ
               .logo__item 必須
@@ -43,7 +43,8 @@
               .puts__condition 商品の状態
               .logo__item 必須
             = f.select :status, Item.statuses.keys, {prompt:"--"}, class:'bar__conditions'
-            = f.hidden_field :trade_step, Item.trade_steps.keys,{}' 
+            -# trade_step
+            = f.select :trade_step, Item.trade_steps.keys, {}, class:"hidden"
       .item__price
         .about__price
           .about__carry 配送について
@@ -56,9 +57,9 @@
               .delivery 配送の方法
               .logo__item 必須
             = f.select :delivery, Item.delivery_1s.keys, {prompt:"--"}, class: 'bar__delivery'
-            .shipping__delivery_2
-              .delivery_2 配送の方法
-              .logo__item 必須
+            -# .shipping__delivery_2
+            -#   .delivery_2 配送の方法
+            -#   .logo__item 必須
             -# = f.select :delivery, Item.delivery_2s.keys, {prompt:"--"}, class: 'bar__delivery'
             .shipping__area
               .areas 発送元の地域

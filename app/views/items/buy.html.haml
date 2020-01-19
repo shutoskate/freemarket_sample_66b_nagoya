@@ -41,8 +41,8 @@
                 = @address.address
                 = @address.building
                 %br/
-                = @user.family_name
-                = @user.first_name
+                = current_user.family_name
+                = current_user.first_name
             .buy-content
               %button 購入する
 = render "layouts/sub_footer"

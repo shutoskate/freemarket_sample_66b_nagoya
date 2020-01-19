@@ -27,19 +27,19 @@
       -if user_signed_in?
         %nav.categories__right
           %ul.user_area
-            %li.liked
+            %li
               %a.lists(href="#")
                 %i.far.fa-heart
                 %span いいね！一覧
-            %li.ararm
+            %li
               %a.lists(href="#")
                 %i.far.fa-bell
                 %span お知らせ
-            %li.to_do
+            %li
               %a.lists(href="#")
                 %i.fas.fa-check
                 %span やることリスト
-            %li.my_page
+            %li
               %a.lists(href="/mypage")
                 %i.far.fa-smile
                 %span
@@ -47,7 +47,7 @@
       -else
         %nav.categories__right
           %ul.user_area.no_session
-            %li.sign_up.btn.btn_red
-              = link_to('新規会員登録', signup_registration_path, class:'lists')
-            %li.sign_in.btn.btn_login
-              = link_to('ログイン', "/login", class:'lists')
+            %li.btn.btn_red
+              = link_to '新規会員登録', signup_registration_path
+            %li.btn.btn_login
+              = link_to 'ログイン', "/login"

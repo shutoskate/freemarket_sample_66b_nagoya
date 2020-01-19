@@ -162,36 +162,37 @@
 
 
 /* 完了ページ- adress.html.haml================================ */
-  .type-done{
-    width: 100%;
-    height: 90px;
-    font-size: 20px;
-    text-align: center;
-    padding-top: 30px;
-    font-weight:bold;
-    border-bottom: 1px solid #ccc;
+.type-done{
+  width: 100%;
+  height: 90px;
+  font-size: 20px;
+  text-align: center;
+  padding-top: 30px;
+  font-weight:bold;
+  border-bottom: 1px solid #ccc;
+}
+.type__thx{
+  width: 100%;
+  height: 25px;
+  text-align: center;
+  margin-top: 40px;
+}
+.type__regi{
+  width: 100%;
+  height: 20px;
+  text-align: center;
+}
+.red__logo-start{
+  margin: 50px auto;
+  display: block;
+  max-width: 280px;
+  .start__app{
+    padding: 10px 30px;
+    height: 48px;
+    background: #ea352d;
+    border: 1px solid #ea352d;
+    color: #fff;
+    text-decoration: none;
+    font-size: 17px;
   }
-  .type__thx{
-    width: 100%;
-    height: 25px;
-    text-align: center;
-    margin-top: 40px;
-    font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
-  }
-  .type__regi{
-    width: 100%;
-    height: 20px;
-    text-align: center;
-    font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
-  }
-  .red__logo-start{
-    margin: 50px 40px;
-    .start__app{
-      width: 100%;
-      height: 48px;
-      background: #ea352d;
-      border: 1px solid #ea352d;
-      color: #fff;
-      font-size: 17px;
-    }
-  }
+}

@@ -1,0 +1,11 @@
+= render "registration_header"
+%main
+  .contents
+    .contents__done
+      .type-done 会員登録完了
+      .type__thx ありがとうございます。
+      .type__regi 会員登録が完了しました。
+      .red__logo-start
+        = link_to "F marketを始めるはじめる", "/", class:"start__app"
+      = image_tag "applogo.jpeg", class:"background__logo", size: "460x250"
+= render "layouts/sub_footer"

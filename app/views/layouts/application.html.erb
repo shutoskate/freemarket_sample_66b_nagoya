@@ -11,9 +11,12 @@
 
   <body>
     <% if Rails.env.development? %>
-      <%= link_to('新規会員登録', signup_registration_path, class:'lists') %>
-      <%= link_to('ログイン', "/login", class:'lists') %>
-      <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+      <div class="dev", style="background-color: gray">
+        開発環境用メニュー
+        <%= link_to('新規会員登録', signup_registration_path, class:'lists') %>
+        <%= link_to('ログイン', "/login", class:'lists') %>
+        <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+      </div>
     <% end %>
     <%= yield %>
   </body>

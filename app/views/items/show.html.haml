@@ -96,6 +96,9 @@
       .item-box.seller
         = link_to('商品の編集', {}, class:"item-buy-btn")
         %span or
-        = link_to('出品を再開する', {}, class:"item-buy-btn")
+        - if @item.trade_step == "出品中"
+          = link_to('出品を停止する', stop_path(@item), method:'POST', class:"item-buy-btn")
+        - if @item.trade_step == "出品停止"
+          = link_to('出品を再開する', start_path(@item), method:'POST', class:"item-buy-btn")
         = link_to('この商品を削除する', item_path, method:'DELETE', data:{confirm: "削除すると二度と復活できません。削除する代わりに停止することもできます。本当に削除しますか？"}, class:"item-buy-btn delete")
 = render "layouts/footer"

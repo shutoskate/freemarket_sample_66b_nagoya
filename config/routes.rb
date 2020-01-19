@@ -23,4 +23,6 @@ Rails.application.routes.draw do
   get "/sell" => "items#new"
   get "/buy/:id" => "items#buy"
   get "/:id" => "items#show"
+  post "/stop/:id" => "items#stop", as: :stop
+  post "/start/:id" => "items#start", as: :start
 end

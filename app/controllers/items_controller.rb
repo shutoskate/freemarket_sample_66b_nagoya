@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create, :buy, :edit, :destroy]
-  before_action :set_item, only: [:show, :edit, :destroy, :buy]
+  before_action :authenticate_user!, only: [:new, :create, :buy, :edit, :destroy,]
+  before_action :set_item, only: [:show, :edit, :destroy, :buy, :stop, :start]
   require 'enumerize'
 
   def index
@@ -50,10 +50,37 @@ class ItemsController < ApplicationController
     @address = Address.find_by(user_id: current_user.id)
   end
 
+  def stop
+    @item.update_attribute(:trade_step, "出品停止")
+    redirect_to @item
+  end
+
+  def start
+    @item.update_attribute(:trade_step, "出品中")
+    redirect_to @item
+  end
+
+  # def change
+  #   if @item.trade_step = "出品中"
+  #     @item.update_attribute(:trade_step, "出品停止")
+  #     # binding.pry
+  #   elsif @item.trade_step = "出品停止"
+  #     @item.update_attribute(:trade_step, "出品中")
+  #     # binding.pry
+  #   else
+  #     render :show
+  #   end
+  #   redirect_to @item
+  # end
+
   private
 
   def set_item
     @item = Item.find(params[:id])
+  end
+
+  def change_params
+    params.require(:item).permit(:trade_step)
   end
   
   def item_params

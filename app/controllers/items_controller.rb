@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create, :buy]
+  before_action :authenticate_user!, only: [:new, :create, :buy, :edit, :destroy]
   require 'enumerize'
 
   def index
@@ -36,7 +36,20 @@ class ItemsController < ApplicationController
     end
   end
 
+  def edit
+    @item = Item.find(params[:id])
+  end
+
+  def destroy
+    @item = Item.find(params[:id])
+    @item.destroy
+    redirect_to root_path
+  end
+
   def buy
+    @item = Item.find_by(params[:id])
+    @user = current_user
+    @address = Address.find_by(user_id: @user.id)
   end
 
   private

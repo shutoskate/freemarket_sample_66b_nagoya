@@ -21,5 +21,6 @@ Rails.application.routes.draw do
   post "/mypage/profile" => "users#profile_update"
   get "/logout" => "users#logout"
   get "/sell" => "items#new"
+  get "/buy/:id" => "items#buy"
   get "/:id" => "items#show"
 end

@@ -28,6 +28,7 @@
               .puts__category カテゴリー
               .logo__item 必須
             .categories__name
+              -# カテゴリー機能実装の際、使用----------------------------
               -# = f.select :category_id, {}, class:'bar__category'
               -# = f.select :category_id, {}, class:'bar__category_2'
               = f.select :category_id, [["小カテゴリー",356]],{}, class:'bar__category_3'
@@ -56,6 +57,7 @@
               .delivery 配送の方法
               .logo__item 必須
             = f.select :delivery, Item.delivery_1s.keys, {prompt:"--"}, class: 'bar__delivery'
+            -# 配送方法を条件分岐する際に使用−−−−−−−−−−---------
             -# .shipping__delivery_2
             -#   .delivery_2 配送の方法
             -#   .logo__item 必須

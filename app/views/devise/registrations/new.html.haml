@@ -52,11 +52,7 @@
           = f.telephone_field :phone_num, autofocus: true,  placeholder:"携帯電話の番号を入力"
 
         .field
-          = f.hidden_field :birth_year, value:"2020"
-        .field
-          = f.hidden_field :birth_month, value:"2"
-        .field
-          = f.hidden_field :birth_day, value:"1"
+          = f.date_select(:birthday, use_month_numbers: true, start_year:1930,end_year:(Time.now.year), default:Date.new(1989, 1, 1))
 
         .field
           = flash[:recaptcha_error]

@@ -1,10 +1,7 @@
 class ItemsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create, :buy, :edit, :destroy,]
-  before_action :set_item, only: [:show, :edit, :destroy, :buy, :stop, :start]
+  before_action :authenticate_user!, only: [:new, :create, :buy, :edit, :update, :destroy,]
+  before_action :set_item, only: [:show, :edit, :update, :destroy, :buy, :stop, :start]
   require 'enumerize'
-
-  def index
-  end
 
   def show
     if Category.find(@item.category_id).parent.parent
@@ -36,6 +33,14 @@ class ItemsController < ApplicationController
   end
 
   def edit
+  end
+
+  def update
+    if @item.update(item_params)
+      redirect_to @item
+    else
+      render :edit
+    end
   end
 
   def destroy

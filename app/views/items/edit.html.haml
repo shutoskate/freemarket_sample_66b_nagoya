@@ -1,0 +1,89 @@
+= render 'layouts/sub_header'
+%main
+  = form_for(@item, url: item_path, html: {method: "PUT"})do |f|
+    .contents__items
+      .puts__items 商品の情報入力
+      .item__images
+        .image__name__area
+          .image__name 出品画像
+          .logo__item 必須
+        %p.text__image 最大10枚までアップロードできます
+        .image__area
+          = f.file_field :image, class: 'image_up'
+      .about__item
+        .puts__items__area
+          .items__name__area 商品名
+          .logo__item 必須
+        = f.text_field :name, class: 'puts__item__name', placeholder: '商品名（必須40字まで'
+        .item__detail
+          .puts__items__area
+            .items__name__area 商品の説明
+            .logo__item 必須
+        = f.text_area :item_text, class: 'puts__item__detail', placeholder: '商品名の説明(必須1000文字以内)（色、素材、重さ、定価、注意点など）例）2010年頃購入しました。傷汚れありません。'      
+      .items__details
+        .about__items
+          .about__puts 商品の詳細
+          .categories
+            .category__area
+              .puts__category カテゴリー
+              .logo__item 必須
+            .categories__name
+              -# カテゴリー機能実装の際、使用----------------------------
+              -# = f.select :category_id, {}, class:'bar__category'
+              -# = f.select :category_id, {}, class:'bar__category_2'
+              = f.select :category_id, [["小カテゴリー",356]],{}, class:'bar__category_3'
+            .size__area
+              .puts__size サイズ
+              .logo__item 必須
+            = f.select :size, Item.sizes.keys, {prompt:"--"}, class:'bar__size'
+            .brand__area
+              .puts__brand ブランド名
+              .logo__item__no 任意
+            = f.select :brand_id,Item.brand_id.options,{}, class:'bar__brand'
+            .condition__area
+              .puts__condition 商品の状態
+              .logo__item 必須
+            = f.select :status, Item.statuses.keys, {prompt:"--"}, class:'bar__conditions'
+            = f.select :trade_step, Item.trade_steps.keys, {}, class:"hidden"
+      .item__price
+        .about__price
+          .about__carry 配送について
+          .how__delivery
+            .shipping__charge
+              .shipping 配送料の負担
+              .logo__item 必須
+            = f.select :charge, Item.charges.keys,{prompt:"--"}, class:'bar__charge'
+            .shipping__delivery
+              .delivery 配送の方法
+              .logo__item 必須
+            = f.select :delivery, Item.delivery_1s.keys, {prompt:"--"}, class: 'bar__delivery'
+            -# 配送方法を条件分岐する際に使用−−−−−−−−−−---------
+            -# .shipping__delivery_2
+            -#   .delivery_2 配送の方法
+            -#   .logo__item 必須
+            -# = f.select :delivery, Item.delivery_2s.keys, {prompt:"--"}, class: 'bar__delivery'
+            .shipping__area
+              .areas 発送元の地域
+              .logo__item 必須
+            = f.select :prefecture, Item.prefectures.keys, {prompt:"--"}, class: 'bar__area'
+            .shipping__day
+              .day_to 発送までの日数
+              .logo__item 必須
+            = f.select :term, Item.terms.keys, {prompt:"--"}, class: 'bar__day'
+      .item__price__tax
+        .price__tax
+          .what__price 販売価格（300~9,999,999)
+          .price
+            .price__what
+              .price__true
+                .view__price 価格
+                .logo__item 必須
+              .puts__price
+                .jpn-money ¥
+                = f.number_field :price, class: 'bar__price', placeholder: '例）300'
+            .tax 販売手数料（10%）
+            .profit 販売利益
+      .bottum__area
+        = f.submit "変更する", class: 'item__bottom'
+        %button.back__bottom{type: "submit"} もどる
+= render 'layouts/sub_footer'

@@ -97,7 +97,7 @@
               %span あんしん・あんぜんへの取り組み
     - if @item.seller_id === current_user.id
       .item-box.seller
-        = link_to('商品の編集', {}, class:"item-buy-btn")
+        = link_to('商品の編集', edit_item_path(@item), class:"item-buy-btn")
         %span or
         - if @item.trade_step == "出品中"
           = link_to('出品を停止する', stop_path(@item), method:'POST', class:"item-buy-btn")

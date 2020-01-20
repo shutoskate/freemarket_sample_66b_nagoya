@@ -7,7 +7,10 @@
       .item-content
         .item-images
           .item-image
-            = image_tag 'IMG_34498.jpg', alt: '商品写真', class: ''
+            = image_tag 'IMG_34498.jpg', alt: '商品写真', class: 'photo'
+          - if @item.trade_step == "出品停止"
+            .stop
+            %span.stop_text 公開停止中
         %table.item-table
           %tbody
             %tr

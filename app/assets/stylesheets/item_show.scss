@@ -21,9 +21,34 @@
 .item-images {
   width: 300px;
   height: 420px;
+  .stop {
+    display: block;
+    width: 150px;
+    height: 150px;
+    text-align: center;
+    transform: rotate(-45deg);
+    border-bottom: 75px solid #999;
+    border-left: 75px solid transparent;
+    border-right: 75px solid transparent;
+    font-size: 14px;
+    position: relative;
+    left: -75px;
+    top: -75px;
+    writing-mode: vertical-lr;
+  }
+  .stop_text {
+    color: #ffffff;
+    display: block;
+    position: relative;
+    left: -30px;
+    top: -200px;
+    font-weight: bold;
+    transform: rotate(-45deg);
+  }
   .item-image {
     width: 300px;
     height: 300px;
+    position: absolute;
   }
 }
 .item-table {

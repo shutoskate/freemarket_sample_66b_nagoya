@@ -17,9 +17,7 @@ class User < ApplicationRecord
   validates :first_name, presence: true
   validates :family_name_kana, presence: true
   validates :first_name_kana, presence: true
-  validates :birth_year, presence: true
-  validates :birth_month, presence: true
-  validates :birth_day, presence: true
+  validates :birthday, presence: true
 
   # has_many :active_relationships, class_name: “Relationship”, foreign_key: “follower_id”
   # has_many :passive_relationships, class_name: “Relationship”, foreign_key: “followed_id”

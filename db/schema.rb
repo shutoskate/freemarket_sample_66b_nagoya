@@ -10,7 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200119023459) do
+
+ActiveRecord::Schema.define(version: 20200121021718) do
 
   create_table "addresses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id"
@@ -24,6 +25,7 @@ ActiveRecord::Schema.define(version: 20200119023459) do
     t.datetime "updated_at",                null: false
     t.index ["user_id"], name: "index_addresses_on_user_id", using: :btree
   end
+
 
   create_table "brands", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name",       null: false
@@ -42,9 +44,10 @@ ActiveRecord::Schema.define(version: 20200119023459) do
 
   create_table "item_imgs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "img",        null: false
-    t.integer  "item_id",    null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "item_id"
+    t.index ["item_id"], name: "index_item_imgs_on_item_id", using: :btree
   end
 
   create_table "items", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -80,22 +83,24 @@ ActiveRecord::Schema.define(version: 20200119023459) do
     t.string   "family_name",                                       null: false
     t.string   "first_name",                                        null: false
     t.string   "family_name_kana",                                  null: false
-    t.string   "first_name_kana",                                   null: false
-    t.integer  "birth_year",                                        null: false
-    t.integer  "birth_month",                                       null: false
-    t.integer  "birth_day",                                         null: false
-    t.string   "phone_num",                                         null: false
+    t.string   "first_name_kana",                                   null: false   
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.datetime "created_at",                                        null: false
     t.datetime "updated_at",                                        null: false
+    t.date     "birthday",                                          null: false
+    t.string   "phone_num",                                         null: false
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["nickname"], name: "index_users_on_nickname", using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+
+  add_foreign_key "item_imgs", "items"
+
   add_foreign_key "addresses", "users"
+
   add_foreign_key "items", "brands"
   add_foreign_key "items", "categories"
   add_foreign_key "items", "users", column: "seller_id"

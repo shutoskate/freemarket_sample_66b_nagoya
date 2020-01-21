@@ -1,0 +1,28 @@
+= render "layouts/sub_header"
+%main
+  .contents
+    .area
+      .new__registration
+        %p.text アカウントをお持ちでない方はこちら
+        = link_to "新規会員登録", "/signup/registration", class:"box__logo"
+      .login__sns
+        %button.btn-sns-facebook
+          %i.fab.fa-facebook-square
+          Facebookでログイン
+        %button.btn-sns-google
+          %i.fab.fa-google
+          Googleでログイン
+      = form_for(@user, url: new_user_session_path(@user)) do |f|
+        .login__form
+          .email__area
+            = f.email_field :email, autocomplete: "email", class:"login-email", placeholder: "メールアドレス"
+          .pass__area
+            = f.password_field :password, autocomplete: "password", class:"login-pass", placeholder: "パスワード"
+          .recaptcha
+            = flash[:recaptcha_error]
+            = recaptcha_tags
+          .login__area
+            .submit__area
+              = f.submit "ログイン", class:"login-submit"
+          = link_to "パスワードをお忘れの方", {}, class:"forget-pass"
+  = render "layouts/sub_footer"

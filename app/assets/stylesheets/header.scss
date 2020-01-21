@@ -88,41 +88,13 @@
           display: flex;
           list-style: none;
           justify-content: space-around;
-          .liked{
-            text-decoration: none ;
-            color: #333;
             .lists{
-              text-decoration: none ;
+              text-decoration: none;
               color: #333;
+              &:hover {
+                color: #0099e8;
+              }
             }
-          }
-          .ararm{
-            text-decoration: none ;
-            color: black;
-            margin-left: 15px;
-            .lists{
-              text-decoration: none ;
-              color: black;
-            }
-          }
-          .to_do{
-            text-decoration: none ;
-            color: black;
-            margin-left: 15px;
-            .lists{
-              text-decoration: none ;
-              color: black;
-            }
-          }
-          .my_page{
-            text-decoration: none ;
-            color: black;
-            margin-left: 15px;
-            .lists{
-              text-decoration: none ;
-              color: black;
-            }
-          }
           .btn {
             padding: 0 10px;
             line-height: 30px;
@@ -133,21 +105,30 @@
             }
           }
           .btn_red {
-            background: #ea352d;
+            background-color: #ea352d;
             border: 1px solid #ea352d;
             color: #fff;
-            .lists {
-              color: #fff
+            a {
+              color: #fff;
+              text-decoration: none;
             }
           }
           .btn_login {
             display: block;
             border: 1px solid #0099e8;
-            background: #fff;
-            color: #0099e8;
+            background-color: #fff;
             margin-left: 10px;
-            .lists {
+            a {
               color: #0099e8;
+              text-decoration: none;
+            }
+            &:hover {
+              background-color: #0099e8;
+              transition: 0.3s;
+              a {
+                color: #fff;
+                transition: 0.3s;
+              }
             }
           }
         }

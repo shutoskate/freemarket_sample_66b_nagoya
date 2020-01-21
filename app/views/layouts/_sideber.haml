@@ -9,7 +9,7 @@
     %li.side__lists--list
       = link_to "いいね！一覧", "#",class:"list"
     %li.side__lists--list
-      = link_to "出品する", "#",class:"list"
+      = link_to "出品する", new_item_path,class:"list"
     %li.side__lists--list
       = link_to " 出品した商品 - 出品中", "#",class:"list"
     %li.side__lists--list
@@ -28,14 +28,14 @@
       = link_to " ガイド", "#",class:"list"
     %li.side__lists--list
       = link_to " お問い合わせ", "#",class:"list"
-  %h3.merpay
+  %h3.side__title
     メルペイ
   %nav.side__lists
     %li.side__lists--list
       = link_to " 売上・振込申請", "#",class:"list"
     %li.side__lists--list
       = link_to " ポイント", "#",class:"list"
-  %h3.config
+  %h3.side__title
     設定
   %nav.side__lists
     %li.side__lists--list

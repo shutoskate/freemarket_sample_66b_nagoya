@@ -1,4 +1,7 @@
 /* 商品入力ページ- add_item.html.haml================================ */
+.hidden {
+  display: none;
+}
 .contents__items{
   margin-left: 320px;
   margin-right: 320px;
@@ -8,7 +11,6 @@
     border-bottom:1px solid lightgray;
     padding: 32px 16px;
     font-size: 22px;
-    font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
     text-align: center;
     font-weight:bold;
     height: 100px;
@@ -39,7 +41,6 @@
       height: 20px;
       font-size: 12px;
       margin-top: 10px;
-      font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
       margin-bottom: 5px;
     }
     #image__area{
@@ -84,7 +85,6 @@
       font-weight: bold;
       .items__name__area{
         font-size: 16px;
-
       }
       .logo__item{
         width: 35px;
@@ -105,7 +105,6 @@
       border-color: gray;
 
     }
-
   }
   .item__detail{
     width: 100%;
@@ -135,8 +134,11 @@
         width: 420px;
 
       }
-        .category__area{
+      .category__area{
+        display: flex;
+        .puts__category{
           display: flex;
+
           .puts__category{
             display: flex;
             flex-direction: row;
@@ -165,89 +167,105 @@
             background-color: #fff;
           }
         }
-        .size__area{
-          display: flex;
-          .puts__size{
-            margin-top: 30px;
-            display: flex;
-            flex-direction: row;
-            font-weight: bold;
-            font-size: 14px;
-          }
-          .logo__item{
-            margin-top: 30px;
-            width: 35px;
-            height: 20px;
-            color: #fff;
-            font-size: 12px;
-            text-align: center;
-            background-color: red;  
-            margin-left: 15px;
-            border-radius: 4px;
-          }
+        .logo__item{
+          width: 35px;
+          height: 20px;
+          color: #fff;
+          font-size: 12px;
+          text-align: center;
+          background-color: red;  
+          margin-left: 15px;
+          border-radius: 4px;
         }
-        .bar__size{
+      }
+      .categories__name{
+        .bar__category{
           margin-top: 5px;
           width: 400px;
           height: 40px;
           padding: 10px 16px 8px;
           background-color: #fff;
-
         }
-        .brand__area{
+      }
+      .size__area{
+        display: flex;
+        .puts__size{
+          margin-top: 30px;
           display: flex;
-          .puts__brand{
-            margin-top: 30px;
-            display: flex;
-            flex-direction: row;
-            font-weight: bold;
-            font-size: 14px;
-          }
-          .logo__item__no{
-            margin-top: 30px;
-            width: 35px;
-            height: 20px;
-            color: #fff;
-            font-size: 12px;
-            text-align: center;
-            background-color: gray;  
-            margin-left: 15px;
-            border-radius: 4px;
-          }
+          flex-direction: row;
+          font-weight: bold;
+          font-size: 14px;
         }
-        .condition__area{
+        .logo__item{
+          margin-top: 30px;
+          width: 35px;
+          height: 20px;
+          color: #fff;
+          font-size: 12px;
+          text-align: center;
+          background-color: red;  
+          margin-left: 15px;
+          border-radius: 4px;
+        }
+      }
+      .bar__size{
+        margin-top: 5px;
+        width: 400px;
+        height: 40px;
+        padding: 10px 16px 8px;
+        background-color: #fff;
+      }
+      .brand__area{
+        display: flex;
+        .puts__brand{
+          margin-top: 30px;
           display: flex;
-          .puts__condition{
-            margin-top: 30px;
-            display: flex;
-            flex-direction: row;
-            font-weight: bold;
-            font-size: 14px;
-          }
-          .logo__item {
-            margin-top: 30px;
-            width: 35px;
-            height: 20px;
-            color: #fff;
-            font-size: 12px;
-            text-align: center;
-            background-color: red;  
-            margin-left: 15px;
-            border-radius: 4px;
-          }
+          flex-direction: row;
+          font-weight: bold;
+          font-size: 14px;
         }
-        .bar__conditions{
-          margin-top: 5px;
-          width: 400px;
-          height: 50px;
-          padding: 10px 16px 8px;
-          background-color: #fff;
+        .logo__item__no{
+          margin-top: 30px;
+          width: 35px;
+          height: 20px;
+          color: #fff;
+          font-size: 12px;
+          text-align: center;
+          background-color: gray;  
+          margin-left: 15px;
+          border-radius: 4px;
         }
-        .bar__trade_step{
-          display: none;
-        } 
+      }
+      .condition__area{
+        display: flex;
+        .puts__condition{
+          margin-top: 30px;
+          display: flex;
+          flex-direction: row;
+          font-weight: bold;
+          font-size: 14px;
+        }
+        .logo__item {
+          margin-top: 30px;
+          width: 35px;
+          height: 20px;
+          color: #fff;
+          font-size: 12px;
+          text-align: center;
+          background-color: red;  
+          margin-left: 15px;
+          border-radius: 4px;
+        }
+      }
+      .bar__conditions{
+        margin-top: 5px;
+        width: 400px;
+        height: 50px;
+        padding: 10px 16px 8px;
+        background-color: #fff;
+      }
+    }
   }
-}
   .item__price{
     border-top:1px solid lightgray;
     width: 100%;

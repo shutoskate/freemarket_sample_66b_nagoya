@@ -1,6 +1,6 @@
 = render 'layouts/sub_header'
 %main
-  = form_for(@item, url: items_path, html: {method: "post"})do |f|
+  = form_for(@item, url: item_path, html: {method: "PUT"})do |f|
     .contents__items
       .puts__items 商品の情報入力
       .item__images
@@ -8,24 +8,8 @@
           .image__name 出品画像
           .logo__item 必須
         %p.text__image 最大10枚までアップロードできます
-        #image__area
-          .label-content
-          #previews
-            - if @item.persisted?
-              - @item.item_imgs.each_with_index do |image, i|
-                = image_tag image.img.url, data: { index: i }, width: "100", height: '100'
-          = f.fields_for :item_imgs do |i|
-            .js-file_group{"data-index" => "#{i.index}"}
-              .file_area
-                = i.label :img, class: 'js-area'
-                = i.file_field :img, class: 'js-file'
-                %span.js-remove 削除
-            - if @item.persisted?
-              = i.check_box :_destroy, data:{ index: i.index }, class: 'hidden-destroy'
-            - if @item.persisted?
-              .js-file_group{"data-index" => "#{@item.item_imgs.count}"}
-                = file_field_tag :img, name: "item[item_imgs_attributes][#{@item.item_imgs.count}][img]", class: 'js-file'
-                -# .js-remove 削除
+        .image__area
+          = f.file_field :image, class: 'image_up'
       .about__item
         .puts__items__area
           .items__name__area 商品名
@@ -44,6 +28,7 @@
               .puts__category カテゴリー
               .logo__item 必須
             .categories__name
+              -# カテゴリー機能実装の際、使用----------------------------
               -# = f.select :category_id, {}, class:'bar__category'
               -# = f.select :category_id, {}, class:'bar__category_2'
               = f.select :category_id, [["小カテゴリー",356]],{}, class:'bar__category_3'
@@ -59,7 +44,6 @@
               .puts__condition 商品の状態
               .logo__item 必須
             = f.select :status, Item.statuses.keys, {prompt:"--"}, class:'bar__conditions'
-            -# trade_step
             = f.select :trade_step, Item.trade_steps.keys, {}, class:"hidden"
       .item__price
         .about__price
@@ -73,6 +57,7 @@
               .delivery 配送の方法
               .logo__item 必須
             = f.select :delivery, Item.delivery_1s.keys, {prompt:"--"}, class: 'bar__delivery'
+            -# 配送方法を条件分岐する際に使用−−−−−−−−−−---------
             -# .shipping__delivery_2
             -#   .delivery_2 配送の方法
             -#   .logo__item 必須
@@ -99,14 +84,6 @@
             .tax 販売手数料（10%）
             .profit 販売利益
       .bottum__area
-        .text__arart
-          %p.text
-          禁止されている出品、行為を必ずご確認ください。
-          %br/
-          またブランド品でシリアルナンバー等がある場合はご記載ください。偽ブランドの販売は犯罪であり処罰される可能性があります。
-          %br/
-          また、出品をもちまして加盟店規約に同意したことになります
-        = f.submit "出品する", class: 'item__bottom'
+        = f.submit "変更する", class: 'item__bottom'
         %button.back__bottom{type: "submit"} もどる
 = render 'layouts/sub_footer'
-

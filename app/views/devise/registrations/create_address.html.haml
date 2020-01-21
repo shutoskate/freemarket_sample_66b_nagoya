@@ -1,0 +1,26 @@
+%header
+  %h1
+    = link_to root_path do
+      = image_tag "fmarket_logo_red.svg", alt:"mercari"
+
+  %nav.progress-bar.signup-bar
+    %ol
+      %li.active
+        会員情報
+        .progress-status.progress-status-first
+      %li.active
+        お届け先住所入力
+        .progress-status
+      %li.active
+        完了
+        .progress-status.progress-status-last
+%main
+  .contents
+    .contents__done
+      .type-done 会員登録完了
+      .type__thx ありがとうございます。
+      .type__regi 会員登録が完了しました。
+      .red__logo-start
+        = link_to "F marketを始めるはじめる", "/", class:"start__app"
+      = image_tag "applogo.jpeg", class:"background__logo", size: "460x250"
+= render "layouts/sub_footer"

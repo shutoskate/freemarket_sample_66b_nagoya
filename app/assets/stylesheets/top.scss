@@ -81,23 +81,19 @@
     &__category-list{
       max-width: 1000px;
       margin-top: 60px;
-      &__top{
-        display: flex;
-        justify-content: space-between;
-        &--name{
-          font-size:  15px;
-        }
-        &--more{
-          line-height: 60px;
-          text-align: right;
-          .more{
-            text-decoration: none;
-            color: #0095ee;
-          }
+      &--more{
+        line-height: 60px;
+        text-align: right;
+        .more{
+          text-decoration: none;
+          color: #0095ee;
         }
       }
-      &--imgs{
-        display: flex;
+    &__category-box{
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 50px;
         .product {
           height: 250px;
           width: 20%;
@@ -115,53 +111,53 @@
           &__wrap:hover{
             box-sizing: content-box;
             box-shadow: 0 0 2px blue;
-            z-index: 1;
-          }
-          &__img{
+          z-index: 1;
+        }
+        &__img{
+          position: absolute;
+          height: 100%;
+          min-height: 180px;
+          overflow: hidden;
+          &__price{
+            text-decoration: none;
+            color: white;
             position: absolute;
-            height: 100%;
-            min-height: 180px;
-            overflow: hidden;
-            &__price{
-              text-decoration: none;
-              color: white;
-              position: absolute;
-              height: 28px;
-              width: 80px;
-              font-size: 17px;
-              text-align: center;
-              line-height: 28px;
-              background-color: rgba(0, 0, 0, 0.315);
-              left: 0;
-              bottom: 70px;
-              border-radius : 0 15px 15px 0;
-            }
+            height: 28px;
+            width: 80px;
+            font-size: 17px;
+            text-align: center;
+            line-height: 28px;
+            background-color: rgba(0, 0, 0, 0.315);
+            left: 0;
+            bottom: 70px;
+            border-radius : 0 15px 15px 0;
           }
-          &__name {
-            height: 64px;
-            width: 180px;
-            box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
-            overflow: hidden;
-            position: absolute;
-            bottom: 0px;
-            .name {
-              height:64px;
-              width: 180px;
-              padding: 8px 15px;
-              background-color: #fff;
-              color: #333;
-              text-overflow: ellipsis;
-              line-height: 25px;
-              text-decoration: none;
-              color: black;
-              font-size: 14px;
-              word-break: break-all;
-            }
+        }
+        &__name {
+          height: 64px;
+          width: 100%;
+          box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+          overflow: hidden;
+          position: absolute;
+          bottom: 0px;
+          .name {
+            height:64px;
+            width: 100%;
+            padding: 8px 15px;
+            background-color: #fff;
+            color: #333;
+            text-overflow: ellipsis;
+            line-height: 25px;
+            text-decoration: none;
+            color: black;
+            font-size: 14px;
+            word-break: break-all;
           }
         }
       }
     }
   }
+}
 }
 .exhibition1{
   position: fixed;

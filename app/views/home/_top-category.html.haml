@@ -1,98 +1,21 @@
--g = 'https://wired.jp/wp-content/uploads/2018/01/GettyImages-522585140.jpg'
-
-
-.top__category-item__category-list--imgs
-  .product
-    .product__wrap
-      = link_to href:"#" do
-        = image_tag "IMG_34498.jpg", class:"img"
-        .product__img__price
-          %p.price "¥ 5,000"
-        .product__name
-          %p.name
-            学名:ゴリラゴリラゴリラaaaaaaaaaaaaaaaaaaaaaaaｓ
-  .product
-    .product__wrap
-      = link_to href:"#" do
-        = image_tag "IMG_34498.jpg", class:"img"
-        .product__img__price
-          %p.price "¥ 5,000"
-        .product__name
-          %p.name
-            学名:ゴリラゴリラゴリラaaaaaaa
-  .product
-    .product__wrap
-      = link_to href:"#" do
-        = image_tag "IMG_34498.jpg", class:"img"
-        .product__img__price
-          %p.price "¥ 5,000"
-        .product__name
-          %p.name
-            学名:ゴリラゴリラゴリラaaaaaaa
-  .product
-    .product__wrap
-      = link_to href:"#" do
-        = image_tag "IMG_34498.jpg", class:"img"
-        .product__img__price
-          %p.price "¥ 5,000"
-        .product__name
-          %p.name
-            学名:ゴリラゴリラゴリラaaaaaaa
-  .product
-    .product__wrap
-      = link_to href:"#" do
-        = image_tag "IMG_34498.jpg", class:"img"
-        .product__img__price
-          %p.price "¥ 5,000"
-        .product__name
-          %p.name
-            学名:ゴリラゴリラゴリラaaaaaaa
-
--#人気カテゴリー名1　二行目-------------------
-.top__category-item__category-list--imgs
-  .product
-    .product__wrap
-      = link_to href:"#" do
-        = image_tag "IMG_34498.jpg", class:"img"
-        .product__img__price
-          %p.price "¥ 5,000"
-        .product__name
-          %p.name
-            学名:ゴリラゴリラゴリラaaaaaaa
-  .product
-    .product__wrap
-      = link_to href:"#" do
-        = image_tag "IMG_34498.jpg", class:"img"
-        .product__img__price
-          %p.price "¥ 5,000"
-        .product__name
-          %p.name
-            学名:ゴリラゴリラゴリラaaaaaaa
-  .product
-    .product__wrap
-      = link_to href:"#" do
-        = image_tag "IMG_34498.jpg", class:"img"
-        .product__img__price
-          %p.price "¥ 5,000"
-        .product__name
-          %p.name
-            学名:ゴリラゴリラゴリラaaaaaaa
-  .product
-    .product__wrap
-      = link_to href:"#" do
-        = image_tag "IMG_34498.jpg", class:"img"
-        .product__img__price
-          %p.price "¥ 5,000"
-        .product__name
-          %p.name
-            学名:ゴリラゴリラゴリラaaaaaaa
-  .product
-    .product__wrap
-      = link_to href:"#" do
-        = image_tag "IMG_34498.jpg", class:"img"
-        .product__img__price
-          %p.price "¥ 5,000"
-        .product__name
-          %p.name
-            学名:ゴリラゴリラゴリラaaaaaaa
-      = link_to "ゴリラ10", "#",class:"name"
+- @popular_categories.each do |item|
+  %h3
+    - if Category.find(item[0][:category_id]).parent.parent == nil
+      = Category.find(item[0][:category_id]).parent.name
+    - else
+      = Category.find(item[0][:category_id]).parent.parent.name
+  .top__category-item__category-list--more
+    = link_to "もっとみる >", "#" , class:"more"
+  .top__category-item__category-list__category-box
+    - item.first(10).each do |i|
+      .product
+        .product__wrap
+          = link_to item_path(i) do
+            = image_tag "IMG_34498.jpg", class:"img"
+            .product__img__price
+              %p.price 
+                ¥
+                = i[:price].to_s(:delimited, delimiter: ',')
+            .product__name
+              %p.name
+                = i[:name]

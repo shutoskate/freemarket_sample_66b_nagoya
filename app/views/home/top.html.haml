@@ -8,7 +8,7 @@
         %h2 スマホでかんたん
         %h2 フリマアプリ
         .advertisement-fonts2
-          %h2 メルカリはスマホからすぐに出品できる
+          %h2 Fマーケはスマホからすぐに出品できる
           %h2 購入時も安心な独自システムのアプリです
         .advertisement-img
           = link_to "https://apps.apple.com/jp/app/id667861049?l=ja", class: "apple" do
@@ -26,48 +26,15 @@
     .top__category__font
       %h2 人気のカテゴリー
       .top__category__font--list
-        .select-list 人気カテゴリー名1
-        .select-list 人気カテゴリー名2
-        .select-list 人気カテゴリー名3
-        .select-list 人気カテゴリー名4
+        .select-list レディース
+        .select-list メンズ
+        .select-list 家電・スマホ・カメラ
+        .select-list おもちゃ・ホビー・グッズ
 
   -# 人気カテゴリー-------------------
   .top__category-item
     .top__category-item__category-list
-      .top__category-item__category-list__top
-        .top__category-item__category-list__top--name0
-          %h3 人気カテゴリー名その1
-        .top__category-item__category-list__top--more
-          = link_to "もっとみる >", "#", class:"more"
       = render "top-category"
-
-  .top__category-item
-    .top__category-item__category-list
-      .top__category-item__category-list__top
-        .top__category-item__category-list__top--name1
-          %h3 人気カテゴリー名その2
-        .top__category-item__category-list__top--more
-          = link_to "もっとみる >", "#", class:"more"
-      = render "top-category"
-
-  .top__category-item
-    .top__category-item__category-list
-      .top__category-item__category-list__top
-        .top__category-item__category-list__top--name2
-          %h3 人気カテゴリー名その3
-        .top__category-item__category-list__top--more
-          = link_to "もっとみる >", "#", class:"more"
-      = render "top-category"
-
-  .top__category-item
-    .top__category-item__category-list
-      .top__category-item__category-list__top
-        .top__category-item__category-list__top--name3
-          %h3 人気カテゴリー名その4
-        .top__category-item__category-list__top--more
-          = link_to "もっとみる >", "#", class:"more"
-      = render "top-category"
-
 
   -#  以下ブランド ----------------------------------
 
@@ -75,46 +42,20 @@
     .top__category__font
       %h2 人気のブランド
       .top__category__font--list
-        .select-list 人気ブランド名1
-        .select-list 人気ブランド名2
-        .select-list 人気ブランド名3
-        .select-list 人気ブランド名4
+        .select-list 
+          = @brands1_items[0][:brand_id]
+        .select-list 
+          = @brands2_items[0][:brand_id]
+        .select-list
+          = @brands3_items[0][:brand_id]
+        .select-list
+          = @brands4_items[0][:brand_id]
         
   -# 人気のブランド--------------------------------------
   .top__category-item
     .top__category-item__category-list
       .top__category-item__category-list__top
-        .top__category-item__category-list__top--name4
-          %h3 人気ブランド名その1
-        .top__category-item__category-list__top--more
-          = link_to "もっとみる >", "#", class:"more"
-      = render "top-category"
+      = render "top-brand"
 
-  .top__category-item
-    .top__category-item__category-list
-      .top__category-item__category-list__top
-        .top__category-item__category-list__top--name5
-          %h3 人気ブランド名その2
-        .top__category-item__category-list__top--more
-          = link_to "もっとみる >", "#", class:"more"
-      = render "top-category"
-
-  .top__category-item
-    .top__category-item__category-list
-      .top__category-item__category-list__top
-        .top__category-item__category-list__top--name6
-          %h3 人気カテゴリー名その3
-        .top__category-item__category-list__top--more
-          = link_to "もっとみる >", "#", class:"more"
-      = render "top-category"
-
-  .top__category-item
-    .top__category-item__category-list
-      .top__category-item__category-list__top
-        .top__category-item__category-list__top--name7
-          %h3 人気ブランド名その4
-        .top__category-item__category-list__top--more
-          = link_to "もっとみる >", "#", class:"more"
-      = render "top-category"
 = render 'layouts/footer'
 = render 'layouts/exhibition'

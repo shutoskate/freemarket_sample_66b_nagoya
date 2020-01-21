@@ -1,4 +1,19 @@
-= render "registration_header"
+%header
+  %h1
+    = link_to root_path do
+      = image_tag "fmarket_logo_red.svg", alt:"mercari"
+
+  %nav.progress-bar.signup-bar
+    %ol
+      %li.active
+        会員情報
+        .progress-status.progress-status-first
+      %li.active
+        お届け先住所入力
+        .progress-status
+      %li.active
+        完了
+        .progress-status.progress-status-last
 %main
   .contents
     .contents__done

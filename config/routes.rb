@@ -15,14 +15,12 @@ Rails.application.routes.draw do
     get "users/sign_out" => "users/sessions#destroy"
   end
   resources :users, only: [:edit, :update]
-  resources :items
+  resources :items, only: [:show, :new, :create, :edit, :update, :destroy]
   get "/mypage" => "users#mypage"
   get "/mypage/profile" => "users#profile"
   post "/mypage/profile" => "users#profile_update"
   get "/logout" => "users#logout"
-  get "/sell" => "items#new"
-  get "/buy/:id" => "items#buy"
-  get "/:id" => "items#show"
+  get "/buy/:id" => "items#buy", as: :buy
   post "/stop/:id" => "items#stop", as: :stop
   post "/start/:id" => "items#start", as: :start
 end

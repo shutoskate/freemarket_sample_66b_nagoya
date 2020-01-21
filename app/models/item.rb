@@ -7,6 +7,8 @@ class Item < ApplicationRecord
   has_many :item_imgs
   has_one :trade
 
+  accepts_nested_attributes_for :item_imgs, allow_destroy: true
+
   with_options presence: true do
     validates :name
     validates :size

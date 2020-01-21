@@ -34,7 +34,7 @@
   -# 人気カテゴリー-------------------
   .top__category-item
     .top__category-item__category-list
-      = render "top-category"
+      = render partial: "top-category", collection: @popular_categories, as: "item"
 
   -#  以下ブランド ----------------------------------
 
@@ -55,7 +55,7 @@
   .top__category-item
     .top__category-item__category-list
       .top__category-item__category-list__top
-      = render "top-brand"
+      = render partial: "top-brand" , collection: @popular_brand_items, as: "brand"
 
 = render 'layouts/footer'
 = render 'layouts/exhibition'

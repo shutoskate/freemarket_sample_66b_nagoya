@@ -10,7 +10,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
 ActiveRecord::Schema.define(version: 20200121021718) do
 
   create_table "addresses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -25,7 +24,6 @@ ActiveRecord::Schema.define(version: 20200121021718) do
     t.datetime "updated_at",                null: false
     t.index ["user_id"], name: "index_addresses_on_user_id", using: :btree
   end
-
 
   create_table "brands", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name",       null: false
@@ -83,7 +81,7 @@ ActiveRecord::Schema.define(version: 20200121021718) do
     t.string   "family_name",                                       null: false
     t.string   "first_name",                                        null: false
     t.string   "family_name_kana",                                  null: false
-    t.string   "first_name_kana",                                   null: false   
+    t.string   "first_name_kana",                                   null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -96,11 +94,8 @@ ActiveRecord::Schema.define(version: 20200121021718) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
-
-  add_foreign_key "item_imgs", "items"
-
   add_foreign_key "addresses", "users"
-
+  add_foreign_key "item_imgs", "items"
   add_foreign_key "items", "brands"
   add_foreign_key "items", "categories"
   add_foreign_key "items", "users", column: "seller_id"

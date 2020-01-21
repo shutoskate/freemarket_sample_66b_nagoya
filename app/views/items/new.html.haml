@@ -8,8 +8,24 @@
           .image__name 出品画像
           .logo__item 必須
         %p.text__image 最大10枚までアップロードできます
-        .image__area
-          = f.file_field :image, class: 'image_up'
+        #image__area
+          .label-content
+          #previews
+            - if @item.persisted?
+              - @item.item_imgs.each_with_index do |image, i|
+                = image_tag image.img.url, data: { index: i }, width: "100", height: '100'
+          = f.fields_for :item_imgs do |i|
+            .js-file_group{"data-index" => "#{i.index}"}
+              .file_area
+                = i.label :img, class: 'js-area'
+                = i.file_field :img, class: 'js-file'
+                %span.js-remove 削除
+            - if @item.persisted?
+              = i.check_box :_destroy, data:{ index: i.index }, class: 'hidden-destroy'
+            - if @item.persisted?
+              .js-file_group{"data-index" => "#{@item.item_imgs.count}"}
+                = file_field_tag :img, name: "item[item_imgs_attributes][#{@item.item_imgs.count}][img]", class: 'js-file'
+                -# .js-remove 削除
       .about__item
         .puts__items__area
           .items__name__area 商品名

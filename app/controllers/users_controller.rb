@@ -33,6 +33,10 @@ class UsersController < ApplicationController
     end
   end
 
+  def items
+    @items = Item.where(seller_id: current_user.id)
+  end
+
   def logout
   end
 

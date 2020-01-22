@@ -45,7 +45,7 @@ main {
         padding: 40px 16px;
       }
       &__text{
-        min-height: 272px;
+        height: 200px;
         .text{
           min-height: 200px;
           width: 668px;
@@ -58,6 +58,7 @@ main {
           margin-top: 16px;
           position: relative;
           text-align: center;
+          margin-top: 40px;
           .edit{
             position: absolute;
             background-color: red;

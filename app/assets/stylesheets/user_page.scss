@@ -102,10 +102,9 @@ h3{
   color: #333;
   line-height: 1;
 }
-
 .mypage-tab-container {
-  margin: 40px 0 0;
   background: #fff;
+  width: 700px;
   .mypage-tab-head {
     padding: 0 16px;
     background: #fafafa;
@@ -148,6 +147,118 @@ h3{
       text-align: center;
       font-size: 16px;
       color: #ccc;
+    }
+  }  
+  // 出品中ーーーーーーーーーーーーーーーーー
+  .mypage-tab-head {
+    padding: 0 16px;
+    background: #fafafa;
+    font-size: 16px;
+    line-height: 72px;
   }
+  .listing-tabs {
+    border: 0;
+    background: #eee;
+    font-size: 0;
+    & .active {
+      background: #fff;
+    }
+    li {
+      width: 33.3%;
+      display: inline-block;
+      text-align: center;
+      vertical-align: top;
+      h3 {
+        font-size: 22px;
+        a {
+          text-decoration: none;
+          position: relative;
+          display: block;
+          color: #333;
+          font-size: 16px;
+          line-height: 72px;
+        }
+      }
+    }
+    li.active a{
+      border-top: 2px solid #ea352d;
+    }
+  }
+  .tab-content {
+    display: block;
+    .mypage-item-list li {
+      position: relative;
+      a {
+        text-decoration: none;
+      }
+      &:first-child {
+        border-bottom: 1px solid #eee;
+        color: #333;
+      }
+      .mypage-item-link {
+        display: block;
+        height: 80px;
+        padding: 16px;
+        color: #333;
+      }
+      figure {
+        position: relative;
+        overflow: hidden;
+        float: left;
+        width: 48px;
+        height: 48px;
+        img {
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          z-index: 1;
+          width: 100%;
+        }
+      }
+      .mypage-item-body {
+        margin-left: 68px;
+        .mypage-item-text {
+          font-size: 14px;
+          overflow: hidden;
+          display: block;
+          text-overflow: ellipsis;
+        }
+        .listing-item-count {
+          margin: 0 6px 0 0;
+          font-size: 16px;
+          
+          i {
+            color: #ccc;
+          }
+          & span {
+            vertical-align: middle;
+            margin: 0 0 0 2px;
+            font-size: 16px;
+            color: #888;
+          }
+          .mypage-item-status {
+            display: inline-block;
+            margin: 8px 0 0 0;
+            padding: 5px 6px;
+            border-radius: 2px;
+            font: 66.6%;
+            color: #fff;
+            font-weight: bold;
+          }
+          .action-required {
+            background: #ea352d;
+            font-size: 12px;
+          }
+        }
+        .fa-chevron-right {
+          position: absolute;
+          top: 50%;
+          right: 16px;
+          color: #333;
+        }
+      }
+    }
   }
 }

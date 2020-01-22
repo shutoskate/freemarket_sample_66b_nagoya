@@ -1,0 +1,20 @@
+= render 'layouts/header'
+%main
+  .content
+    = render "layouts/sideber"
+    %section.mypage-tab-container
+      %h2.mypage-tab-head
+        出品した商品
+      %ul.listing-tabs
+        %li.active
+          %h3
+            = link_to "出品中", {}, data_toggle:"tab"
+        %li
+          %h3
+            = link_to "取引中", {}
+        %li
+          %h3
+            = link_to "売却済み", {}
+      = render partial: "item_list", collection: @items, as: "item"
+= render 'layouts/footer'
+= render 'layouts/exhibition'

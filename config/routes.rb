@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   get "/mypage" => "users#mypage"
   get "/mypage/profile" => "users#profile"
   post "/mypage/profile" => "users#profile_update"
+  get "/mypage/items" => "users#items"
   get "/logout" => "users#logout"
   get "/buy/:id" => "items#buy", as: :buy
   post "/stop/:id" => "items#stop", as: :stop

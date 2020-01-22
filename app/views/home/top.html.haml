@@ -1,6 +1,5 @@
 = render 'layouts/header'
 .top
-
   -# 広告------------------------------
   .top__advertising
     .advertisement-box
@@ -26,10 +25,10 @@
     .top__category__font
       %h2 人気のカテゴリー
       .top__category__font--list
-        .select-list レディース
-        .select-list メンズ
-        .select-list 家電・スマホ・カメラ
-        .select-list おもちゃ・ホビー・グッズ
+        %a{href: "#レディース", class: "select-list"} レディース
+        %a{href: "#メンズ", class: "select-list"} メンズ
+        %a{href: "#家電・スマホ・カメラ", class: "select-list"} 家電・スマホ・カメラ
+        %a{href: "#おもちゃ・ホビー・グッズ", class: "select-list"} おもちゃ・ホビー・グッズ
 
   -# 人気カテゴリー-------------------
   .top__category-item
@@ -42,13 +41,13 @@
     .top__category__font
       %h2 人気のブランド
       .top__category__font--list
-        .select-list 
+        %a{href: "##{@brands1_items[0][:brand_id]}", class: "select-list"}
           = @brands1_items[0][:brand_id]
-        .select-list 
+        %a{href: "##{@brands2_items[0][:brand_id]}", class: "select-list"}
           = @brands2_items[0][:brand_id]
-        .select-list
+        %a{href: "##{@brands3_items[0][:brand_id]}", class: "select-list"}
           = @brands3_items[0][:brand_id]
-        .select-list
+        %a{href: "##{@brands4_items[0][:brand_id]}", class: "select-list"}
           = @brands4_items[0][:brand_id]
         
   -# 人気のブランド--------------------------------------

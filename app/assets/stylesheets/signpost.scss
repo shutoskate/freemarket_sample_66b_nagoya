@@ -1,0 +1,15 @@
+.breadcrumb{
+  margin: 0 26.5px ;
+  padding: 16px 0 ;
+  .breadcrumbs{
+    font-size: 14px ;
+    .a{
+      text-decoration: none ;
+      
+    }
+    .current{
+      font-weight: 600 ;
+      padding-left: 5px;
+    }
+  }
+}

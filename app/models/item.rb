@@ -4,7 +4,7 @@ class Item < ApplicationRecord
   belongs_to :category
   has_many :likes
   has_many :comments
-  has_many :item_imgs
+  has_many :item_imgs, dependent: :destroy
   has_one :trade
 
   accepts_nested_attributes_for :item_imgs, allow_destroy: true

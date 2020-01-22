@@ -3,7 +3,7 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-  background-image: url(footer-back.jpg);
+  background-image: image-url("footer-back.jpg");
   &__box{
     margin: 0 auto;
     width: 990px;

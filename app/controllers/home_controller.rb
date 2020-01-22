@@ -10,10 +10,10 @@ class HomeController < ApplicationController
     # アイテムから、ブランドidごとに集計して、上位四つのブランドidと数の配列を取得
     @brand_list = Item.group(:brand_id).count.sort_by{|k,v| v}.reverse.first(4) 
     @popular_brands = @brand_list.map {|item| item[0]}
-    @brands1_items = Item.where(brand_id: @popular_brands[0]).last(10)
-    @brands2_items = Item.where(brand_id: @popular_brands[1]).last(10)
-    @brands3_items = Item.where(brand_id: @popular_brands[2]).last(10)
-    @brands4_items = Item.where(brand_id: @popular_brands[3]).last(10)
+    @brands1_items = Item.where(brand_id: @popular_brands[0]).last(10).reverse
+    @brands2_items = Item.where(brand_id: @popular_brands[1]).last(10).reverse
+    @brands3_items = Item.where(brand_id: @popular_brands[2]).last(10).reverse
+    @brands4_items = Item.where(brand_id: @popular_brands[3]).last(10).reverse
     @popular_brand_items = [@brands1_items, @brands2_items, @brands3_items, @brands4_items]
 
   end
@@ -27,7 +27,7 @@ class HomeController < ApplicationController
     ].flatten.compact
     @items_category = []
     @categories.each do |category|
-      @items_category << (Item.where(category_id: category.id).compact).last(10)
+      @items_category << (Item.where(category_id: category.id).compact).last(10).reverse
       @items_category = @items_category.delete_if(&:empty?)
     end
     @items_category = @items_category[0]

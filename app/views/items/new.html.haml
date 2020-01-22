@@ -1,112 +1,114 @@
 = render 'layouts/sub_header'
 %main
-  = form_for(@item, url: items_path, html: {method: "post"})do |f|
-    .contents__items
-      .puts__items 商品の情報入力
-      .item__images
-        .image__name__area
-          .image__name 出品画像
-          .logo__item 必須
-        %p.text__image 最大10枚までアップロードできます
-        #image__area
-          .label-content
-          #previews
-            - if @item.persisted?
-              - @item.item_imgs.each_with_index do |image, i|
-                = image_tag image.img.url, data: { index: i }, width: "100", height: '100'
-          = f.fields_for :item_imgs do |i|
-            .js-file_group{"data-index" => "#{i.index}"}
-              .file_area
-                = i.label :img, class: 'js-area'
-                = i.file_field :img, class: 'js-file'
-                %span.js-remove 削除
-            - if @item.persisted?
-              = i.check_box :_destroy, data:{ index: i.index }, class: 'hidden-destroy'
-            - if @item.persisted?
-              .js-file_group{"data-index" => "#{@item.item_imgs.count}"}
-                = file_field_tag :img, name: "item[item_imgs_attributes][#{@item.item_imgs.count}][img]", class: 'js-file'
-                -# .js-remove 削除
-      .about__item
-        .puts__items__area
-          .items__name__area 商品名
-          .logo__item 必須
-        = f.text_field :name, class: 'puts__item__name', placeholder: '商品名（必須40字まで'
-        .item__detail
-          .puts__items__area
-            .items__name__area 商品の説明
+  .container
+    = form_for(@item, url: items_path, html: {method: "post"})do |f|
+      .contents__items
+        .puts__items 商品の情報入力
+        .item__images
+          .image__name__area
+            .image__name 出品画像
             .logo__item 必須
-        = f.text_area :item_text, class: 'puts__item__detail', placeholder: '商品名の説明(必須1000文字以内)（色、素材、重さ、定価、注意点など）例）2010年頃購入しました。傷汚れありません。'      
-      .items__details
-        .about__items
-          .about__puts 商品の詳細
-          .categories
-            .category__area
-              .puts__category カテゴリー
+          %p.text__image 最大10枚までアップロードできます
+          #image__area
+            #previews
+              - if @item.persisted?
+                - @item.item_imgs.each_with_index do |image, i|
+                  = image_tag image.img.url, data: { index: i }
+            #inputs
+              = f.fields_for :item_imgs do |i|
+                .js-file_group{"data-index" => "#{i.index}"}
+                  %label.js-area
+                    編集
+                    = i.file_field :img, class: 'js-file'
+                  %label.js-area
+                    %span.js-remove 削除
+                - if @item.persisted?
+                  = i.check_box :_destroy, data:{ index: i.index }, class: 'hidden-destroy'
+                - if @item.persisted?
+                  .js-file_group{"data-index" => "#{@item.item_imgs.count}"}
+                    = file_field_tag :img, name: "item[item_imgs_attributes][#{@item.item_imgs.count}][img]", class: 'js-file'
+                    .js-remove 削除
+        .about__item
+          .puts__items__area
+            .items__name__area 商品名
+            .logo__item 必須
+          = f.text_field :name, class: 'puts__item__name', placeholder: '商品名（必須40字まで'
+          .item__detail
+            .puts__items__area
+              .items__name__area 商品の説明
               .logo__item 必須
-            .categories__name
-              -# = f.select :category_id, {}, class:'bar__category'
-              -# = f.select :category_id, {}, class:'bar__category_2'
-              = f.select :category_id, [["小カテゴリー",356]],{}, class:'bar__category_3'
-            .size__area
-              .puts__size サイズ
-              .logo__item 必須
-            = f.select :size, Item.sizes.keys, {prompt:"--"}, class:'bar__size'
-            .brand__area
-              .puts__brand ブランド名
-              .logo__item__no 任意
-            = f.select :brand_id,Item.brand_id.options,{}, class:'bar__brand'
-            .condition__area
-              .puts__condition 商品の状態
-              .logo__item 必須
-            = f.select :status, Item.statuses.keys, {prompt:"--"}, class:'bar__conditions'
-            -# trade_step
-            = f.select :trade_step, Item.trade_steps.keys, {}, class:"hidden"
-      .item__price
-        .about__price
-          .about__carry 配送について
-          .how__delivery
-            .shipping__charge
-              .shipping 配送料の負担
-              .logo__item 必須
-            = f.select :charge, Item.charges.keys,{prompt:"--"}, class:'bar__charge'
-            .shipping__delivery
-              .delivery 配送の方法
-              .logo__item 必須
-            = f.select :delivery, Item.delivery_1s.keys, {prompt:"--"}, class: 'bar__delivery'
-            -# .shipping__delivery_2
-            -#   .delivery_2 配送の方法
-            -#   .logo__item 必須
-            -# = f.select :delivery, Item.delivery_2s.keys, {prompt:"--"}, class: 'bar__delivery'
-            .shipping__area
-              .areas 発送元の地域
-              .logo__item 必須
-            = f.select :prefecture, Item.prefectures.keys, {prompt:"--"}, class: 'bar__area'
-            .shipping__day
-              .day_to 発送までの日数
-              .logo__item 必須
-            = f.select :term, Item.terms.keys, {prompt:"--"}, class: 'bar__day'
-      .item__price__tax
-        .price__tax
-          .what__price 販売価格（300~9,999,999)
-          .price
-            .price__what
-              .price__true
-                .view__price 価格
+          = f.text_area :item_text, class: 'puts__item__detail', placeholder: '商品名の説明(必須1000文字以内)（色、素材、重さ、定価、注意点など）例）2010年頃購入しました。傷汚れありません。'      
+        .items__details
+          .about__items
+            .about__puts 商品の詳細
+            .categories
+              .category__area
+                .puts__category カテゴリー
                 .logo__item 必須
-              .puts__price
-                .jpn-money ¥
-                = f.number_field :price, class: 'bar__price', placeholder: '例）300'
-            .tax 販売手数料（10%）
-            .profit 販売利益
-      .bottum__area
-        .text__arart
-          %p.text
-          禁止されている出品、行為を必ずご確認ください。
-          %br/
-          またブランド品でシリアルナンバー等がある場合はご記載ください。偽ブランドの販売は犯罪であり処罰される可能性があります。
-          %br/
-          また、出品をもちまして加盟店規約に同意したことになります
-        = f.submit "出品する", class: 'item__bottom'
-        %button.back__bottom{type: "submit"} もどる
+              .categories__name
+                -# = f.select :category_id, {}, class:'bar__category'
+                -# = f.select :category_id, {}, class:'bar__category_2'
+                = f.select :category_id, [["小カテゴリー",356]],{}, class:'bar__category_3'
+              .size__area
+                .puts__size サイズ
+                .logo__item 必須
+              = f.select :size, Item.sizes.keys, {prompt:"--"}, class:'bar__size'
+              .brand__area
+                .puts__brand ブランド名
+                .logo__item__no 任意
+              = f.select :brand_id,Item.brand_id.options,{}, class:'bar__brand'
+              .condition__area
+                .puts__condition 商品の状態
+                .logo__item 必須
+              = f.select :status, Item.statuses.keys, {prompt:"--"}, class:'bar__conditions'
+              -# trade_step
+              = f.select :trade_step, Item.trade_steps.keys, {}, class:"hidden"
+        .item__price
+          .about__price
+            .about__carry 配送について
+            .how__delivery
+              .shipping__charge
+                .shipping 配送料の負担
+                .logo__item 必須
+              = f.select :charge, Item.charges.keys,{prompt:"--"}, class:'bar__charge'
+              .shipping__delivery
+                .delivery 配送の方法
+                .logo__item 必須
+              = f.select :delivery, Item.delivery_1s.keys, {prompt:"--"}, class: 'bar__delivery'
+              -# .shipping__delivery_2
+              -#   .delivery_2 配送の方法
+              -#   .logo__item 必須
+              -# = f.select :delivery, Item.delivery_2s.keys, {prompt:"--"}, class: 'bar__delivery'
+              .shipping__area
+                .areas 発送元の地域
+                .logo__item 必須
+              = f.select :prefecture, Item.prefectures.keys, {prompt:"--"}, class: 'bar__area'
+              .shipping__day
+                .day_to 発送までの日数
+                .logo__item 必須
+              = f.select :term, Item.terms.keys, {prompt:"--"}, class: 'bar__day'
+        .item__price__tax
+          .price__tax
+            .what__price 販売価格（300~9,999,999)
+            .price
+              .price__what
+                .price__true
+                  .view__price 価格
+                  .logo__item 必須
+                .puts__price
+                  .jpn-money ¥
+                  = f.number_field :price, class: 'bar__price', placeholder: '例）300'
+              .tax 販売手数料（10%）
+              .profit 販売利益
+        .bottum__area
+          .text__arart
+            %p.text
+            禁止されている出品、行為を必ずご確認ください。
+            %br/
+            またブランド品でシリアルナンバー等がある場合はご記載ください。偽ブランドの販売は犯罪であり処罰される可能性があります。
+            %br/
+            また、出品をもちまして加盟店規約に同意したことになります
+          = f.submit "出品する", class: 'item__bottom'
+          %button.back__bottom{type: "submit"} もどる
 = render 'layouts/sub_footer'
 

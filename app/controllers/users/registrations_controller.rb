@@ -39,6 +39,19 @@ class Users::RegistrationsController < Devise::RegistrationsController
     end
   end
 
+  def edit_address
+    @address = Address.find_by(user_id: current_user.id)
+  end
+
+  def update_address
+    @address = Address.find_by(user_id: current_user.id)
+    if @address.update(address_params)
+      redirect_to mypage_identification_path
+    else
+      render :edit_address
+    end
+  end
+
   # GET /resource/edit
   # def edit
   #   super
@@ -74,7 +87,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     end
 
     def address_params
-      params.require(:address).permit(:post_code, :prefecture, :city, :address, :master)
+      params.require(:address).permit(:post_code, :prefecture, :city, :address, :building, :master)
     end
 
   protected

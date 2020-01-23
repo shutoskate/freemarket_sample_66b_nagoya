@@ -18,7 +18,7 @@
         = image_tag "top-banner.png", class: "advertisement"
 
   -# 自分がいいねした商品
-  .top__like
+  -# .top__like
 
   -# カテゴリー表示----------------------
   .top__category
@@ -41,15 +41,10 @@
     .top__category__font
       %h2 人気のブランド
       .top__category__font--list
-        %a{href: "##{@brands1_items[0][:brand_id]}", class: "select-list"}
-          = @brands1_items[0][:brand_id]
-        %a{href: "##{@brands2_items[0][:brand_id]}", class: "select-list"}
-          = @brands2_items[0][:brand_id]
-        %a{href: "##{@brands3_items[0][:brand_id]}", class: "select-list"}
-          = @brands3_items[0][:brand_id]
-        %a{href: "##{@brands4_items[0][:brand_id]}", class: "select-list"}
-          = @brands4_items[0][:brand_id]
-        
+        - @popular_brand_items.each_with_index do |popular_brand, i|
+          %a{href: "#brand#{i}", class: "select-list"}
+            = popular_brand[0].brand_id
+
   -# 人気のブランド--------------------------------------
   .top__category-item
     .top__category-item__category-list

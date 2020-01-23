@@ -1,15 +1,18 @@
 .breadcrumb{
   margin: 0 26.5px ;
   padding: 16px 0 ;
-  .breadcrumbs{
+  li a{
     font-size: 14px ;
-    .a{
-      text-decoration: none ;
-      
-    }
-    .current{
-      font-weight: 600 ;
-      padding-left: 5px;
-    }
+    text-decoration: none ;
+    color: grey;
+  }
+  .current{
+    font-weight: 600 ;
+    padding-left: 5px;
+  }
+  li a:hover{
+    font-size: 14px ;
+    text-decoration: underline;
+    color: black;
   }
 }

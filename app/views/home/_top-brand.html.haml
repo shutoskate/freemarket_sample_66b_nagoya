@@ -1,5 +1,5 @@
-%div{id: "#{brand[0][:brand_id]}"}
-  = brand[0][:brand_id]
+%div{id: "brand#{brand_counter}"}
+= brand[0].brand_id
 .top__category-item__category-list--more
   = link_to "もっとみる >", "#" , class:"more"
 .top__category-item__category-list__category-box

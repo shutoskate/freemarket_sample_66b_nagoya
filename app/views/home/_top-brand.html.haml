@@ -1,0 +1,17 @@
+.brand_title{id: "brand#{brand_counter}"}
+= brand[0].brand_id
+.top__category-item__category-list--more
+  = link_to "もっとみる >", "#" , class:"more"
+.top__category-item__category-list__category-box
+  - brand.each do |item|
+    .product
+      .product__wrap
+        = link_to item_path(item) do
+          = image_tag "IMG_34498.jpg", class:"img"
+          .product__img__price
+            %p.price 
+              ¥
+              = item[:price].to_s(:delimited, delimiter: ',')
+          .product__name
+            %p.name
+              = item[:name]

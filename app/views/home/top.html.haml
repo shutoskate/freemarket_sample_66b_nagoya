@@ -1,6 +1,5 @@
 = render 'layouts/header'
 .top
-
   -# 広告------------------------------
   .top__advertising
     .advertisement-box
@@ -8,7 +7,7 @@
         %h2 スマホでかんたん
         %h2 フリマアプリ
         .advertisement-fonts2
-          %h2 メルカリはスマホからすぐに出品できる
+          %h2 Fマーケはスマホからすぐに出品できる
           %h2 購入時も安心な独自システムのアプリです
         .advertisement-img
           = link_to "https://apps.apple.com/jp/app/id667861049?l=ja", class: "apple" do
@@ -19,55 +18,22 @@
         = image_tag "top-banner.png", class: "advertisement"
 
   -# 自分がいいねした商品
-  .top__like
+  -# .top__like
 
   -# カテゴリー表示----------------------
   .top__category
     .top__category__font
       %h2 人気のカテゴリー
       .top__category__font--list
-        .select-list 人気カテゴリー名1
-        .select-list 人気カテゴリー名2
-        .select-list 人気カテゴリー名3
-        .select-list 人気カテゴリー名4
+        = link_to "レディース", "#レディース", class: "select-list" 
+        = link_to "メンズ", "#メンズ", class: "select-list" 
+        = link_to "家電・スマホ・カメラ", "#家電・スマホ・カメラ", class: "select-list" 
+        = link_to "おもちゃ・ホビー・グッズ", "#おもちゃ・ホビー・グッズ", class: "select-list" 
 
   -# 人気カテゴリー-------------------
   .top__category-item
     .top__category-item__category-list
-      .top__category-item__category-list__top
-        .top__category-item__category-list__top--name0
-          %h3 人気カテゴリー名その1
-        .top__category-item__category-list__top--more
-          = link_to "もっとみる >", "#", class:"more"
-      = render "top-category"
-
-  .top__category-item
-    .top__category-item__category-list
-      .top__category-item__category-list__top
-        .top__category-item__category-list__top--name1
-          %h3 人気カテゴリー名その2
-        .top__category-item__category-list__top--more
-          = link_to "もっとみる >", "#", class:"more"
-      = render "top-category"
-
-  .top__category-item
-    .top__category-item__category-list
-      .top__category-item__category-list__top
-        .top__category-item__category-list__top--name2
-          %h3 人気カテゴリー名その3
-        .top__category-item__category-list__top--more
-          = link_to "もっとみる >", "#", class:"more"
-      = render "top-category"
-
-  .top__category-item
-    .top__category-item__category-list
-      .top__category-item__category-list__top
-        .top__category-item__category-list__top--name3
-          %h3 人気カテゴリー名その4
-        .top__category-item__category-list__top--more
-          = link_to "もっとみる >", "#", class:"more"
-      = render "top-category"
-
+      = render partial: "top-category", collection: @popular_categories, as: "item"
 
   -#  以下ブランド ----------------------------------
 
@@ -75,46 +41,14 @@
     .top__category__font
       %h2 人気のブランド
       .top__category__font--list
-        .select-list 人気ブランド名1
-        .select-list 人気ブランド名2
-        .select-list 人気ブランド名3
-        .select-list 人気ブランド名4
-        
+        - @popular_brand_items.each_with_index do |popular_brand, i|
+          = link_to popular_brand[0].brand_id, "#brand#{i}", class: "select-list" 
+
   -# 人気のブランド--------------------------------------
   .top__category-item
     .top__category-item__category-list
       .top__category-item__category-list__top
-        .top__category-item__category-list__top--name4
-          %h3 人気ブランド名その1
-        .top__category-item__category-list__top--more
-          = link_to "もっとみる >", "#", class:"more"
-      = render "top-category"
+      = render partial: "top-brand" , collection: @popular_brand_items, as: "brand"
 
-  .top__category-item
-    .top__category-item__category-list
-      .top__category-item__category-list__top
-        .top__category-item__category-list__top--name5
-          %h3 人気ブランド名その2
-        .top__category-item__category-list__top--more
-          = link_to "もっとみる >", "#", class:"more"
-      = render "top-category"
-
-  .top__category-item
-    .top__category-item__category-list
-      .top__category-item__category-list__top
-        .top__category-item__category-list__top--name6
-          %h3 人気カテゴリー名その3
-        .top__category-item__category-list__top--more
-          = link_to "もっとみる >", "#", class:"more"
-      = render "top-category"
-
-  .top__category-item
-    .top__category-item__category-list
-      .top__category-item__category-list__top
-        .top__category-item__category-list__top--name7
-          %h3 人気ブランド名その4
-        .top__category-item__category-list__top--more
-          = link_to "もっとみる >", "#", class:"more"
-      = render "top-category"
 = render 'layouts/footer'
 = render 'layouts/exhibition'

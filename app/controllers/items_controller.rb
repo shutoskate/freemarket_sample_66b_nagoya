@@ -2,6 +2,7 @@ class ItemsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :buy, :edit, :update, :destroy,]
   before_action :set_item, only: [:show, :edit, :update, :destroy, :buy, :stop, :start]
   require 'enumerize'
+  require "payjp"
 
   def show
     if Category.find(@item.category_id).parent.parent
@@ -16,7 +17,6 @@ class ItemsController < ApplicationController
     @user = User.find(@item.seller_id)
     # 以下、imgテーブル作成次第表示----------------
     # @img = Item_imag.find(item_id: params[:id])
-
   end
 
   def new
@@ -54,7 +54,21 @@ class ItemsController < ApplicationController
 
   def buy
     @address = Address.find_by(user_id: current_user.id)
+
+    card = Card.where(user_id: current_user.id).first
+    #Cardテーブルは前回記事で作成、テーブルからpayjpの顧客IDを検索
+    if card.blank?
+      #登録された情報がない場合にカード登録画面に移動
+      redirect_to controller: "card", action: "new"
+    else
+      Payjp.api_key = "sk_test_3ff988f60aac8662127a1d34"
+      #保管した顧客IDでpayjpから情報取得
+      customer = Payjp::Customer.retrieve(card.customer_id)
+      #保管したカードIDでpayjpから情報取得、カード情報表示のためインスタンス変数に代入
+      @default_card_information = customer.cards.retrieve(card.card_id)
+    end
   end
+
 
   def stop
     @item.update_attribute(:trade_step, "出品停止")

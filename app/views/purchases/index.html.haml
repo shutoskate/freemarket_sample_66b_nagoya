@@ -17,7 +17,7 @@
               = @item.charge
       .buy-content.box
         .buy-content-inner
-          %form
+          .form
             .buy-price-box.box
               .buy-price-box-label 支払い金額
               .buy-price
@@ -54,5 +54,9 @@
                 = current_user.family_name
                 = current_user.first_name
             .buy-content
-              = link_to '購入する', item_purchase_index_path(:item_id)
+            = form_tag(action: :pay, method: :post) do
+              = submit_tag "購入する"
+              -# %button 購入する  
+            -# = form_for(@user, url: pay_item_purchase_index_path(:item_id), method: :post) do |f|
+            -#   f.submit 購入する
 = render "layouts/sub_footer"

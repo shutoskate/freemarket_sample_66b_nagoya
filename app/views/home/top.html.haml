@@ -1,6 +1,5 @@
 = render 'layouts/header'
 .top
-
   -# 広告------------------------------
   .top__advertising
     .advertisement-box
@@ -19,17 +18,17 @@
         = image_tag "top-banner.png", class: "advertisement"
 
   -# 自分がいいねした商品
-  .top__like
+  -# .top__like
 
   -# カテゴリー表示----------------------
   .top__category
     .top__category__font
       %h2 人気のカテゴリー
       .top__category__font--list
-        .select-list レディース
-        .select-list メンズ
-        .select-list 家電・スマホ・カメラ
-        .select-list おもちゃ・ホビー・グッズ
+        = link_to "レディース", "#レディース", class: "select-list" 
+        = link_to "メンズ", "#メンズ", class: "select-list" 
+        = link_to "家電・スマホ・カメラ", "#家電・スマホ・カメラ", class: "select-list" 
+        = link_to "おもちゃ・ホビー・グッズ", "#おもちゃ・ホビー・グッズ", class: "select-list" 
 
   -# 人気カテゴリー-------------------
   .top__category-item
@@ -42,15 +41,9 @@
     .top__category__font
       %h2 人気のブランド
       .top__category__font--list
-        .select-list 
-          = @brands1_items[0][:brand_id]
-        .select-list 
-          = @brands2_items[0][:brand_id]
-        .select-list
-          = @brands3_items[0][:brand_id]
-        .select-list
-          = @brands4_items[0][:brand_id]
-        
+        - @popular_brand_items.each_with_index do |popular_brand, i|
+          = link_to popular_brand[0].brand_id, "#brand#{i}", class: "select-list" 
+
   -# 人気のブランド--------------------------------------
   .top__category-item
     .top__category-item__category-list

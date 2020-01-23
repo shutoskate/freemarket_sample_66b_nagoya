@@ -4,14 +4,15 @@
   .content
     = render "layouts/sideber"
     .content__profile
-      %h2.content__profile__profile-title プロフィール
-      .content__profile__mine
-        = form_for(@user, url: mypage_profile_path, method: :post) do |f|
-          .content__profile__mine__top
-            .content__profile__mine__img
-            .content__profile__mine__name
+      %h2.content__profile__title プロフィール
+      = form_for(@user, url: mypage_profile_path, method: :post) do |f|
+        .content__profile__name
+          .content__profile__name__top
+            .content__profile__name__img
+            .content__profile__name__name
               = f.text_field :nickname, class:'name', value:"#{@user.nickname}"
               %br
+        .content__profile__mine
           .content__profile__text
             = f.text_area :profile_text, class:'text', placeholder:'例）こんにちは☆ ご覧いただきありがとうございます！かわいいものやきれいめオフィスカジュアル中心に出品しています。服のサイズは主に9号です。気持ちよくお取引できるよう心がけていますので、商品や発送方法などご質問がありましたらお気軽にどうぞ♪'
           .content__profile__text__edit

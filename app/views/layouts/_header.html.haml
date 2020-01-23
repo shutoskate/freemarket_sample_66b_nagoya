@@ -51,4 +51,8 @@
               = link_to '新規会員登録', signup_registration_path
             %li.btn.btn_login
               = link_to 'ログイン', "/login"
-= render "layouts/signpost"
+              
+- unless current_page?(root_path)
+  .breadcrumb
+    %ul
+      %li= breadcrumbs  separator: " > "

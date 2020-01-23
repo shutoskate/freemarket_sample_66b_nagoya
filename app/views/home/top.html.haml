@@ -25,10 +25,10 @@
     .top__category__font
       %h2 人気のカテゴリー
       .top__category__font--list
-        %a{href: "#レディース", class: "select-list"} レディース
-        %a{href: "#メンズ", class: "select-list"} メンズ
-        %a{href: "#家電・スマホ・カメラ", class: "select-list"} 家電・スマホ・カメラ
-        %a{href: "#おもちゃ・ホビー・グッズ", class: "select-list"} おもちゃ・ホビー・グッズ
+        = link_to "レディース", "#レディース", class: "select-list" 
+        = link_to "メンズ", "#メンズ", class: "select-list" 
+        = link_to "家電・スマホ・カメラ", "#家電・スマホ・カメラ", class: "select-list" 
+        = link_to "おもちゃ・ホビー・グッズ", "#おもちゃ・ホビー・グッズ", class: "select-list" 
 
   -# 人気カテゴリー-------------------
   .top__category-item
@@ -42,8 +42,7 @@
       %h2 人気のブランド
       .top__category__font--list
         - @popular_brand_items.each_with_index do |popular_brand, i|
-          %a{href: "#brand#{i}", class: "select-list"}
-            = popular_brand[0].brand_id
+          = link_to popular_brand[0].brand_id, "#brand#{i}", class: "select-list" 
 
   -# 人気のブランド--------------------------------------
   .top__category-item

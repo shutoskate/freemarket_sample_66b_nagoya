@@ -1,8 +1,8 @@
 - if Category.find(item[0][:category_id]).parent.parent == nil
-  %div{id: "#{Category.find(item[0][:category_id]).parent.name}"}
+  .category_title{id: "#{Category.find(item[0][:category_id]).parent.name}"}
   = Category.find(item[0][:category_id]).parent.name
 - else
-  %div{id: "#{Category.find(item[0][:category_id]).parent.parent.name}"}
+  .category_title{id: "#{Category.find(item[0][:category_id]).parent.parent.name}"}
   = Category.find(item[0][:category_id]).parent.parent.name
 .top__category-item__category-list--more
   = link_to "もっとみる >", "#" , class:"more"

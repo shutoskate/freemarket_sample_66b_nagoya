@@ -2,13 +2,16 @@
 .hidden {
   display: none;
 }
+main .container form {
+  padding: 0;
+}
 .contents__items{
   margin: 0 auto;
   background-color: #fff;
   .puts__items{
     height: 65px;
     border-bottom:1px solid lightgray;
-    padding: 32px 16px;
+    padding: 32px;
     font-size: 22px;
     text-align: center;
     font-weight:bold;
@@ -17,6 +20,7 @@
   .item__images{
     width: 100%;
     height: 460px;
+    padding: 40px;
     .image__name__area{
       display: flex;
       flex-direction: row;
@@ -487,20 +491,20 @@
         .profit{
           height: 80px;
           padding: 24px 0;
-          border-top: 1px solid #ccc;
           font-weight: bold;
         }
       }
     }
   }
-  .bottum__area{
-    border-top:1px solid lightgray;
+  .bottom__area{
     width: 100%;
     height: 330px;
     padding: 40px;
+    text-align: center;
     .text__arart{
       height: 80px;
       font-size: 12px;
+      text-align-last: left;
     }
     .item__bottom{
       height: 50px;
@@ -512,8 +516,7 @@
     .back__bottom{
       height: 50px;
       width: 45%;
-      margin-top: 30px;
-      margin-left: 170px;
+      margin: 30px auto;
       background: #aaa;
       color: #fff;
       border: 1px solid #aaa;

@@ -1,5 +1,4 @@
 $(function(){
-  // カテゴリー等選択時のスクロール---------------------
    $('a[href^="#"]').on('click', function(){
      var speed = 400; 
      var href= $(this).attr("href");

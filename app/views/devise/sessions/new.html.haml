@@ -16,7 +16,7 @@
         %button.btn-sns-google
           %i.fab.fa-google
           - if Rails.env.development?
-            .google{style: 'text-decoration: none; color: black;'}
+            .google
               = link_to 'Googleでログイン', user_google_oauth2_omniauth_authorize_path, method: :post
           - else
             Googleでログイン

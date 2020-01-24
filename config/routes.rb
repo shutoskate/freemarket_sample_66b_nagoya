@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   end
   resources :users, only: [:edit, :update]
   resources :items, only: [:show, :new, :create, :edit, :update, :destroy] 
+  resources :trades, only: [:new, :create]
   resources :purchases do
     member do
       get 'index', to: 'purchases#index'

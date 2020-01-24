@@ -6,6 +6,7 @@ class PurchasesController < ApplicationController
     # if current_user.present?
     @address = Address.find_by(user_id: current_user.id)
     @card = Card.find_by(user_id: current_user.id)
+    @trade = Trade.new
     if @card.blank?
       #登録された情報がない場合にカード登録画面に移動
       redirect_to controller: "cards", action: "new"
@@ -25,12 +26,33 @@ class PurchasesController < ApplicationController
     :amount => @item.price, #支払金額を入力（itemテーブル等に紐づけても良い）
     :customer => @card.customer_id, #顧客ID
     :currency => 'jpy', #日本円
-  )
-  redirect_to action: 'done' #完了画面に移動
+    )
+    @trade = Trade.new
+    @trade.item_id = params[:id]
+    @trade.buyer_id = current_user.id
+    @trade.rating = 0
+    @trade.status = 0
+    @item.update_attribute(:trade_step, "交渉中")
+    redirect_to done_purchase_path if @trade.save!
   end
 end
 
 private
+
+def confirm_item_seller_is_not_buyer
+  redirect_to root_path, alert: "出品した商品を購入することはできません" if seller_id == current_user
+end
+def confirm_transaction_stage_under_sale
+  redirect_to root_path, alert: "既に販売済みの商品です" unless @item.under_sale?
+end
+
+
+
+private 
+
+def trade_params
+  params.require(:trade).permit(:item_id, :buyer_id, :status, :rating).merge(buyer_id: current_user.id)
+end
 
 def set_item
   @item = Item.find(params[:id])

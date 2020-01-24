@@ -3,8 +3,8 @@ class CardsController < ApplicationController
   require "payjp"
   
   def new
-    card = Card.where(user_id: current_user.id)
-    redirect_to action: "show" if card.exists?
+    @card = Card.where(user_id: current_user.id)
+    redirect_to action: "show" if @card.exists?
   end
 
   def pay #payjpとCardのデータベース作成を実施します。
@@ -26,25 +26,25 @@ class CardsController < ApplicationController
   end
 
   def delete
-    card = Card.where(user_id: current_user.id).first
-    if card.blank?
+    @card = Card.where(user_id: current_user.id).first
+    if @card.blank?
     else
       Payjp.api_key = ENV["PAYJP_ACCESS_KEY"]
       customer = Payjp::Customer.retrieve(card.customer_id)
       customer.delete #pay.jp顧客情報削除
-      card.delete #Cardテーブルのデータ削除
+      @card.delete #Cardテーブルのデータ削除
     end
       redirect_to action: "index"
   end
 
   def show #Cardのデータpayjpに送り情報を取り出します
-    card = Card.where(user_id: current_user.id).first
-    if card.blank?
+    @card = Card.where(user_id: current_user.id).first
+    if @card.blank?
       redirect_to action: "new" 
     else
       Payjp.api_key = ENV["PAYJP_ACCESS_KEY"]
-      customer = Payjp::Customer.retrieve(card.customer_id)
-      @default_card_information = customer.cards.retrieve(card.card_id)
+      customer = Payjp::Customer.retrieve(@card.customer_id)
+      @default_card_information = customer.cards.retrieve(@card.card_id)
     end
   end
 
@@ -52,7 +52,7 @@ class CardsController < ApplicationController
   private
 
   def set_card
-    card = Card.where(user_id: current_user.id)
+    @card = Card.where(user_id: current_user.id)
   end
 
 

@@ -55,13 +55,13 @@ class ItemsController < ApplicationController
   def buy
     @address = Address.find_by(user_id: current_user.id)
 
-    card = Card.where(user_id: current_user.id).first
+    @card = Card.where(user_id: current_user.id).first
     #Cardテーブルは前回記事で作成、テーブルからpayjpの顧客IDを検索
     if card.blank?
       #登録された情報がない場合にカード登録画面に移動
       redirect_to controller: "card", action: "new"
     else
-      Payjp.api_key = "sk_test_3ff988f60aac8662127a1d34"
+      Payjp.api_key = ENV["PAYJP_ACCESS_KEY"]
       #保管した顧客IDでpayjpから情報取得
       customer = Payjp::Customer.retrieve(card.customer_id)
       #保管したカードIDでpayjpから情報取得、カード情報表示のためインスタンス変数に代入

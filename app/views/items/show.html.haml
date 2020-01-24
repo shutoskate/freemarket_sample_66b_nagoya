@@ -78,7 +78,7 @@
         %span.item-shipping-fee
           = @item.charge
       - unless @item.seller_id === current_user.id
-        = link_to('購入画面に進む', {}, class:"item-buy-btn")
+        = link_to('購入画面に進む', purchase_path(@item.id), class:"item-buy-btn")
         .item-description
           %p.item-description-inner
             = @item.item_text

@@ -17,7 +17,22 @@ Rails.application.routes.draw do
     get "users/sign_out" => "users/sessions#destroy"
   end
   resources :users, only: [:edit, :update]
-  resources :items, only: [:show, :new, :create, :edit, :update, :destroy]
+  resources :items, only: [:show, :new, :create, :edit, :update, :destroy] 
+  resources :purchases do
+    member do
+      get 'index', to: 'purchases#index'
+      post 'pay', to: 'purchases#pay'
+      get 'done', to: 'purchases#done'
+    end
+  end
+
+  resources :cards, only: [:index, :new, :show] do
+    collection do
+      post 'show', to: 'cards#show'
+      post 'pay', to: 'cards#pay'
+      post 'delete', to: 'cards#delete'
+    end
+  end
   get "/mypage" => "users#mypage"
   get "/mypage/profile" => "users#profile"
   post "/mypage/profile" => "users#profile_update"
@@ -25,7 +40,7 @@ Rails.application.routes.draw do
   # get "/mypage/identification" => "users#identify"
   # post "/mypage/identification" => "users#identify_update"
   get "/logout" => "users#logout"
-  get "/buy/:id" => "items#buy", as: :buy
+  # get "/buy/:id" => "items#buy", as: :buy 
   post "/stop/:id" => "items#stop", as: :stop
   post "/start/:id" => "items#start", as: :start
 end

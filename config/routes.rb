@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   devise_for :users, controllers: {
     sessions: 'users/sessions',
+    omniauth_callbacks: 'users/omniauth_callbacks',
     registrations: 'users/registrations'
   }
   devise_scope :user do
@@ -13,6 +14,7 @@ Rails.application.routes.draw do
     post "signup/registration" => "users/registrations#create"
     get "/login" => "users/sessions#new"
     get "users/sign_out" => "users/sessions#destroy"
+    get "signup" => "users/registrations#selection"
   end
   resources :users, only: [:edit, :update]
   resources :items, only: [:show, :new, :create, :edit, :update, :destroy]

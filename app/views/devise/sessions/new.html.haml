@@ -8,10 +8,18 @@
       .login__sns
         %button.btn-sns-facebook
           %i.fab.fa-facebook-square
-          Facebookでログイン
+          - if Rails.env.development?
+            .facebook
+              = link_to 'Facebookでログイン', user_facebook_omniauth_authorize_path, method: :post
+          - else
+            Facebookでログイン
         %button.btn-sns-google
           %i.fab.fa-google
-          Googleでログイン
+          - if Rails.env.development?
+            .google{style: 'text-decoration: none; color: black;'}
+              = link_to 'Googleでログイン', user_google_oauth2_omniauth_authorize_path, method: :post
+          - else
+            Googleでログイン
       = form_for(@user, url: new_user_session_path(@user)) do |f|
         .login__form
           .email__area

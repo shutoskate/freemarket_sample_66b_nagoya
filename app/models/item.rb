@@ -68,6 +68,6 @@ class Item < ApplicationRecord
   }
 
   enum trade_step:{
-    "出品中":1, "交渉中":2, "出品停止":3 
+    "出品中":1, "交渉中":2, "出品停止":3, "売却済":4
   }
 end

@@ -4,7 +4,7 @@ class Item < ApplicationRecord
   belongs_to :category
   has_many :likes
   has_many :comments
-  has_many :item_imgs
+  has_many :item_imgs, dependent: :destroy
   has_one :trade
 
   accepts_nested_attributes_for :item_imgs, allow_destroy: true
@@ -42,12 +42,12 @@ class Item < ApplicationRecord
   }
 
   enum delivery_1:{
-    "未定":1,"ラクラク便":2,"ゆうメール":3,"レターパック":4,"普通郵便（定型・定形外）":5,"クロネコヤマト":6,"ゆうパック":7,"クリックポスト":8,"ゆうパック":9
+    "未定":1,"ラクラク便":2,"ゆうメール":3,"レターパック":4,"普通郵便（定型・定形外）":5,"クロネコヤマト":6,"ゆうパック":7,"クリックポスト":8
   }
 
-  enum delivery_2:{
-    "未定 ":1,"ゆうメール ":2,"ゆうパック ":3,"クロネコヤマト ":4
-  }
+  # enum delivery_2:{
+  #   "未定 ":1,"ゆうメール ":2,"ゆうパック ":3,"クロネコヤマト ":4
+  # }
 
   enum term:{
     "1~2日で発送":1, "2~3日で発送":2, "4~7日で発送":3

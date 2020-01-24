@@ -6,6 +6,15 @@
 # 50.times do |i|
 #   brands << Brand.new(name: "Brand-#{i+1}")
 # end
+require "csv"
+
+CSV.foreach('db/brand.csv') do |row|
+  Brand.create(:name => row[0])
+end
+
+CSV.foreach('db/category.csv') do |row|
+  Category.create(:name => row[0], :parent_id => row[1])
+end
 
 10.times do |i|
   Item.create!(
@@ -75,13 +84,3 @@ end
     item_text: "text"
   )
 end
-
-# require "csv"
-
-# CSV.foreach('db/brand.csv') do |row|
-#   Brand.create(:name => row[0])
-# end
-
-# CSV.foreach('db/category.csv') do |row|
-#   Category.create(:name => row[0], :parent_id => row[1])
-# end

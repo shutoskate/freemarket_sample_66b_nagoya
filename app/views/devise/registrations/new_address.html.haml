@@ -15,36 +15,10 @@
         完了
         .progress-status.progress-status-last
 %main
-  .container
-    %h2 住所入力
-    = form_for @address do |f|
-      = render "devise/shared/error_messages", resource: @address
-      .content
-        .field
-          = f.label :郵便番号
-          %span.require 必須
-          %br
-          = f.text_field :post_code, autofocus:true, autocomplete:"postal-code", placeholder:"例）123ｰ4567"
-        .field
-          =f.label :都道府県
-          %span.require 必須
-          %br
-          = f.select :prefecture, Item.prefectures.keys, {prompt:"選択してください"}, class:'select'
-        .field
-          =f.label :市区町村
-          %span.require 必須
-          %br
-          = f.text_field :city, autofocus:true, autocomplete:"address-level2", placeholder:"例）横浜市緑区"
-        .field
-          =f.label :番地
-          %span.require 必須
-          %br
-          = f.text_field :address, autofocus:true, autocomplete:"address-level3", placeholder:"例）青山1ｰ1ｰ1"
-        .field
-          =f.label :建物名
-          %span.optional 任意
-          %br
-          = f.text_field :building, autofocus:true, autocomplete:"address-level3", placeholder:"例）柳ビル103"
-        .actions
-          = f.submit "次へ進む", class:'btn-red'
+  .content
+    .identify.address
+      %section.identify__title
+        %h2 住所入力
+      %section.identify__form
+        = render partial: "address_form", locals: { path: addresses_path(@user) }
 = render "layouts/sub_footer"

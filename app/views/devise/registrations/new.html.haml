@@ -16,7 +16,7 @@
         .progress-status.progress-status-last
 %main
   .container
-    %h2 会員情報入力
+    %h2.identify__title 会員情報入力
     = form_for(@user, url: user_registration_path) do |f|
       = render "devise/shared/error_messages", resource: resource
 

@@ -1,37 +1,41 @@
 .spend{
   width: 700px;
-  padding: 0 auto;
+  margin: 0 auto;
+  background-color: #fff;
   &__title{
     height: 65px;
     padding: 16px;
-    border-bottom:1px solid lightgray;
-    .spend-title{
+    border-bottom:1px solid #f5f5f5;
+    p {
       font-size: 22px;
       text-align: center;
-      margin: 0;
       font-weight:bolder;
     }
   }
   &__main{
-    padding: 40px 80px 64px;
+    // padding: 40px 80px 64px;
+    width: 343px;
+    margin: 40px auto;
     .spend-font{
       font-size: 14px;
       font-weight: 700;
       margin:10px;
     }
     &__card-num{
+      width: 320px;
+      font-weight: bold;
       padding: 20px 0 20px;
       .card-num{
         min-height: 50px;
-        max-width: 668px;
         width: 100%;
+        max-width: 668px;
         padding: 10px 16px 8px;
         margin: 10px 0 10px ;
         font-size: 20px;
       }
-      .cregit{
-        height: 50px;
-        width: 60%;
+      .credit{
+        height: 40px;
+        // width: 60%;
         padding: 5px;
       }
     }
@@ -40,17 +44,23 @@
       padding: 20px 0 20px;
       &__days{
         align-items: center;
+        display: flex;
         .expiration-day{
           height: 50px;
-          max-width: 150px;
-          width: 100%;
+          width: 80%;
+          background-color: #fff;
+          border-color: #ccc;
           padding: 10px 16px 8px;
           margin: 20px 0 20px;
           font-size: 20px;
         }
         .spend-day{
-          margin-left: 8px;
+          // margin-left: 8px;
+          display: inline-block;
         }
+      }
+      &__year, &__month {
+        width: 50%;
       }
     }
     &__security-num{
@@ -65,18 +75,12 @@
       }
     }
     &__next{
-      height: 60px;
-      width: 100%;
-      margin-top: 16px ;
+      height: 50px;
+      width: 320px;
+      margin: 16px auto 32px;
       background-color: red;
       text-align: center;
-      position: relative;
       .next{
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
         text-decoration: none;
         line-height: 60px;
         color: white;
@@ -97,17 +101,15 @@
   }
 }
 
-/* クレジットカード追加ページ- addcredit.html.haml================================ */
+/* クレジットカード追加リンク- addcredit.html.haml================================ */
 .far.fa-credit-card{
   font-size: 20px;
   color: white;
-  transform: translateY(99%) translateX(-600%);
-
 }
 .spend__main__bottom{
   width: 100%;
   height: 100px;
-  border-top:1px solid lightgray;
+  border-top:1px solid #f5f5f5;
   text-align: right;
   padding-top: 40px;
   .how-pay{

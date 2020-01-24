@@ -1,0 +1,36 @@
+= render "layouts/header"
+%main
+  .content
+    = render "layouts/sideber"
+    .identify
+      %section.identify__title
+        %h2 本人情報の登録
+      %section.identify__info
+        %p.info
+          お客さまの本人情報をご登録ください。
+          %br
+          登録されたお名前・生年月日を変更する場合、本人確認書類の提出が必要になります。
+        %br/
+        .identify__info__group
+          %span お名前
+          %br/
+          %p
+            = current_user.family_name
+            = current_user.first_name
+          %br/
+        .identify__info__group
+          %span お名前カナ
+          %br/
+          %p
+            = current_user.family_name_kana
+            = current_user.first_name_kana
+          %br/
+        .identify__info__group
+          %span 生年月日
+          %br/
+          %p
+            = current_user.birthday.strftime('%Y/%m/%d')
+      %section.identify__form
+        = render partial: "address_form", locals: { path: mypage_identification_path(current_user) }
+= render "layouts/footer"
+= render "layouts/exhibition"

@@ -9,17 +9,16 @@ main {
       height: 568px;
       width: 700px;
       background-color: #fff;
-      &__profile-title{
+      &__title{
         padding: 8px 24px;
         text-align: center;
         font-size: 24px;
       }
-      &__mine{
-        background-image: image-url("https://www.illust-box.jp/db_img/sozai/00011/116345/watermark.jpg");
-        padding: 72px 16px 24px;
-        display: flex;
-        justify-content: center;
+      &__name {
         &__top {
+          padding: 40px 0;
+          height: 156px;
+          background-image: image-url("https://www.illust-box.jp/db_img/sozai/00011/116345/watermark.jpg");
           display: flex;
           justify-content: center;
         }
@@ -29,28 +28,37 @@ main {
           border-radius: 100%;
           background-color: skyblue;
         }
-        .name{
-          height: 50px;
-          width: 200px;
-          margin-left: 8px;
-          padding: 10px 16px 8px;
-          display: inline;
+        &__name{
+          .name {
+            height: 50px;
+            width: 200px;
+            margin-left: 8px;
+            padding: 10px 16px 8px;
+            display: inline;
+            border-radius: 4px;
+            border-width: 1px;
+            margin-top: 5px;
+          }
         }
       }
-      &__text{
-        min-height: 272px;
+      &__mine{
         padding: 40px 16px;
+      }
+      &__text{
+        height: 200px;
         .text{
           min-height: 200px;
           width: 668px;
           max-width: 668px;
           padding: 15px;
+          margin: 0 auto;
         }
         &__edit{
           height: 50px;
           margin-top: 16px;
           position: relative;
           text-align: center;
+          margin-top: 40px;
           .edit{
             position: absolute;
             background-color: red;

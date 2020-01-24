@@ -1,5 +1,5 @@
-%h3
-  = brand[0][:brand_id]
+.brand_title{id: "brand#{brand_counter}"}
+= brand[0].brand_id
 .top__category-item__category-list--more
   = link_to "もっとみる >", "#" , class:"more"
 .top__category-item__category-list__category-box

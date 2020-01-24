@@ -10,7 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
+ActiveRecord::Schema.define(version: 20200124045720) do
+
+ActiveRecord::Schema.define(version: 20200121093546) do
 ActiveRecord::Schema.define(version: 20200121021718) do
+
+
 
   create_table "addresses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id"
@@ -30,6 +36,15 @@ ActiveRecord::Schema.define(version: 20200121021718) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["name"], name: "index_brands_on_name", using: :btree
+  end
+
+  create_table "cards", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "user_id",     null: false
+    t.string   "customer_id", null: false
+    t.string   "card_id",     null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["user_id"], name: "index_cards_on_user_id", using: :btree
   end
 
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -72,6 +87,17 @@ ActiveRecord::Schema.define(version: 20200121021718) do
     t.index ["trade_step"], name: "index_items_on_trade_step", using: :btree
   end
 
+  create_table "trades", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "buyer_id",   null: false
+    t.integer  "item_id",    null: false
+    t.integer  "status",     null: false
+    t.integer  "rating",     null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["buyer_id"], name: "index_trades_on_buyer_id", using: :btree
+    t.index ["item_id"], name: "index_trades_on_item_id", using: :btree
+  end
+
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "nickname",                                          null: false
     t.string   "email",                                default: "", null: false
@@ -95,8 +121,16 @@ ActiveRecord::Schema.define(version: 20200121021718) do
   end
 
   add_foreign_key "addresses", "users"
+
+
+  add_foreign_key "cards", "users"
+
+
+
   add_foreign_key "item_imgs", "items"
   add_foreign_key "items", "brands"
   add_foreign_key "items", "categories"
   add_foreign_key "items", "users", column: "seller_id"
+  add_foreign_key "trades", "items"
+  add_foreign_key "trades", "users", column: "buyer_id"
 end

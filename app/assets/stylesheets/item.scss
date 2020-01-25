@@ -147,22 +147,19 @@ main .container form {
         display: flex;
         .puts__category{
           display: flex;
-          .puts__category{
-            display: flex;
-            flex-direction: row;
-            font-weight: bold;
-            font-size: 14px;
-          }
-          .logo__item{
-            width: 35px;
-            height: 20px;
-            color: #fff;
-            font-size: 12px;
-            text-align: center;
-            background-color: red;  
-            margin-left: 15px;
-            border-radius: 4px;
-          }
+          flex-direction: row;
+          font-weight: bold;
+          font-size: 14px;
+        }
+        .logo__item{
+          width: 35px;
+          height: 20px;
+          color: #fff;
+          font-size: 12px;
+          text-align: center;
+          background-color: red;  
+          margin-left: 15px;
+          border-radius: 4px;
         }
         .categories__name{
           .bar__category{
@@ -184,14 +181,12 @@ main .container form {
           border-radius: 4px;
         }
       }
-      .categories__name{
-        .bar__category{
-          margin-top: 5px;
-          width: 400px;
-          height: 40px;
-          padding: 10px 16px 8px;
-          background-color: #fff;
-        }
+      .bar__category{
+        margin-top: 5px;
+        width: 400px;
+        height: 40px;
+        padding: 10px 16px 8px;
+        background-color: #fff;
       }
       .size__area{
         display: flex;
@@ -241,6 +236,13 @@ main .container form {
           margin-left: 15px;
           border-radius: 4px;
         }
+      }
+      .bar__brand {
+        margin-top: 5px;
+        width: 400px;
+        height: 40px;
+        padding: 10px 16px 8px;
+        background-color: #fff;
       }
       .condition__area{
         display: flex;

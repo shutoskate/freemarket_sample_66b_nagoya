@@ -22,7 +22,22 @@ class ItemsController < ApplicationController
   def new
     @item = Item.new
     @item.item_imgs.new
+    @category = ["---"]
+    Category.where(parent_id: nil).each do |category|
+      @category << category.name
+    end
   end
+
+  def get_subcategory
+    # 選択された大カテゴリーに紐付く中カテゴリーの配列を取得
+    @subcategory = Category.find_by(name: "#{params[:category]}", parent_id: nil).children
+  end
+
+  # 中カテゴリーが選択された後に動くアクション
+  def get_subsubcategory
+    @subsubcategory = Category.find("#{params[:child_id]}").children
+  end
+
   def create
     @item = Item.new(item_params)
     # 開発終わればsave!をsaveに戻す
@@ -34,6 +49,10 @@ class ItemsController < ApplicationController
   end
 
   def edit
+    @category = ["---"]
+    Category.where(parent_id: nil).each do |category|
+      @category << category.name
+    end
   end
 
   def update
@@ -79,19 +98,6 @@ class ItemsController < ApplicationController
     @item.update_attribute(:trade_step, "出品中")
     redirect_to @item
   end
-
-  # def change
-  #   if @item.trade_step = "出品中"
-  #     @item.update_attribute(:trade_step, "出品停止")
-  #     # binding.pry
-  #   elsif @item.trade_step = "出品停止"
-  #     @item.update_attribute(:trade_step, "出品中")
-  #     # binding.pry
-  #   else
-  #     render :show
-  #   end
-  #   redirect_to @item
-  # end
 
   private
 

@@ -17,7 +17,13 @@ Rails.application.routes.draw do
     get "users/sign_out" => "users/sessions#destroy"
   end
   resources :users, only: [:edit, :update]
-  resources :items, only: [:show, :new, :create, :edit, :update, :destroy] 
+  resources :items, only: [:show, :new, :create, :edit, :update, :destroy] do
+    collection do
+      get 'get_subcategory', defaults: { format: 'json' }
+      get 'get_subsubcategory', defaults: { format: 'json' }
+    end
+  end
+
   resources :trades, only: [:new, :create]
   resources :purchases do
     member do

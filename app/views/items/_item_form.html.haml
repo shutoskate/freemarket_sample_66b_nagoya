@@ -40,13 +40,13 @@
         .about__puts 商品の詳細
         .categories
           .category__area
-            .puts__category カテゴリー
+            = f.label 'カテゴリー', class: 'listing-default__label puts__category'
             .logo__item 必須
-          .categories__name
-            -# カテゴリー機能実装の際、使用----------------------------
-            -# = f.select :category_id, {}, class:'bar__category'
-            -# = f.select :category_id, {}, class:'bar__category_2'
-            = f.select :category_id, [["小カテゴリー",356]],{}, class:'bar__category_3'
+          .listing-form-box
+            .listing-product-detail__category
+              .listing-select-wrapper
+                .listing-select-wrapper__box
+                  = f.select :category_id, @category, {}, {class: 'listing-select-wrapper__box--select bar__category', id: 'parent_category'}
           .size__area
             .puts__size サイズ
             .logo__item 必須

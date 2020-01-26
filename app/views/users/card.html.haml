@@ -1,0 +1,17 @@
+= render "layouts/header"
+%main
+  .content
+    = render "layouts/sideber"
+    .spend
+      .spend__title
+        %p 支払い方法
+      .spend__main
+        .spend__main__card-num クレジットカード一覧
+        -# cardテーブルできたら条件分岐
+        .spend__main__next
+          .far.fa-credit-card
+          = link_to "クレジットカードを追加する", mypage_addcard_path, class: "next"
+        .spend__main__bottom
+          = link_to "支払い方法について >", "#", class:"how-pay"
+= render "layouts/footer"
+= render "layouts/exhibition"

@@ -1,0 +1,17 @@
+%ul#menu
+  %li.top-item
+    = link_to "#", class:"lists" do
+      %i.fas.fa-list-ul
+      %span カテゴリーから探す
+    %ul
+      - @categories1.each do |category|
+        %li.cate
+          = link_to category.name, "#"
+          %ul
+            - category.children.each do |subcategory|
+              %li.sub
+                = link_to subcategory.name, "#"
+                %ul
+                  - subcategory.children.each do |subsubcategory|
+                    %li.subsub
+                      = link_to subsubcategory.name, "#"

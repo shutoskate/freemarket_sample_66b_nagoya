@@ -1,0 +1,53 @@
+#menu, #menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+#menu li {
+  float: left;
+  margin: 0;
+}
+#menu li ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 5em;
+  box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+}
+#menu li ul li {
+  padding: 0 15px;
+  width: 230px;
+  height: 44px;
+  display: block;
+  background-color: #fff;
+  a {
+    color: #333333;
+    text-decoration: none;
+    font-size: 14px;
+    white-space: nowrap;
+    line-height: 44px;
+    text-overflow: ellipsis;
+  }
+}
+#menu li ul li ul {
+  position: absolute;
+  top: 0;
+  left: 230px;
+}
+#menu:after {
+  content: ".";
+  display: block;
+  height: 0;
+  visibility: hidden;
+  clear: both;
+}
+#menu {
+  zoom: 100%;
+  z-index: 10;
+}
+#menu li a {
+  display: block;
+  width: 100%;
+}

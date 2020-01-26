@@ -22,7 +22,7 @@ class ItemsController < ApplicationController
   def new
     @item = Item.new
     @item.item_imgs.new
-    @category =  Category.where(parent_id: nil).pluck(:name)
+    @category =  Category.where(parent_id: nil).pluck(:name).unshift("---")
   end
 
   def get_subcategory
@@ -46,7 +46,7 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    @category =  Category.where(parent_id: nil).pluck(:name)
+    @category =  Category.where(parent_id: nil).pluck(:name).unshift("---")
   end
 
   def update

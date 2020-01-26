@@ -5,6 +5,9 @@
 main .container form {
   padding-bottom: 40px;
 }
+.edit_item {
+  padding: 0;
+}
 .contents__items{
   margin: 0 auto;
   background-color: #fff;
@@ -141,7 +144,7 @@ main .container form {
         font: size 14px;
       }
       .categories{
-        width: 420px;
+        width: 400px;
       }
       .category__area{
         display: flex;
@@ -291,7 +294,7 @@ main .container form {
       .how__delivery{
         display: flex;
         flex-direction: column;
-        width: 420px;
+        width: 400px;
         .shipping__charge{
           display: flex;
           .shipping{

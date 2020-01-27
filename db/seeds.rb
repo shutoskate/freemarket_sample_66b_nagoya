@@ -1,12 +1,12 @@
-require "csv"
+# require "csv"
 
-CSV.foreach('db/brand.csv') do |row|
-  Brand.create(:name => row[0])
-end
+# CSV.foreach('db/brand.csv') do |row|
+#   Brand.create(:name => row[0])
+# end
 
-CSV.foreach('db/category.csv') do |row|
-  Category.create(:name => row[0], :parent_id => row[1])
-end
+# CSV.foreach('db/category.csv') do |row|
+#   Category.create(:name => row[0], :parent_id => row[1])
+# end
 
 10.times do |i|
   Item.create!(

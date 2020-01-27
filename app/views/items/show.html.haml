@@ -11,6 +11,9 @@
           - if @item.trade_step == "出品停止"
             .stop
             %span.stop_text 公開停止中
+          - if @item.trade_step == "売却済"
+            .stop.sold
+            %span.stop_text.sold_text SOLD
         %table.item-table
           %tbody
             %tr

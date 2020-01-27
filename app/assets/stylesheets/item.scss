@@ -61,7 +61,7 @@ main .container form {
         }
       }
   
-      // 編集・削除ボタン
+      // 画像　編集・削除ボタン
       .js-file_group {
         width: 116px;
         display: inline-flex;
@@ -242,6 +242,36 @@ main .container form {
           border-radius: 4px;
         }
       }
+      #brand-search-field {
+        margin-top: 5px;
+        width: 400px;
+        height: 40px;
+        padding: 10px 16px 8px;
+        background-color: #fff;
+        border-radius: 5px;
+        border-width: 1px;
+        border-style: solid;
+        border-color: rgb(166, 166, 166);
+      }
+      #brand-search-result {
+        // float: left;
+        position: absolute;
+      }
+      .brand_list {
+        z-index: 100;
+        background-color: #fff;
+        width: 400px;
+        line-height: 30px;
+        border: 1px solid #ccc;
+        border-top: none;
+        cursor: pointer;
+        // p {
+        //   background-color: #fff;
+        // }
+        justify-content: space-between;
+      }
+      .brand_list__name, .brand_list-select {
+      }
       .condition__area{
         display: flex;
         .puts__condition{
@@ -266,7 +296,7 @@ main .container form {
       .bar__conditions{
         margin-top: 5px;
         width: 400px;
-        height: 50px;
+        height: 40px;
         padding: 10px 16px 8px;
         background-color: #fff;
       }

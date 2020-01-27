@@ -23,6 +23,16 @@ class ItemsController < ApplicationController
     @item = Item.new
     @item.item_imgs.new
   end
+
+  def brand
+    return nil if params[:keyword] == ""
+    @brands = Brand.where(['name LIKE ?', "%#{params[:keyword]}%"] ).limit(10)
+    respond_to do |format|
+      format.html
+      format.json
+    end
+  end
+
   def create
     @item = Item.new(item_params)
     # 開発終わればsave!をsaveに戻す

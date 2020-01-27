@@ -1,4 +1,4 @@
-table_names = %w(brands)
+table_names = %w(items)
 
 table_names.each do |table_name|
   environment = (Rails.env == "test") ? "development" : Rails.env

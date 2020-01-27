@@ -48,7 +48,19 @@
   .item-image {
     width: 300px;
     height: 300px;
-    position: absolute;
+    .photo {
+      width: 300px;
+      height: 300px;
+    }
+  }
+  .subphot-box {
+    font-size: 0;
+    display: inline;
+    .subphoto {
+      width: 60px;
+      height: 60px;
+      vertical-align: bottom;
+    }
   }
 }
 .item-table {

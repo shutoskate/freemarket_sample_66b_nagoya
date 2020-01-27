@@ -21,9 +21,9 @@ Rails.application.routes.draw do
     collection do
       get 'get_subcategory', defaults: { format: 'json' }
       get 'get_subsubcategory', defaults: { format: 'json' }
+      get 'brand', defaults: { format: 'json' }
     end
   end
-
   resources :trades, only: [:new, :create]
   resources :purchases do
     member do

@@ -25,6 +25,7 @@ class ItemsController < ApplicationController
     @category =  Category.where(parent_id: nil).pluck(:name).unshift("---")
   end
 
+
   def get_subcategory
     # 選択された大カテゴリーに紐付く中カテゴリーの配列を取得
     @subcategory = Category.find_by(name: "#{params[:category]}", parent_id: nil).children
@@ -33,6 +34,16 @@ class ItemsController < ApplicationController
   # 中カテゴリーが選択された後に動くアクション
   def get_subsubcategory
     @subsubcategory = Category.find("#{params[:child_id]}").children
+  end
+    @subsubcategory = Category.find("#{params[:child_id]}").children
+
+  def brand
+    return nil if params[:keyword] == ""
+    @brands = Brand.where(['name LIKE ?', "%#{params[:keyword]}%"] ).limit(10)
+    respond_to do |format|
+      format.html
+      format.json
+    end
   end
 
   def create

@@ -1,1 +1,18 @@
-%h2 購入が完了しました！
+= render "layouts/sub_header"
+%main
+  .buy
+    .item-box
+      .buy-head
+        購入が完了しました
+      .buy-content.box
+        .item-info
+          .item-info-img
+            = image_tag 'IMG_34498.jpg', alt: '商品写真'
+          .item-info-detail
+            .item-info-name
+              = @item.name
+            .item-info-price
+              %span ¥
+              = @item.price.to_s(:delimited, delimiter: ',')
+              = @item.charge
+= render "layouts/sub_footer"

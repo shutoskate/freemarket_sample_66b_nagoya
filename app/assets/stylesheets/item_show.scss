@@ -45,6 +45,10 @@
     font-weight: bold;
     transform: rotate(-45deg);
   }
+  .sold{
+    border-bottom: 75px solid red;
+    background-color: transparent;
+  }
   .item-image {
     width: 300px;
     height: 300px;
@@ -61,6 +65,11 @@
       height: 60px;
       vertical-align: bottom;
     }
+  }
+  .sold_text{
+    font-size: 24px;
+    left: -33px;
+    top: -210px;
   }
 }
 .item-table {
@@ -215,4 +224,7 @@
   .delete {
     background-color: #aaa;
   }
+}
+.sold{
+  background-color: #aaa;
 }

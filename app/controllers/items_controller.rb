@@ -16,7 +16,10 @@ class ItemsController < ApplicationController
     end
 
     # ブランド詳細ーーーーーーーーーーーーーーー
-    @brand = Brand.find(@item.brand_id_before_type_cast)
+    if @item.brand_id != nil
+      @brand = Brand.find(@item.brand_id_before_type_cast)
+    end
+
     @user = User.find(@item.seller_id)
     
     # 画像表示ーーーーーーーーーーーーーー
@@ -26,7 +29,29 @@ class ItemsController < ApplicationController
   def new
     @item = Item.new
     @item.item_imgs.new
+    @category =  Category.where(parent_id: nil).pluck(:name).unshift("---")
   end
+
+
+  def get_subcategory
+    # 選択された大カテゴリーに紐付く中カテゴリーの配列を取得
+    @subcategory = Category.find_by(name: "#{params[:category]}", parent_id: nil).children
+  end
+
+  # 中カテゴリーが選択された後に動くアクション
+  def get_subsubcategory
+    @subsubcategory = Category.find("#{params[:child_id]}").children
+  end
+
+  def brand
+    return nil if params[:keyword] == ""
+    @brands = Brand.where(['name LIKE ?', "%#{params[:keyword]}%"] ).limit(10)
+    respond_to do |format|
+      format.html
+      format.json
+    end
+  end
+
   def create
     @item = Item.new(item_params)
     # 開発終わればsave!をsaveに戻す
@@ -38,6 +63,7 @@ class ItemsController < ApplicationController
   end
 
   def edit
+    @category =  Category.where(parent_id: nil).pluck(:name).unshift("---")
   end
 
   def update
@@ -84,19 +110,6 @@ class ItemsController < ApplicationController
     redirect_to @item
   end
 
-  # def change
-  #   if @item.trade_step = "出品中"
-  #     @item.update_attribute(:trade_step, "出品停止")
-  #     # binding.pry
-  #   elsif @item.trade_step = "出品停止"
-  #     @item.update_attribute(:trade_step, "出品中")
-  #     # binding.pry
-  #   else
-  #     render :show
-  #   end
-  #   redirect_to @item
-  # end
-
   private
 
   def set_item
@@ -110,6 +123,5 @@ class ItemsController < ApplicationController
   def item_params
     params.require(:item).permit(:name, :size, :price, :seller_id, :brand_id, :category_id, :status, :charge, :trade_step, :delivery, :prefecture, :term, :item_text, item_imgs_attributes: [:img, :_destroy, :id]).merge(seller_id:current_user.id)
   end
-
 
 end

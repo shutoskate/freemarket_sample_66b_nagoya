@@ -37,8 +37,6 @@
               = link_to({}, class:"buy-payment-link") do
                 %i.fas.fa-plus-circle
                 %span 登録してください
-                -# = form_tag(action: :pay, method: :post) do
-                -#   %script.payjp-button{:src => "https://checkout.pay.jp", :type => "text/javascript" ,"data-text" => "カードで支払う" ,"data-key" => "pk_test_fdecd306854b31c885512ef5"}  
             .user-info.box
               .user-info-label
                 %span 配送先
@@ -53,7 +51,6 @@
                 %br/
                 = current_user.family_name
                 = current_user.first_name
-            .buy-content
             = form_tag(action: :pay, method: :post) do
-              = submit_tag "購入する"
+              = submit_tag "購入する", class:"pay-tag"
 = render "layouts/sub_footer"

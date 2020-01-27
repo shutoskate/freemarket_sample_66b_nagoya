@@ -1,6 +1,6 @@
 class Item < ApplicationRecord
   belongs_to :seller, class_name: "User"
-  belongs_to :brand
+  belongs_to :brand, optional: true
   belongs_to :category
   has_many :likes
   has_many :comments

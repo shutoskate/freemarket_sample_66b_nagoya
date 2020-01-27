@@ -46,7 +46,8 @@
             %tr
               %th ブランド
               %td
-                = link_to(@brand.name, {})
+                - if @item.brand_id != nil
+                  = link_to(@brand.name, {})
             - unless @item.size === "サイズなし"
               %tr
                 %th サイズ

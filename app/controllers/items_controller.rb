@@ -13,7 +13,9 @@ class ItemsController < ApplicationController
       @subcategory = Category.find(@item.category_id)
       @category = @subcategory.parent
     end
-    @brand = Brand.find(@item.brand_id_before_type_cast)
+    if @item.brand_id != nil
+      @brand = Brand.find(@item.brand_id_before_type_cast)
+    end
     @user = User.find(@item.seller_id)
     # 以下、imgテーブル作成次第表示----------------
     # @img = Item_imag.find(item_id: params[:id])

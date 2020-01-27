@@ -1,4 +1,4 @@
-$(document).on('turbolinks:load', ()=> {
+$(document).ready(function () {
   // 画像用のinputを生成する関数
   const buildFileField = (num)=> {
     const html = `<div class="js-file_group" data-index="${num}">

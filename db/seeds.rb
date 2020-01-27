@@ -1,3 +1,13 @@
+require "csv"
+
+CSV.foreach('db/brand.csv') do |row|
+  Brand.create(:name => row[0])
+end
+
+CSV.foreach('db/category.csv') do |row|
+  Category.create(:name => row[0], :parent_id => row[1])
+end
+
 10.times do |i|
   Item.create!(
     name: "レディースItem #{i+1}",
@@ -66,16 +76,3 @@ end
     item_text: "text"
   )
 end
-
-
-# table_names = %w(items)
-
-# table_names.each do |table_name|
-#   environment = (Rails.env == "test") ? "development" : Rails.env
-
-#   path = Rails.root.join("db/seeds", environment, table_name + ".rb")
-#   if File.exist?(path)
-#     puts "#{table_name}..."
-#     require path
-#   end
-# end

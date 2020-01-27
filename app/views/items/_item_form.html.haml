@@ -54,7 +54,8 @@
           .brand__area
             .puts__brand ブランド名
             .logo__item__no 任意
-          = f.select :brand_id,Item.brand_id.options,{}, class:'bar__brand'
+          = f.text_field :brand_id, id:"brand-search-field", placeholder:"入力して検索"
+          #brand-search-result
           .condition__area
             .puts__condition 商品の状態
             .logo__item 必須

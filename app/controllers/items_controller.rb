@@ -35,7 +35,6 @@ class ItemsController < ApplicationController
   def get_subsubcategory
     @subsubcategory = Category.find("#{params[:child_id]}").children
   end
-    @subsubcategory = Category.find("#{params[:child_id]}").children
 
   def brand
     return nil if params[:keyword] == ""

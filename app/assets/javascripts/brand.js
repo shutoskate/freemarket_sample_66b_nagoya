@@ -24,7 +24,6 @@ $(function() {
     })
     .done(function(brands) {
       $("#brand-search-result").empty();
-      console.log(brands);
       if (brands.length !== 0) {
         brands.forEach(function(brand) {
           selectBrand(brand);
@@ -39,7 +38,6 @@ $(function() {
       alert("通信エラーです。ブランドが表示できません。");
     });
     $(document).on("click", ".brand_list", function() {
-      console.log
       const brandName = $(this).attr("data-brand-name");
       const brandId = $(this).attr("data-brand-id");
       $(this).parent().prev().val(brandName);

@@ -69,7 +69,6 @@ main .container form {
         label {
           color: #0099e8;
         background-color: #f5f5f5;
-        // padding: 10px;
         border: solid 1px #aaa;
         display: inline-block;
         width: 58px;
@@ -254,7 +253,6 @@ main .container form {
         border-color: rgb(166, 166, 166);
       }
       #brand-search-result {
-        // float: left;
         position: absolute;
       }
       .brand_list {
@@ -265,9 +263,6 @@ main .container form {
         border: 1px solid #ccc;
         border-top: none;
         cursor: pointer;
-        // p {
-        //   background-color: #fff;
-        // }
         justify-content: space-between;
       }
       .brand_list__name, .brand_list-select {

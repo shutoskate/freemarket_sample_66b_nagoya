@@ -1,5 +1,7 @@
 class PurchasesController < ApplicationController
   before_action :set_item
+  before_action :confirm_item_seller_is_not_buyer
+
   require 'payjp'
 
   def index
@@ -35,25 +37,23 @@ class PurchasesController < ApplicationController
     @item.update_attribute(:trade_step, "交渉中")
     redirect_to done_purchase_path if @trade.save!
   end
+
+
+def done
 end
-
-private
-
-def confirm_item_seller_is_not_buyer
-  redirect_to root_path, alert: "出品した商品を購入することはできません" if seller_id == current_user
-end
-def confirm_transaction_stage_under_sale
-  redirect_to root_path, alert: "既に販売済みの商品です" unless @item.under_sale?
-end
-
-
 
 private 
 
-def trade_params
-  params.require(:trade).permit(:item_id, :buyer_id, :status, :rating).merge(buyer_id: current_user.id)
-end
+  def trade_params
+    params.require(:trade).permit(:item_id, :buyer_id, :status, :rating).merge(buyer_id: current_user.id)
+  end
 
-def set_item
-  @item = Item.find(params[:id])
+  def set_item
+    @item = Item.find(params[:id])
+  end
+
+  def confirm_item_seller_is_not_buyer
+    redirect_to root_path if @item.seller_id == current_user.id
+  end
+
 end

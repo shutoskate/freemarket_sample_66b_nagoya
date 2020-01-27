@@ -77,7 +77,9 @@
           (税込)
         %span.item-shipping-fee
           = @item.charge
-      - unless @item.seller_id === current_user.id
+      - if @item.trade_step == "売却済"
+        .item-buy-btn.sold 売り切れました
+      - if @item.seller_id != current_user.id  
         = link_to('購入画面に進む', purchase_path(@item.id), class:"item-buy-btn")
         .item-description
           %p.item-description-inner
@@ -95,7 +97,7 @@
             = link_to( {}, class:"item-button item-button-report", target:"_blank") do
               %i.fas.fa-lock
               %span あんしん・あんぜんへの取り組み
-    - if @item.seller_id === current_user.id
+    - if @item.seller_id == current_user.id && @item.trade_step != "売却済"
       .item-box.seller
         = link_to('商品の編集', edit_item_path(@item), class:"item-buy-btn")
         %span or

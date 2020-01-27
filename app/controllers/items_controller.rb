@@ -5,6 +5,7 @@ class ItemsController < ApplicationController
   require "payjp"
 
   def show
+    # カテゴリー詳細ーーーーーーーーーーーーー
     if Category.find(@item.category_id).parent.parent
       @subsubcategory = Category.find(@item.category_id)
       @subcategory = @subsubcategory.parent
@@ -13,12 +14,16 @@ class ItemsController < ApplicationController
       @subcategory = Category.find(@item.category_id)
       @category = @subcategory.parent
     end
+
+    # ブランド詳細ーーーーーーーーーーーーーーー
     if @item.brand_id != nil
       @brand = Brand.find(@item.brand_id_before_type_cast)
     end
+
     @user = User.find(@item.seller_id)
-    # 以下、imgテーブル作成次第表示----------------
-    # @img = Item_imag.find(item_id: params[:id])
+    
+    # 画像表示ーーーーーーーーーーーーーー
+    @show_img = ItemImg.where(item_id: Item.find(params[:id]))
   end
 
   def new

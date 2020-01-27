@@ -73,5 +73,8 @@ gem 'pry-byebug'
 gem 'recaptcha', require: 'recaptcha/rails'
 gem 'mini_magick'
 gem 'enumerize'
+gem "gretel"
+gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
 gem 'payjp'
 gem "gretel"

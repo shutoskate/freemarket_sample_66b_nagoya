@@ -1,15 +1,15 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
-
+  devise   :database_authenticatable, :registerable,
+           :recoverable, :rememberable, :validatable, :omniauthable, omniauth_providers: [:facebook, :google_oauth2]  
   has_many :items
   has_many :trades
   has_many :comments
   has_many :likes
   has_many :addresses
   has_many :cards
+  has_many :sns_credentials, dependent: :destroy
   validates :nickname, presence: true
   validates :email, presence: true
   validates :encrypted_password, presence: true, length: { minimum: 6 }
@@ -21,6 +21,19 @@ class User < ApplicationRecord
 
   # has_many :active_relationships, class_name: “Relationship”, foreign_key: “follower_id”
   # has_many :passive_relationships, class_name: “Relationship”, foreign_key: “followed_id”
+
+  def self.from_omniauth(auth)
+    sns = SnsCredential.where(provider: auth.provider, uid: auth.uid).first_or_create
+    user = sns.user || User.where(email: auth.info.email).first_or_initialize(
+      nickname: auth.info.name,
+        email: auth.info.email
+    )
+    if user.persisted?
+      sns.user = user
+      sns.save
+    end
+    { user: user, sns: sns }
+  end
   
   year_list = {}
   for i in 0..120 do

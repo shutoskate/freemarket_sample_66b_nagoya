@@ -1,0 +1,23 @@
+= render "layouts/sub_header"
+%main
+  .contents2
+    .area2
+      .new__registration2
+        %h2 新規会員登録
+      .registration-box2
+        = link_to "メールアドレスで登録する", "/signup/registration", class:"box__logo2"
+      %button.btn-sns-facebook2
+        %i.fab.fa-facebook-square
+        - if Rails.env.development?
+          .facebook
+            = link_to 'Facebookで登録する', user_facebook_omniauth_authorize_path, method: :post
+        - else
+          Facebookでログイン
+      %button.btn-sns-google2
+        %i.fab.fa-google
+        - if Rails.env.development?
+          .google{style: 'text-decoration: none; color: black;'}
+            = link_to 'Googleで登録する', user_google_oauth2_omniauth_authorize_path, method: :post
+        - else
+          Googleでログイン
+  = render "layouts/sub_footer"

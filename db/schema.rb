@@ -81,6 +81,15 @@ ActiveRecord::Schema.define(version: 20200124045720) do
     t.index ["trade_step"], name: "index_items_on_trade_step", using: :btree
   end
 
+  create_table "sns_credentials", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "provider"
+    t.string   "uid"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_sns_credentials_on_user_id", using: :btree
+  end
+
   create_table "trades", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "buyer_id",   null: false
     t.integer  "item_id",    null: false
@@ -120,6 +129,7 @@ ActiveRecord::Schema.define(version: 20200124045720) do
   add_foreign_key "items", "brands"
   add_foreign_key "items", "categories"
   add_foreign_key "items", "users", column: "seller_id"
+  add_foreign_key "sns_credentials", "users"
   add_foreign_key "trades", "items"
   add_foreign_key "trades", "users", column: "buyer_id"
 end

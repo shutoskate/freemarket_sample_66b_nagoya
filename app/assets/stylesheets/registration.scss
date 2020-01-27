@@ -216,6 +216,17 @@ footer {
     font-size: 15px;
   }
 }
+.facebook{
+  a {
+    text-decoration: none;
+    color: white; 
+  }
+}
+.google{
+  a {
+    text-decoration: none;
+    color: black; 
+  }
 
 
 // 本人情報編集ページ
@@ -257,7 +268,8 @@ footer {
     vertical-align: middle;
     cursor: pointer;
   }
-}
-.address {
-  height: 800px;
+  }
+  .address {
+    height: 800px;
+  }
 }

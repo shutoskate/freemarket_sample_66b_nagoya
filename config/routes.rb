@@ -19,6 +19,8 @@ Rails.application.routes.draw do
   resources :users, only: [:edit, :update]
   resources :items, only: [:show, :new, :create, :edit, :update, :destroy] do
     collection do
+      get 'get_subcategory', defaults: { format: 'json' }
+      get 'get_subsubcategory', defaults: { format: 'json' }
       get 'brand', defaults: { format: 'json' }
     end
   end

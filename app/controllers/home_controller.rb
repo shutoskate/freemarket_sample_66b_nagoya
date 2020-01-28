@@ -27,9 +27,9 @@ class HomeController < ApplicationController
     ].flatten.compact
     @items_category = []
     @categories.each do |category|
-      @items_category << (Item.where(category_id: category.id).compact).last(10).reverse
+      @items_category << (Item.where(category_id: category.id).compact)
       @items_category = @items_category.delete_if(&:empty?)
     end
-    @items_category = @items_category[0]
+    @items_category = @items_category.flatten.sort.reverse
   end
 end

@@ -1,0 +1,16 @@
+- breadcrumb :categories
+= render 'layouts/header'
+%main
+  .category
+    .category__box
+      %h2.index
+        カテゴリー一覧
+      .category__tags
+        - @categories.each do |category|
+          .category__tag
+            = link_to "#{category.name}", "##{category.name}"
+      = render partial: "category_list", collection: @categories, as: "category" 
+        
+        
+    
+= render "layouts/footer"

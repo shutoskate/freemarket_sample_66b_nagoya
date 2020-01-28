@@ -1,3 +1,4 @@
+// カテゴリー検索結果
 .category {
   width: 1020px;
   margin: 0 auto;
@@ -65,6 +66,70 @@
         font-size: 16px;
         word-break: break-all;
         z-index: 10;
+      }
+    }
+  }
+  // カテゴリー一覧
+  &__box {
+    width: 700px;
+    margin: 0 auto;
+  }
+  &__tags {
+    overflow: hidden;
+    .category__tag {
+      float: left;
+      display: block;
+      background-color: #fff;
+      text-align: center;
+      border-radius: 4px;
+      width: auto;
+      min-width: 80px;
+      height: 40px;
+      box-shadow: 1px 1px 1px 1px rgba(14,14,14,0.0580392);
+      padding: 0 30px;
+      margin: 5px;
+      font-size: 16px;
+      line-height: 40px;
+      a {
+        color: #333;
+        text-decoration: none;
+      }
+    }
+  }
+  &__title {
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    padding: 7px 30px 0 30px;
+    height: 40px;
+    color: #fff;
+    background-color: #ea352d;
+    margin-top: 25px;
+    font-size: 22px;
+  }
+  &__content {
+    padding: 24px 30px 10px 30px;
+    background-color: #fff;
+    .link {
+      font-size: 16px;
+      margin: 8px 0;
+    }
+    a {
+      text-decoration: none;
+      color: #0099e8;
+    }
+    .subcategory {
+      padding: 15px 0 5px;
+      .subsubcategories {
+        padding: 0 20px 10px;
+        overflow: hidden;
+        .subsubcategory {
+          float: left;
+          width: 50%;
+          padding: 0 20px 0 0;
+          font-size: 16px;
+          margin-top: 8px;
+          margin-bottom: 8px;
+        }
       }
     }
   }

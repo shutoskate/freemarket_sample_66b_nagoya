@@ -12,16 +12,14 @@
     .header__bottom
       %nav.categories__left
         %ul.categories__items
-          %li.serch_categories
+          %li.serch
             %h4
               = render "home/category_menu"
-          %li.serch_brand
+          %li.serch
             %h4
               %a.lists{:href => "#"}
                 %i.fas.fa-tag
                 %span ブランドから探す
-          .serch_items
-
       -if user_signed_in?
         %nav.categories__right
           %ul.user_area

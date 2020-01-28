@@ -14,11 +14,14 @@ main {
         text-align: center;
         font-size: 24px;
       }
+      .edit_user {
+        padding: 0;
+      }
       &__name {
         &__top {
           padding: 40px 0;
           height: 156px;
-          background-image: image-url("https://www.illust-box.jp/db_img/sozai/00011/116345/watermark.jpg");
+          background-image: image-url("cloud.jpeg");
           display: flex;
           justify-content: center;
         }
@@ -49,7 +52,6 @@ main {
         .text{
           min-height: 200px;
           width: 668px;
-          max-width: 668px;
           padding: 15px;
           margin: 0 auto;
         }

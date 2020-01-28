@@ -5,7 +5,8 @@
   .category_title{id: "#{Category.find(item[0][:category_id]).parent.parent.name}"}
   = Category.find(item[0][:category_id]).parent.parent.name
 .top__category-item__category-list--more
-  = link_to "もっとみる >", "#" , class:"more"
+  - @category = Category.find(item[0][:category_id]).parent.parent
+  = link_to "もっとみる >", category_path(@category) , class:"more"
 .top__category-item__category-list__category-box
   - item.first(10).each do |i|
     .product

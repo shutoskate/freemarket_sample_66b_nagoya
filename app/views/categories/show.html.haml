@@ -1,0 +1,25 @@
+- breadcrumb :category
+= render 'layouts/header'
+%main
+  .category
+    %h2.index
+      #{@category.name}の商品一覧
+    - if @items.length == 0
+      %h3 該当する商品はありません。
+    .category__items
+      - @items.first(100).each do |i|
+        .category__item
+          = link_to item_path(i) do
+            - item_img = ItemImg.where(item_id: i.id)
+            - if item_img[0] == nil 
+              = image_tag "/uploads/item_img/img/IMG_34498.jpg", class:"img"
+            - else
+              = image_tag "/uploads/item_img/img/#{item_img[0][:img]}", class:"img"
+            .category__item__price
+              %p
+                ¥
+                = i[:price].to_s(:delimited, delimiter: ',')
+            .category__item__name
+              %p
+                = i[:name]
+= render "layouts/footer"

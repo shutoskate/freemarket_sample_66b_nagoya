@@ -38,13 +38,13 @@
             %tr
               %th カテゴリー
               %td
-                = link_to(@category.name, {})
-                = link_to({}, {}) do
+                = link_to(@category.name, category_path(@category))
+                = link_to category_path(@subcategory) do
                   .sub-category
                     %i.fas.fa-chevron-right
                     = @subcategory.name
                 - if @subsubcategory
-                  = link_to({}, {}) do
+                  = link_to category_path(@subsubcategory) do
                     .sub-sub-category
                       %i.fas.fa-chevron-right
                       = @subsubcategory.name

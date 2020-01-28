@@ -34,7 +34,6 @@ Rails.application.routes.draw do
       get 'done', to: 'purchases#done'
     end
   end
-
   resources :cards, only: [:index, :new, :show] do
     collection do
       post 'show', to: 'cards#show'
@@ -42,14 +41,12 @@ Rails.application.routes.draw do
       post 'delete', to: 'cards#delete'
     end
   end
+  resources :categories, only: [:index, :show]
   get "/mypage" => "users#mypage"
   get "/mypage/profile" => "users#profile"
   post "/mypage/profile" => "users#profile_update"
   get "/mypage/items" => "users#items"
-  # get "/mypage/identification" => "users#identify"
-  # post "/mypage/identification" => "users#identify_update"
   get "/logout" => "users#logout"
-  # get "/buy/:id" => "items#buy", as: :buy 
   post "/stop/:id" => "items#stop", as: :stop
   post "/start/:id" => "items#start", as: :start
 end

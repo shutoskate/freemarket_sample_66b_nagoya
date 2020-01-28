@@ -1,9 +1,6 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
 
-  def mypage
-  end
-
   def edit
   end
 
@@ -18,11 +15,11 @@ class UsersController < ApplicationController
   end
 
   def mypage
-    @user = current_user
+    @trading_items = Item.where(trade_step: "出品中").or(Item.where(trade_step: "出品停止")).where(seller_id: current_user.id).first(5)
+    @sold_items = Item.where(seller_id: current_user.id, trade_step: "売却済")
   end
 
   def profile
-    @user = current_user
   end
 
   def profile_update

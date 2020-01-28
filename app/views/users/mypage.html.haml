@@ -8,35 +8,49 @@
         = link_to (), class:"user__about" do
           = image_tag "//static.mercdn.net/images/member_photo_noimage_thumb.png", size: "60x60", alt: "顔写真", class: "user__image"
           %h5.user__name
-            = @user.nickname
-      %section.user__tab
-        %ul.tab
-          %li.notice
-            %h3 お知らせ
-          %li.to_do
-            %h3 やることリスト
-      %section.user__contents
-        = image_tag "//static.mercdn.net/images/member_photo_noimage_thumb.png", size: "60x60", alt: "顔写真", class: "app__image"
+            = current_user.nickname
+      %section.user__tab.mypage-tab-container
+        %ul.mypage-tabs
+          %li.tab.active
+            %h3
+              お知らせ
+          %li.tab
+            %h3
+              やることリスト
+        .tab-content
+          %ul.mypage-item-list.tab-pane
+            %li.panel.show
+              %section.user__contents
+                = image_tag "logo_red.svg", size: "60x60", alt: "Fマーケット", class: "app__image"
+            %li.panel.mypage-item-not-found
+              現在、やることリストはありません
+      
         .app__text
       %section.user__index 
         .index__text
-          %link_to.text{:href => "#"} 一覧を見る
-      -# JSでactive切り替えｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰ
+          = link_to "一覧を見る", {}, {class:"text"}
       %section.mypage-tab-container
         %h2.mypage-tab-head 購入した商品
         %ul.mypage-tabs
-          %li.active
+          %li.tab.active
             %h3
-              = link_to '取引中', {}, data_toggle:"tab"
-          %li
+              取引中
+          %li.tab
             %h3
-              = link_to '過去の取引', {}, data_toggle:"tab"
+              過去の取引
         .tab-content
-          %ul#mypage-tab-transaction-now.mypage-item-list.tab-pane.active
-            %li.mypage-item-not-found.bold
-              取引中の商品がありません
-          %ul#mypage-tab-transaction-old.mypage-item-list.tab-pane
-            %li.mypage-item-not-found.bold
-              過去に取引した商品がありません
+          %ul.mypage-item-list.tab-pane
+            - if @trading_items == nil
+              %li.panel.mypage-item-not-found.show
+                取引中の商品がありません
+            - if @trading_items
+              %li.panel.show
+                = render partial: "item_list", collection: @trading_items, as: "item"
+            - if @sold_items == nil
+              %li.panel.mypage-item-not-found
+                過去に取引した商品がありません
+            - if @sold_items
+              %li.panel.show
+                = render partial: "item_list", collection: @sold_items, as: "item"
 = render "layouts/footer"
 = render "layouts/exhibition"

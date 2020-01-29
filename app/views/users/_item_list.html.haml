@@ -3,7 +3,11 @@
     %li
       = link_to item_path(item), class:"mypage-item-link" do
         %figure
-          = image_tag "logo_red.svg"
+          - item_img = ItemImg.find_by(item_id: item[:id])
+          - if item_img == nil 
+            = image_tag "no_image.jpg", class:"img"
+          - else
+            = image_tag "/uploads/item_img/img/#{item_img.img}", class:"img"
         .mypage-item-body.show-stock-item
           .mypage-item-text
             = item.name

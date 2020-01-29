@@ -9,10 +9,10 @@
           - @show_img.each_with_index do |img, index|
             - if index == 0
               .item-image
-                = image_tag "/uploads/item_img/img/#{img[:img]}", alt: '商品写真', class: 'photo'
+                = image_tag "/uploads/item_img/img/#{i.id}/#{item_img[0][:img]}", alt: '商品写真', class: 'photo'
             - else
               .subphot-box
-                = image_tag "/uploads/item_img/img/#{img[:img]}", alt: '商品写真', class: 'subphoto'
+                = image_tag "/uploads/item_img/img/#{i.id}/#{item_img[0][:img]}", alt: '商品写真', class: 'subphoto'
           - if @item.trade_step == "交渉中"
             .stop
             %span.stop_text 交渉中

@@ -54,89 +54,80 @@
           padding: 0%;
           margin: 0%;
           justify-content: space-between;
-          i {
-            color: #ff0211;
-          }
-          .serch_brand{
+          .serch{
             display: flex;
             font-size: 15px;
             .lists{
               text-decoration: none ;
-              color: #333;
-              i {
-                color: #ff0211;
-              }
-            }
-
-          }
-          .serch_categories{
-            display: flex;
-            font-size: 15px;
-            .lists{
-              text-decoration: none ;
-              color: #333;  
-              }
-            }
-          }
-        }
-      }
-      .categories__right{
-        height: 100%;
-        width: 520px;
-        .user_area{
-          display: flex;
-          list-style: none;
-          justify-content: space-around;
-            .lists{
-              text-decoration: none;
               color: #333;
               &:hover {
                 color: #0099e8;
               }
-            }
-          .btn {
-            padding: 0 10px;
-            line-height: 30px;
-            border-radius: 4px;
-            .lists {
-              text-decoration: none;
-              font-size: 14px;
-            }
-          }
-          .btn_red {
-            background-color: #ea352d;
-            border: 1px solid #ea352d;
-            color: #fff;
-            a {
-              color: #fff;
-              text-decoration: none;
-            }
-          }
-          .btn_login {
-            display: block;
-            border: 1px solid #0099e8;
-            background-color: #fff;
-            margin-left: 10px;
-            a {
-              color: #0099e8;
-              text-decoration: none;
-            }
-            &:hover {
-              background-color: #0099e8;
-              transition: 0.3s;
-              a {
-                color: #fff;
-                transition: 0.3s;
+              i {
+                color: #ff0211;
               }
             }
           }
         }
-        .no_session {
-          float: right;
+      }
+    }
+    .categories__right{
+      height: 100%;
+      width: 520px;
+      .user_area{
+        display: flex;
+        list-style: none;
+        justify-content: space-around;
+          .lists{
+            text-decoration: none;
+            color: #333;
+            &:hover {
+              color: #0099e8;
+            }
+          }
+        .btn {
+          padding: 0 10px;
+          line-height: 30px;
+          border-radius: 4px;
+          .lists {
+            text-decoration: none;
+            font-size: 14px;
+          }
+        }
+        .btn_red {
+          background-color: #ea352d;
+          border: 1px solid #ea352d;
+          color: #fff;
+          a {
+            color: #fff;
+            text-decoration: none;
+          }
+        }
+        .btn_login {
+          display: block;
+          border: 1px solid #0099e8;
+          background-color: #fff;
+          margin-left: 10px;
+          a {
+            color: #0099e8;
+            text-decoration: none;
+          }
+          &:hover {
+            background-color: #0099e8;
+            transition: 0.3s;
+            a {
+              color: #fff;
+              transition: 0.3s;
+            }
+          }
         }
       }
-    } 
-  }
+      .no_session {
+        float: right;
+      }
+    }
+  } 
+}
 .breadcrumb{
   margin: 0 26.5px ;
   padding: 16px 0 ;

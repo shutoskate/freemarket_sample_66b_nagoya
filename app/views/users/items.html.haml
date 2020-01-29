@@ -3,18 +3,36 @@
   .content
     = render "layouts/sideber"
     %section.mypage-tab-container
-      %h2.mypage-tab-head
-        出品した商品
-      %ul.listing-tabs
-        %li.active
+      %h2.mypage-tab-head 出品した商品
+      %ul.mypage-tabs
+        %li.tab.tab3.active
           %h3
-            = link_to "出品中", {}, data_toggle:"tab"
-        %li
+            出品中
+        %li.tab.tab3
           %h3
-            = link_to "取引中", {}
-        %li
+            取引中
+        %li.tab.tab3
           %h3
-            = link_to "売却済み", {}
-      = render partial: "item_list", collection: @items, as: "item"
+            売却済み
+      .tab-content
+        %ul.mypage-item-list.tab-pane
+          - if @selling_items == []
+            %li.panel.mypage-item-not-found.show
+              出品中の商品がありません
+          - else @selling_items
+            %li.panel.show
+              = render partial: "item_list", collection: @selling_items, as: "item"
+          - if @trading_items == []
+            %li.panel.mypage-item-not-found
+              取引中の商品がありません
+          - else @trading_items
+            %li.panel
+              = render partial: "item_list", collection: @trading_items, as: "item"
+          - if @sold_items == []
+            %li.panel.mypage-item-not-found
+              過去に取引した商品がありません
+          - else @sold_items
+            %li.panel
+              = render partial: "item_list", collection: @sold_items, as: "item"
 = render 'layouts/footer'
 = render 'layouts/exhibition'

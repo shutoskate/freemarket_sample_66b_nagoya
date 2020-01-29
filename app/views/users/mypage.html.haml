@@ -40,17 +40,17 @@
               過去の取引
         .tab-content
           %ul.mypage-item-list.tab-pane
-            - if @trading_items == nil
+            - if @trading_items == []
               %li.panel.mypage-item-not-found.show
                 取引中の商品がありません
-            - if @trading_items
+            - else
               %li.panel.show
                 = render partial: "item_list", collection: @trading_items, as: "item"
-            - if @sold_items == nil
+            - if @bought_items == []
               %li.panel.mypage-item-not-found
                 過去に取引した商品がありません
-            - if @sold_items
-              %li.panel.show
-                = render partial: "item_list", collection: @sold_items, as: "item"
+            - else
+              %li.panel
+                = render partial: "item_list", collection: @bought_items, as: "item"
 = render "layouts/footer"
 = render "layouts/exhibition"

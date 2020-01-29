@@ -15,8 +15,8 @@ class UsersController < ApplicationController
   end
 
   def mypage
-    @trading_items = Item.where(trade_step: "出品中").or(Item.where(trade_step: "出品停止")).where(seller_id: current_user.id).first(5)
-    @sold_items = Item.where(seller_id: current_user.id, trade_step: "売却済")
+    @trading_items = Item.where(trade_step: "交渉中").where.not(seller_id: current_user.id).first(5)
+    @bought_items = Item.where(trade_step: "売却済").where.not(seller_id: current_user.id).first(5)
   end
 
   def profile
@@ -31,7 +31,10 @@ class UsersController < ApplicationController
   end
 
   def items
-    @items = Item.where(seller_id: current_user.id)
+    @my_items = Item.where(seller_id: current_user.id)
+    @selling_items = @my_items.where("(trade_step = ?) OR (trade_step = ?)", 1, 3).first(10)
+    @trading_items = @my_items.where(trade_step: "交渉中").first(10)
+    @sold_items = @my_items.where(trade_step: "売却済")
   end
 
   def logout

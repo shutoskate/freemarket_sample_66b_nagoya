@@ -50,6 +50,7 @@
     text-align: center;
     font-size: 15px;
     padding: 16px;
+    margin-bottom: 40px;
     .index__text{
       background-color: #eee;
       height: 50px;
@@ -99,7 +100,7 @@ h3{
   line-height: 1;
 }
 .mypage-tab-container {
-  background: #fff;
+  // background: #fff;
   width: 700px;
   .mypage-tab-head {
     padding: 0 16px;
@@ -123,6 +124,9 @@ h3{
         font-size: 16px;
         line-height: 72px;
       }
+    }
+    .tab3{
+      width: 33.3%;
     }
     .active {
       background-color: #fff;
@@ -156,7 +160,6 @@ h3{
     background: #fafafa;
     font-size: 16px;
     line-height: 72px;
-    margin-top: 40px;
   }
   .listing-tabs {
     border: 0;
@@ -188,6 +191,7 @@ h3{
   }
   .tab-content {
     display: block;
+    background-color: #fff;
     .mypage-item-list li {
       position: relative;
       a {

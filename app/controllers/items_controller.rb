@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :buy, :edit, :update, :destroy,]
-  before_action :set_item, only: [:show, :edit, :update, :destroy, :buy, :stop, :start]
+  before_action :set_item, only: [:show, :edit, :update, :destroy, :buy, :stop, :start, :rating]
   require 'enumerize'
   require "payjp"
 
@@ -110,6 +110,12 @@ class ItemsController < ApplicationController
     redirect_to @item
   end
 
+  def rating
+    @item.trade.update(rating_params)
+    @item.update_attribute(:trade_step, "売却済")
+    redirect_to @item
+  end
+
   private
 
   def set_item
@@ -118,6 +124,10 @@ class ItemsController < ApplicationController
 
   def change_params
     params.require(:item).permit(:trade_step)
+  end
+
+  def rating_params
+    params.require(:trade).permit(:rating)
   end
   
   def item_params

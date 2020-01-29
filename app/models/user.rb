@@ -22,6 +22,13 @@ class User < ApplicationRecord
   # has_many :active_relationships, class_name: “Relationship”, foreign_key: “follower_id”
   # has_many :passive_relationships, class_name: “Relationship”, foreign_key: “followed_id”
 
+  VALID_PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]{6,20}+\z/i
+  validates :password,  format: { with: VALID_PASSWORD_REGEX }
+
+  VALID_NAMEKANA_REGEX = /[\p{katakana} ー－&&[^ -~｡-ﾟ]]+/
+  validates :family_name_kana, format: { with: VALID_NAMEKANA_REGEX}
+  validates :first_name_kana, format: { with: VALID_NAMEKANA_REGEX}
+
   def self.from_omniauth(auth)
     sns = SnsCredential.where(provider: auth.provider, uid: auth.uid).first_or_create
     user = sns.user || User.where(email: auth.info.email).first_or_initialize(

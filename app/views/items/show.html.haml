@@ -13,6 +13,9 @@
             - else
               .subphot-box
                 = image_tag "/uploads/item_img/img/#{img[:img]}", alt: '商品写真', class: 'subphoto'
+          - if @item.trade_step == "交渉中"
+            .stop
+            %span.stop_text 交渉中
           - if @item.trade_step == "出品停止"
             .stop
             %span.stop_text 公開停止中
@@ -88,7 +91,9 @@
           = @item.charge
       - if @item.trade_step == "売却済"
         .item-buy-btn.sold 売り切れました
-      - if @item.seller_id != current_user.id  
+      - if @item.trade_step == "交渉中"
+        .item-buy-btn.sold 交渉中です
+      - if @item.seller_id != current_user.id && @item.trade_step == "出品中" 
         = link_to('購入画面に進む', purchase_path(@item.id), class:"item-buy-btn")
         .item-description
           %p.item-description-inner

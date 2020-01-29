@@ -49,4 +49,5 @@ Rails.application.routes.draw do
   get "/logout" => "users#logout"
   post "/stop/:id" => "items#stop", as: :stop
   post "/start/:id" => "items#start", as: :start
+  post "/rating/:id" => "items#rating", as: :rating
 end

@@ -3,6 +3,56 @@
   padding: 24px 40px 40px;
   background: #fff;
   margin: 40px auto;
+  .submit {
+    width: 300px;
+    display: block;
+    margin: 30px auto 0;
+    height: 60px;
+    color: #fff;
+    background-color: #999;
+  }
+}
+.rating_title {
+  background-color: #fff3b8;
+  text-align: center;
+  height: 60px;
+  width: 700px;
+  display: block;
+  margin: 0 auto;
+  h3 {
+    color: red;
+    line-height: 60px;
+  }
+}
+.rating_title + .item-box {
+  margin-top: 0;
+}
+.rating_boxes {
+  width: 300px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  .rating {
+    text-align: center;
+    width: 70px;
+    height: 70px;
+    &_box {
+      border: 1px solid #ccc;
+      padding: 10px;
+    }
+    i {
+      display: block;
+      font-size: 30px;
+      height: 35px;
+      width: 100%;
+    }
+    p {
+      line-height: 20px;
+    }
+  }
+  .radio:checked + .rating_box {
+    border: 2px solid skyblue;
+  }
 }
 .item-name {
   font-size: 24px;
@@ -72,6 +122,15 @@
     top: -210px;
   }
 }
+.icon-good {
+  color: #ef5185;
+}
+.icon-normal {
+  color: #fba933;
+}
+.icon-bad {
+  color: #6ab5d8;
+}
 .item-table {
   float: right;
   width: 300px;
@@ -110,15 +169,6 @@
       font-variant: normal;
       text-transform: none;
       line-height: 1;
-    }
-    .icon-good {
-      color: #ef5185;
-    }
-    .icon-normal {
-      color: #fba933;
-    }
-    .icon-bad {
-      color: #6ab5d8;
     }
     span {
       color: #333;

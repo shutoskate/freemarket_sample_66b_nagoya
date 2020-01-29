@@ -12,9 +12,9 @@
           = link_to item_path(i) do
             - item_img = ItemImg.where(item_id: i.id)
             - if item_img[0] == nil 
-              = image_tag "/uploads/item_img/img/IMG_34498.jpg", class:"img"
+              = image_tag i.img.url, class:"img"
             - else
-              = image_tag "/uploads/item_img/img/#{item_img[0][:img]}", class:"img"
+              = image_tag i.img.url, class:"img"
             .category__item__price
               %p
                 ¥

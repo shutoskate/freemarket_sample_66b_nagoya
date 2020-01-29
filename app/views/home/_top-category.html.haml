@@ -12,11 +12,11 @@
     .product
       .product__wrap
         = link_to item_path(i) do
-          - item_img = ItemImg.where(item_id: i[:id])
-          - if item_img[0] == nil 
+          - item_img = ItemImg.where(item_id: i[:id])[0]
+          - if item_img == nil 
             = image_tag "no_image.jpg", class:"img"
           - else
-            = image_tag "/uploads/item_img/img/#{item_img[0][:img]}", class:"img"
+            = image_tag item_img.img.url, class:"img"
           .product__img__price
             %p.price 
               ¥

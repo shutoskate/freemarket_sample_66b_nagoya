@@ -7,7 +7,7 @@
           - if item_img == nil 
             = image_tag "no_image.jpg", class:"img"
           - else
-            = image_tag "/uploads/item_img/img/#{item_img.img}", class:"img"
+            = image_tag item_img.img.url, class:"img"
         .mypage-item-body.show-stock-item
           .mypage-item-text
             = item.name

@@ -7,7 +7,7 @@
       .buy-content.box
         .item-info
           .item-info-img
-            = image_tag 'IMG_34498.jpg', alt: '商品写真'
+            = image_tag @item_img.img.url, alt: '商品写真'
           .item-info-detail
             .item-info-name
               = @item.name

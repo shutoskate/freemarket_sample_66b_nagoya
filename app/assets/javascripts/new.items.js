@@ -69,7 +69,7 @@ $(function(){
     $('.right_bar').prepend('¥') 
     $('.right_bar_2').html(profit)
     $('.right_bar_2').prepend('¥')
-    $('#price').val(profit) 
+    $('#price').val(data) 
     if(profit == '') {
     $('.right_bar_2').html('');
     $('.right_bar').html('');

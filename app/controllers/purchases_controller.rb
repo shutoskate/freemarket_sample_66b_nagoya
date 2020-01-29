@@ -1,5 +1,6 @@
 class PurchasesController < ApplicationController
   before_action :set_item
+  before_action :set_img
   before_action :confirm_item_seller_is_not_buyer
 
   require 'payjp'
@@ -54,6 +55,10 @@ private
 
   def confirm_item_seller_is_not_buyer
     redirect_to root_path if @item.seller_id == current_user.id
+  end
+
+  def set_img
+    @item_img = ItemImg.where(item_id: @item[:id])[0]
   end
 
 end

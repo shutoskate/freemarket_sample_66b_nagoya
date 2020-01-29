@@ -24,6 +24,8 @@ class Item < ApplicationRecord
     validates :item_text
   end
 
+  validates :price, numericality: { only_integer: true, greater_than: 299, less_than: 9999999}
+
   extend Enumerize
 
   @brands = Brand.all

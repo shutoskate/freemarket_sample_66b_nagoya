@@ -1,0 +1,12 @@
+%h3.category__title{id: "#{category.name}"}
+  = category.name
+.category__content
+  = link_to "すべて", category_path(category), class:"link"
+  - category.children.each do |subcategory|
+    .subcategory
+      = subcategory.name
+      .subsubcategories
+        - subcategory.children.each do |subsubcategory|
+          .subsubcategory
+            = link_to category_path(subsubcategory), class:"link" do
+              = subsubcategory.name

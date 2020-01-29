@@ -103,8 +103,9 @@
             .right_bar
           .profit#price_point 
             販売利益
-          = f.number_field :price, style: "display: none", id: "price"
-          .right_bar_2
+            .price__tax
+              = f.number_field :price, style: "display: none", id: "price"
+              .right_bar_2
     .bottom__area
       .text__arart
         %p.text

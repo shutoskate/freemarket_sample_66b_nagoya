@@ -516,21 +516,27 @@ main .container form {
           padding: 24px 0px;
           font-size: 14px;
           border-bottom:1px solid lightgray;
+          justify-content: space-between;
           .right_bar{
             font-size: 15px;
+            text-align: right;
           }
         }
         .profit{
           height: 80px;
           padding: 24px 0;
+          
           font-weight: bold;
-        }
-        .right_bar_2{
-          font-size: 30px;
-          margin-left: 40px;
-          margin-left: 287px;
-          margin-top: -62px;
+          font-size: 15px;
 
+          justify-content: space-between;
+          .price__tax{
+            text-align: right;
+            display: inline;
+            .right_bar_2{
+              font-size: 30px;
+            }
+          }
         }
       }
     }

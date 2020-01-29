@@ -1,6 +1,32 @@
 =render "layouts/header"
 %main
   %content
+    - if @item.trade
+      - if @item.trade.buyer_id == current_user.id && @item.trade.rating == "評価待ち"
+        .rating_title
+          %h3 受取評価をしてください
+        .item-box
+          = form_for(@item.trade, url:rating_path, html:{method:"POST"}) do |f|
+            .rating_boxes
+              .rating.rating-follow
+                = f.radio_button :rating, "GOOD", id:"GOOD", class:"hidden radio"
+                .rating_box
+                  = f.label '良い', for: 'GOOD' do
+                    %i.icon-good.fas.fa-laugh
+                    %p 良い
+              .rating.rating-follow
+                = f.radio_button :rating, "NORMAL", id:"NORMAL", class:"hidden radio"
+                .rating_box
+                  = f.label '普通', for: 'NORMAL' do
+                    %i.icon-normal.fas.fa-meh
+                    %p 普通
+              .rating.rating-follow
+                = f.radio_button :rating, "BAD", id:"BAD", class:"hidden radio"
+                .rating_box
+                  = f.label '悪い', for: 'BAD' do
+                    %i.icon-bad.fas.fa-frown
+                    %p 悪い
+            = f.submit "評価を投稿する", class:"submit"
     .item-box
       .item-name
         = @item.name

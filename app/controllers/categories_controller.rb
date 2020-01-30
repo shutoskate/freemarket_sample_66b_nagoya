@@ -17,6 +17,6 @@ class CategoriesController < ApplicationController
         @category.children
       ].flatten.compact
     end
-    @items = @categories.map{|category| Item.where(trade_step: "出品中").or(Item.where(trade_step: "売却済")).where(category_id: category.id)}.flatten
+    @items = @categories.map{|category| Item.where(trade_step: "出品中").or(Item.where(trade_step: "売却済")).where(category_id: category.id).order(id: "desc")}.flatten
   end
 end

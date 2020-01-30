@@ -71,6 +71,7 @@
 .item-images {
   width: 300px;
   height: 420px;
+  position: relative;
   .stop {
     display: block;
     width: 150px;
@@ -82,16 +83,19 @@
     border-right: 75px solid transparent;
     font-size: 14px;
     position: relative;
+    position: absolute;
     left: -75px;
     top: -75px;
     writing-mode: vertical-lr;
   }
   .stop_text {
+    width: 40%;
+    text-align: center;
     color: #ffffff;
     display: block;
     position: relative;
-    left: -30px;
-    top: -200px;
+    left: -20px;
+    top: 25px;
     font-weight: bold;
     transform: rotate(-45deg);
   }
@@ -118,8 +122,8 @@
   }
   .sold_text{
     font-size: 24px;
-    left: -33px;
-    top: -210px;
+    left: -20px;
+    top: 25px;
   }
 }
 .icon-good {

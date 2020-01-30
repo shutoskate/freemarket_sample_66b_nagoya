@@ -63,8 +63,9 @@ $(document).ready(function () {
 $(function(){
   $('#price_calc').on('input', function(){   
     var data = $('#price_calc').val(); 
-    var profit = Math.round(data * 0.9)  
-    var fee = (data - profit) 
+    var profit = Math.round(data * 0.9).toLocaleString();
+    var profits = Math.round(data * 0.9)
+    var fee = (data - profits).toLocaleString();
     $('.right_bar').html(fee) 
     $('.right_bar').prepend('¥') 
     $('.right_bar_2').html(profit)

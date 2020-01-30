@@ -15,8 +15,21 @@ class UsersController < ApplicationController
   end
 
   def mypage
-    @trading_items = Item.where(trade_step: "交渉中").where.not(seller_id: current_user.id).first(5)
-    @bought_items = Item.where(trade_step: "売却済").where.not(seller_id: current_user.id).first(5)
+    @my_trades = Trade.where(buyer_id: current_user.id)
+    @my_trading_item_ids = @my_trades.map{|t| t.item_id}
+
+    @trading_items = []
+    @my_trading_item_ids.each do |i|
+      if Array(Item.where(id: i,trade_step: 2)) != []
+        @trading_items << Item.where(trade_step: 2).find(i)
+      end
+    end
+    @bought_items = []
+    @my_trading_item_ids.each do |i|
+      if Array(Item.where(id: i,trade_step: 4)) != []
+        @bought_items << Item.where(trade_step: 4).find(i)
+      end
+    end
   end
 
   def profile

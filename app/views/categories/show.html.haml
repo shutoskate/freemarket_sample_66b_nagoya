@@ -15,11 +15,14 @@
               = image_tag "no_image.jpg", class:"img"
             - else
               = image_tag item_img.img.url, class:"img"
-            .category__item__price
-              %p
-                ¥
-                = i[:price].to_s(:delimited, delimiter: ',')
-            .category__item__name
-              %p
-                = i[:name]
+          - if i.trade_step == "売却済"
+            .stop_category
+              %span.stop_text_category SOLD
+          .category__item__price
+            %p
+              ¥
+              = i[:price].to_s(:delimited, delimiter: ',')
+          .category__item__name
+            %p
+              = i[:name]
 = render "layouts/footer"

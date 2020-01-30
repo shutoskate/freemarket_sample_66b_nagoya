@@ -31,6 +31,32 @@
         overflow: hidden;
         z-index: 1;
       }
+      .stop_category {
+        display: block;
+        width: 120px;
+        height: 120px;
+        text-align: center;
+        transform: rotate(-45deg);
+        border-bottom: 60px solid red;
+        border-left: 60px solid transparent;
+        border-right: 60px solid transparent;
+        font-size: 14px;
+        position: absolute;
+        left: -60px;
+        top: -60px;
+        writing-mode: vertical-lr;
+        z-index: 5;
+        .stop_text_category {
+          width: 40%;
+          text-align: center;
+          color: #ffffff;
+          display: block;
+          position: relative;
+          top: 80px;
+          font-weight: bold;
+          transform: rotate(-90deg);
+        }
+      }
       &__price {
         text-decoration: none;
         color: white;

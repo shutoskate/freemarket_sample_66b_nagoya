@@ -1,6 +1,5 @@
 = render 'layouts/sub_header'
 %main
   .container
-    = form_for(@item, url: {:action => 'update'})do |f|
-      = render partial: "item_form", :locals=>{:f=>f}
+    = render partial: "item_form", locals: { action: "edit" }
 = render 'layouts/sub_footer'

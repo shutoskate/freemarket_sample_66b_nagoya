@@ -1,4 +1,4 @@
-= form_for(@item, url: items_path, html: {method: "post"})do |f|  
+= form_for(@item, url: items_path, html: {method: "post"})do |f|
   .contents__items
     .puts__items 商品の情報を入力
     .item__images
@@ -97,15 +97,9 @@
               .logo__item 必須
             .puts__price
               .jpn-money ¥
-              %input#price_calc.price_form-box{placeholder: "例) 300", type: "number"}/
-          .tax#price_what 
-            販売手数料（10%）
-            .right_bar
-          .profit#price_point 
-            販売利益
-            .price__tax
-              = f.number_field :price, style: "display: none", id: "price"
-              .right_bar_2
+              = f.number_field :price, class: 'bar__price', placeholder: '例）300'
+          .tax 販売手数料（10%）
+          .profit 販売利益
     .bottom__area
       .text__arart
         %p.text
@@ -114,10 +108,9 @@
         またブランド品でシリアルナンバー等がある場合はご記載ください。偽ブランドの販売は犯罪であり処罰される可能性があります。
         %br/
         また、出品をもちまして加盟店規約に同意したことになります
-      - if request.path_info == "/items/new"
+      - if action == "new"
         = f.submit "出品する", class: 'item__bottom'
-      - else request.path_info == "/items/:id/edit"
+      - if action == "edit"
         = f.submit "変更する", class: 'item__bottom'
       = link_to :back do
         %button.back__bottom もどる
-

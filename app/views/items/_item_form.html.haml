@@ -94,6 +94,42 @@
           .price__true
             .view__price 価格
             .logo__item 必須
+
+          = f.select :term, Item.terms.keys, {prompt:"--"}, class: 'bar__day'
+    .item__price__tax
+      .price__tax
+        .what__price 販売価格（300~9,999,999)
+        .price
+          .price__what
+            .price__true
+              .view__price 価格
+              .logo__item 必須
+            .puts__price
+              .jpn-money ¥
+              %input#price_calc.price_form-box{placeholder: "例) 300", type: "number"}/
+          .tax#price_what 
+            販売手数料（10%）
+            .right_bar
+          .profit#price_point
+            販売利益
+            .price__tax
+              = f.number_field :price, style: "display: none", id: "price"
+              .right_bar_2
+    .bottom__area
+      .text__arart
+        %p.text
+        禁止されている出品、行為を必ずご確認ください。
+        %br/
+        またブランド品でシリアルナンバー等がある場合はご記載ください。偽ブランドの販売は犯罪であり処罰される可能性があります。
+        %br/
+        また、出品をもちまして加盟店規約に同意したことになります
+      - if action == "new"
+        = f.submit "出品する", class: 'item__bottom'
+      - if action == "edit"
+        = f.submit "変更する", class: 'item__bottom'
+      = link_to :back do
+        %button.back__bottom もどる
+
           .puts__price
             .jpn-money ¥
             %input#price_calc.price_form-box{placeholder: "例) 300", type: "number"}/
@@ -119,3 +155,4 @@
       = f.submit "変更する", class: 'item__bottom'
     = link_to :back do
       %button.back__bottom もどる
+

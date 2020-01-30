@@ -24,6 +24,9 @@ class ItemsController < ApplicationController
     
     # 画像表示ーーーーーーーーーーーーーー
     @show_img = ItemImg.where(item_id: Item.find(params[:id]))
+
+
+
   end
 
   def new

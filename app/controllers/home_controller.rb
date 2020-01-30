@@ -8,7 +8,7 @@ class HomeController < ApplicationController
     @popular_categories = [@ladies_items, @mens_items, @camera_items, @hobys_items]
 
     # アイテムから、ブランドidごとに集計して、上位四つのブランドidと数の配列を取得
-    @listed_items = Item.where(trade_step: "出品中").or(Item.where(trade_step: "売却済"))
+    @listed_items = Item.where(trade_step: "出品中")
     @brand_list = @listed_items.group(:brand_id).count.sort_by{|k,v| v}.reverse.first(4)
     @popular_brands = @brand_list.map {|item| item[0]}
     @brands1_items = @listed_items.where(brand_id: @popular_brands[0]).last(10).reverse
@@ -28,7 +28,7 @@ class HomeController < ApplicationController
     ].flatten.compact
     @items_category = []
     @categories.each do |category|
-      @items_category << (Item.where(trade_step: "出品中").or(Item.where(trade_step: "売却済")).where(category_id: category.id).compact)
+      @items_category << (Item.where(trade_step: "出品中").where(category_id: category.id).compact)
       @items_category = @items_category.delete_if(&:empty?)
     end
     @items_category = @items_category.flatten.sort.reverse

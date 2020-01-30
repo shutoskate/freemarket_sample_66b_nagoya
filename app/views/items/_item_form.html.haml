@@ -97,9 +97,15 @@
               .logo__item 必須
             .puts__price
               .jpn-money ¥
-              = f.number_field :price, class: 'bar__price', placeholder: '例）300'
-          .tax 販売手数料（10%）
-          .profit 販売利益
+              %input#price_calc.price_form-box{placeholder: "例) 300", type: "number"}/
+          .tax#price_what 
+            販売手数料（10%）
+            .right_bar
+          .profit#price_point 
+            販売利益
+            .price__tax
+              = f.number_field :price, style: "display: none", id: "price"
+              .right_bar_2
     .bottom__area
       .text__arart
         %p.text

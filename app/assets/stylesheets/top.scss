@@ -10,14 +10,15 @@
       display: flex;
       justify-content: space-around;
       .advertisement-fonts{
-        color: grey;
-        font-size: 40px;
+        color: #333;
+        font-size: 60px;
         padding: 40px 0 0 40px;
         display: block;
         .advertisement-fonts2{
-          color: grey;
-          font-size: 20px;
+          color: #333;
+          font-size: 18px;
           padding-top: 20px;
+          font-weight: normal;
         }
         .advertisement-img{
           padding-top: 20px;
@@ -37,8 +38,7 @@
         display: block;
         height: 100%;
         width: auto;
-        padding-right: 100px;
-        right: 0;
+        left: 50%;
       }
     }
   }

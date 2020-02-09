@@ -20,7 +20,9 @@ crumb :profile do
   parent :mypage
 end
 
-# カテゴリーとブランドの詳細ページを作成次第パンクズを以下に作成
+crumb :item do
+  link "商品詳細", item_path
+end
 
 # カテゴリー一覧
 crumb :categories do

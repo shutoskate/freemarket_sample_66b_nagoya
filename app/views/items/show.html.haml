@@ -1,3 +1,4 @@
+- breadcrumb :item
 =render "layouts/header"
 %main
   %content
@@ -117,9 +118,9 @@
           = @item.charge
       - if @item.trade_step == "売却済"
         .item-buy-btn.sold 売り切れました
-      - if @item.trade_step == "交渉中"
+      - elsif @item.trade_step == "交渉中"
         .item-buy-btn.sold 交渉中です
-      - if @item.seller_id != current_user.id && @item.trade_step == "出品中" 
+      - elsif user_signed_in? && @item.seller_id != current_user.id && @item.trade_step == "出品中"
         = link_to('購入画面に進む', purchase_path(@item.id), class:"item-buy-btn")
         .item-description
           %p.item-description-inner
@@ -137,7 +138,7 @@
             = link_to( {}, class:"item-button item-button-report", target:"_blank") do
               %i.fas.fa-lock
               %span あんしん・あんぜんへの取り組み
-  - if @item.seller_id == current_user.id && @item.trade_step != "売却済"
+  - if user_signed_in? && @item.seller_id == current_user.id && @item.trade_step != "売却済"
     .item-box.seller
       = link_to('商品の編集', edit_item_path(@item), class:"item-buy-btn")
       %span or

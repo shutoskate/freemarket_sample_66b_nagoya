@@ -36,6 +36,10 @@ crumb :category do
   parent :categories
 end
 
+crumb :search do
+  link "商品検索", search_path
+end
+
   # crumb :パンくず名 do
   #   link "パンくずに表示される文字", パス
   #   parent :必要に応じて、親ページのパンくず名を記述

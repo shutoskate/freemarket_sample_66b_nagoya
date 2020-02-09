@@ -4,18 +4,19 @@
       .icon
         %a.lists{:href => "/"}
           = image_tag "fmarket_logo_red.svg", class:"fmarket__logo", size: "134x36"
-      .serch
-        .serch__area
-          %input.input{:action => "/jp/search/", :placeholder => "何かお探しですか？", :method => "post"}
-          %a(href="#")
-            %i.fas.fa-search
+      .search
+        .search__area
+          = form_tag(search_path, method: 'get') do
+            = text_field_tag :search, "", {class: "input", placeholder:"何かお探しですか？"}
+            = button_tag type: 'submit' do
+              %i.fas.fa-search
     .header__bottom
       %nav.categories__left
         %ul.categories__items
-          %li.serch
+          %li.search
             %h4
               = render "home/category_menu"
-          %li.serch
+          %li.search
             %h4
               %a.lists{:href => "#"}
                 %i.fas.fa-tag

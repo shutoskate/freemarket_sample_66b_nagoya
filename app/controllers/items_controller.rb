@@ -120,7 +120,7 @@ class ItemsController < ApplicationController
   end
 
   def search
-    @items = Item.search(params[:search])
+    @items = Item.search(params[:search]).paginate(page: params[:page], per_page: 30)
   end
 
   private

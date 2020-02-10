@@ -1,0 +1,32 @@
+- breadcrumb :search
+= render 'layouts/header'
+%main
+  .category
+    %h2.index
+      - if params[:search] == ""
+        新着商品
+      - else
+        #{params[:search]}の検索結果
+    - if @items.length == 0
+      %h3 該当する商品はありません。
+    .category__items
+      - @items.first(100).each do |i|
+        .category__item
+          = link_to item_path(i) do
+            - item_img = ItemImg.where(item_id: i.id)[0]
+            - if item_img == nil 
+              = image_tag "no_image.jpg", class:"img"
+            - else
+              = image_tag item_img.img.url, class:"img"
+          - if i.trade_step == "売却済"
+            .stop_category
+              %span.stop_text_category SOLD
+          .category__item__price
+            %p
+              ¥
+              = i[:price].to_s(:delimited, delimiter: ',')
+          .category__item__name
+            %p
+              = i[:name]
+= render "layouts/footer"
+= render 'layouts/exhibition'

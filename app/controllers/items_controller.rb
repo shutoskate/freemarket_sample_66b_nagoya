@@ -119,6 +119,10 @@ class ItemsController < ApplicationController
     redirect_to @item
   end
 
+  def search
+    @items = Item.search(params[:search])
+  end
+
   private
 
   def set_item

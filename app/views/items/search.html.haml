@@ -10,7 +10,7 @@
     - if @items.length == 0
       %h3 該当する商品はありません。
     .category__items
-      - @items.first(100).each do |i|
+      - @items.each do |i|
         .category__item
           = link_to item_path(i) do
             - item_img = ItemImg.where(item_id: i.id)[0]
@@ -28,5 +28,6 @@
           .category__item__name
             %p
               = i[:name]
+      = will_paginate @items
 = render "layouts/footer"
 = render 'layouts/exhibition'
